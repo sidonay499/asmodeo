@@ -1,0 +1,35 @@
+---
+---
+
+<a href="/home">
+    <svg 
+        width="55"  
+        height="55"  
+        viewBox="0 0 24 24"  
+        fill="none"   
+    >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+    </svg>
+    INGRESAR
+</a>
+
+<style>
+    svg{
+        fill: var(--action);
+        z-index: -1;
+        position: absolute;
+        left: 2%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: all ease-in-out 200ms;
+    }
+    a{
+        z-index: 2;
+        position: relative;
+    }
+    a:hover svg{
+        width: 65px;
+        height: 65px;
+    }
+</style>

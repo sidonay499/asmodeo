@@ -1,0 +1,51 @@
+---
+import ButtonHeart from "./buttons/ButtonHeart.astro";
+
+---
+
+<section>
+	<picture>
+		<img src="./woman.webp" alt="">
+	</picture>
+	<header>
+		<h1>Sidonay</h1>
+		<h2>GUÍA DE ESCORTS VIP</h2>
+	</header>
+	<div class="landing_box_button" >
+		<ButtonHeart/>
+	</div>
+	<span class="circle_bkg" />
+</section>
+
+<style>
+	section{
+		display: grid;
+		place-items: center;
+	}
+	picture{
+		z-index: -1;
+		position: absolute;
+		top: 37%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	img{
+		width: 400px;
+		mask-image: linear-gradient(var(--third)20%,#00000000);
+	}
+	header{
+		z-index: 1;
+		display: grid;
+		place-items: center;
+		padding-bottom: 50px;
+	}
+	.circle_bkg{
+		z-index: -1;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		background: linear-gradient(var(--black),var(--total-black));
+		clip-path: circle(70% at 50% 177%);
+	}
+</style>
