@@ -1,0 +1,19 @@
+input{
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-bottom: solid 1px white;
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+input::placeholder{
+    color: white;
+}
+button{
+    width: 270px;
+    padding: 10px;
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+}

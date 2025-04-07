@@ -1,0 +1,20 @@
+.box_login_admin_inputs{
+    margin-bottom: -5px;
+}
+.box_login_admin_errors{
+    display: grid;
+    place-items: left;
+    font-size: 10px;
+    height: 20px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    width: 100%;
+    p{
+        height: 10px;
+    }
+}
+.box_login_admin_button{
+    display: grid;
+    place-items: center;
+    margin-top: 35px;
+}

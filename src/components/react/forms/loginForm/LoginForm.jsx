@@ -71,7 +71,7 @@ const LoginForm = ()=>{
             <div className='box_admin_loader' >
                 {loader && <Loader size={80} />}
             </div>
-            <div className='login_box_inputs' >
+            <div className='box_login_admin_inputs' >
                 <input
                     type="text"
                     id='email'
@@ -97,7 +97,7 @@ const LoginForm = ()=>{
                     {formik.touched.password && formik.errors.password && <p>{formik.errors.password}</p>}
                 </div>
             </div>
-            <div className='login_box_button' >
+            <div className='box_login_admin_button' >
                 <ButtonReact type='submit'>
                     ENVIAR
                 </ButtonReact>
