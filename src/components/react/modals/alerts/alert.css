@@ -1,0 +1,34 @@
+.container_alert_modal{
+    position: fixed;
+    z-index: 9;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+.box_alert_modal{
+    z-index: 10;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: var(--black);
+}
+.box_cross{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    right: 10px;
+    top: 10px;
+    transition: all ease-in-out 300ms;
+}
+.box_cross:hover{
+    transform: rotate(-45deg);
+}
