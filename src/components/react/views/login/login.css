@@ -1,0 +1,19 @@
+.container_login{
+    display: grid;
+    place-items: center;
+    gap: 20px;
+}
+.box_redirect{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin-top: 15px;
+    border-top: solid 1px white;
+}
+.text_redirect{
+    font-size: 12px;
+    transition: all ease-in-out 300ms;
+}
+.text_redirect:hover{
+    transform: scale(1.1);
+}
