@@ -9,6 +9,7 @@ import Alert from '../../modals/alerts/Alert'
 import ValidateCode from '../../modals/validateCode/ValidateCode'
 import Loader from '../../icons/loader/Loader'
 import ButtonReact from '../../buttons/buttonsReact/ButtonReact'
+import adminLogin from '../../../../adapters/adminLogin'
 
 const LoginForm = ()=>{
     const [loader,setLoader] = useState(false)
@@ -55,10 +56,7 @@ const LoginForm = ()=>{
     }
 
     return(
-        <form
-            onSubmit={formik.handleSubmit}
-            className='login_form'
-        >
+        <>
             {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             {
                 modal && <ValidateCode
@@ -66,43 +64,48 @@ const LoginForm = ()=>{
                             handleModal={handleModal} 
                             handleAlert={handleAlert} 
                             email={formik.values.email} 
-                         />
+                        />
             }
-            <div className='box_admin_loader' >
-                {loader && <Loader size={80} />}
-            </div>
-            <div className='box_login_admin_inputs' >
-                <input
-                    type="text"
-                    id='email'
-                    name='email'
-                    placeholder='EMAIL'
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                />
-                <div className='box_login_admin_errors' >
-                    {formik.touched.email && formik.errors.email && <p>{formik.errors.email}</p>}
+            <form
+                onSubmit={formik.handleSubmit}
+                className='login_form'
+            >
+                <div className='box_admin_loader' >
+                    {loader && <Loader size={80} />}
                 </div>
-                <input
-                    type="text"
-                    id='password'
-                    name='password'
-                    placeholder='PASSWORD'
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.password}
-                />
-                <div className='box_login_admin_errors' >
-                    {formik.touched.password && formik.errors.password && <p>{formik.errors.password}</p>}
+                <div className='box_login_admin_inputs' >
+                    <input
+                        type="text"
+                        id='email'
+                        name='email'
+                        placeholder='EMAIL'
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                    />
+                    <div className='box_login_admin_errors' >
+                        {formik.touched.email && formik.errors.email && <p>{formik.errors.email}</p>}
+                    </div>
+                    <input
+                        type="text"
+                        id='password'
+                        name='password'
+                        placeholder='PASSWORD'
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.password}
+                    />
+                    <div className='box_login_admin_errors' >
+                        {formik.touched.password && formik.errors.password && <p>{formik.errors.password}</p>}
+                    </div>
                 </div>
-            </div>
-            <div className='box_login_admin_button' >
-                <ButtonReact type='submit'>
-                    ENVIAR
-                </ButtonReact>
-            </div>
-        </form>
+                <div className='box_login_admin_button' >
+                    <ButtonReact type='submit'>
+                        ENVIAR
+                    </ButtonReact>
+                </div>
+            </form>
+        </>
     )
 }
 

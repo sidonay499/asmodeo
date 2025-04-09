@@ -27,14 +27,14 @@ const SigninForm = ()=>{
             const res = await postAdmin(values)
             console.log('res:',res)
             setLoader(false)
-            if(res){
+            if(res.name){
                 setAlert(`Se creo el admin ${res.name} 👌`)
                 setTimeout(()=>{
                     setStorage(res)
                     navigate('/admin')
                 },6000)
             }else{
-                setAlert('Ocurrio un problema 🤷‍♂️')
+                setAlert(res)
             }
         }
     })
