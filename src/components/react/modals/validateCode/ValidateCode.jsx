@@ -54,7 +54,7 @@ const ValidateCode = ({email,handleModal,onSubmit,handleAlert})=>{
                         </div>
                     </div>
                     <ButtonReact type='submit'>
-                        check
+                        CHECK
                     </ButtonReact>
                 </form>
             </div>

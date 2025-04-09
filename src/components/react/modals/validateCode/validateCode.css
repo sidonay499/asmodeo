@@ -16,10 +16,11 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 400px;
-    padding-block: 15px;
+    padding: 15px;
     border-radius: 10px;
     background-color: var(--black);
+    text-align: center;
+    text-wrap: balance;
     h3{
         font-size: 12px;
     }
