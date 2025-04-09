@@ -14,10 +14,8 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 	<div class="landing_box_button" >
 		<ButtonHeart/>
 	</div>
-
-		<img class="black-circle" src="./blackcircle.svg" alt="">
-	
-	<!-- <span class="circle_bkg" /> -->
+	<!-- <img class="black-circle" src="./blackcircle.svg" alt=""> -->
+	<span class="circle_bkg" />
 </section>
 
 <style>
@@ -42,21 +40,21 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		place-items: center;
 		padding-bottom: 50px;
 	}
-	.black-circle{
+	/* .black-circle{
 		z-index: 1;
 		position: absolute;
 		left: 50%;
 		bottom: 0px;
 		transform: translateX(-50%);
 		width: 1000px;
-	}
-	/* .circle_bkg{
+	} */
+	.circle_bkg{
 		z-index: -1;
 		position: absolute;
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 		bottom: 0;
 		background: linear-gradient(var(--black),var(--total-black));
 		clip-path: circle(900px at 50% 1300px);
-	} */
+	}
 </style>

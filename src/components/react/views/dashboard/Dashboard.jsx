@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import useIsLogin from '../../hooks/useIsLogin'
 import './dashboard.css'
+import CreateEscort from '../../forms/createEscort/CreateEscort'
 
 const Dashboard = ()=>{
 
@@ -12,7 +13,8 @@ const Dashboard = ()=>{
 
     return(
         <section>
-            <h1>DASHBOARD</h1>
+            <h2>CREACIÓN DE PERFÍLES</h2>
+            <CreateEscort/>
         </section>
     )
 }
