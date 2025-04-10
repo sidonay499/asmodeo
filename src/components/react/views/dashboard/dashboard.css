@@ -1,0 +1,7 @@
+.section_dashboard{
+    display: grid;
+    place-items: center;
+    gap: 40px;
+    padding-top: 150px;
+    padding-bottom: 50px;
+}

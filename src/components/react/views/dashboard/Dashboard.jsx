@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import useIsLogin from '../../hooks/useIsLogin'
-import './dashboard.css'
 import CreateEscort from '../../forms/createEscort/CreateEscort'
+import './dashboard.css'
 
 const Dashboard = ()=>{
 
@@ -12,7 +12,7 @@ const Dashboard = ()=>{
     },[])
 
     return(
-        <section>
+        <section className='section_dashboard' >
             <h2>CREACIÓN DE PERFÍLES</h2>
             <CreateEscort/>
         </section>

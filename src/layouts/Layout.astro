@@ -77,4 +77,47 @@ const path = Astro.url.pathname
 		color: var(--primary);
 		font-size: 10px;
 	}
+	input{
+		width: 250px;
+		padding: 10px;
+		border: none;
+		font-size: 12px;
+		border-bottom: solid 1px var(--primary);
+		background-color: transparent;
+		color: var(--primary);
+		outline: none;
+	}
+	input::placeholder{
+		color: var(--primary);
+	}
+	label{
+		font-size: 12px;
+		font-family: 'Poppins-ex-italic',sans-serif;
+	}
+	button{
+		width: 270px;
+		padding: 10px;
+		font-weight: 600;
+		background-color: transparent;
+		border: solid 1px var(--primary);
+		color: var(--primary);
+		transition: all ease-in-out 300ms;
+	}
+	button:hover{
+		background-color: var(--third);
+	}
+	select{
+		width: 270px;
+		background-color: transparent;
+		color: var(--primary);
+		padding: 10px;
+		outline: none;
+		font-size: 12px;
+		border: solid 1px var(--primary);
+	}
+	select option{
+		background:var(--third);
+		border: none;
+		font-size: 12px;
+	}
 </style>
