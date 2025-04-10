@@ -1,7 +1,6 @@
 import './navbar.css'
 
 const Navbar = ({path})=>{
-    console.log(path)
     return(
         <section className='aside_navbar' >
             {path != '/' && 
