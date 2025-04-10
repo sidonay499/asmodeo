@@ -1,0 +1,21 @@
+.aside_navbar{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 1000px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+}
+.image_navbar{
+    transition: all ease-in-out 300ms;
+}
+.image_navbar:hover{
+    transform: scale(1.1);
+}
+.box_navbar{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}

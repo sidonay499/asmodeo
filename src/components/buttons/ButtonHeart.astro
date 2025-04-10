@@ -1,7 +1,10 @@
 ---
 ---
 
-<a href="/home">
+<a
+    href="/home"
+    class="button_heart"
+>
     <svg 
         width="55"  
         height="55"  
@@ -24,11 +27,12 @@
         transform: translate(-50%,-50%);
         transition: all ease-in-out 200ms;
     }
-    a{
+    .button_heart{
         z-index: 2;
         position: relative;
+        font-size: 12px;
     }
-    a:hover svg{
+    .button_heart:hover svg{
         width: 65px;
         height: 65px;
     }

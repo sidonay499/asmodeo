@@ -1,7 +1,9 @@
 ---
 import { ClientRouter } from "astro:transitions"
+import Navbar from "../components/react/navbar/Navbar"
 
 const {title} = Astro.props
+const path = Astro.url.pathname
 ---
 
 <!doctype html>
@@ -15,6 +17,7 @@ const {title} = Astro.props
 		<ClientRouter/>
 	</head>
 	<body>
+		<Navbar client:only="react" path={path} />
 		<slot />
 	</body>
 </html>
@@ -72,6 +75,6 @@ const {title} = Astro.props
 	a{
 		text-decoration: none;
 		color: var(--primary);
-		
+		font-size: 10px;
 	}
 </style>
