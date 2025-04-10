@@ -4,9 +4,10 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 ---
 
 <section>
-	<picture>
-		<img class="woman" src="./woman.webp" alt="">
-	</picture>
+	<div class="wrapper">
+		<div class="blurred-bg"></div>
+		<picture></picture>
+	</div>  
 	<header>
 		<h1 style="view-transition-name: asmodeo;" >Asmodeo</h1>
 		<h2>GUÍA DE ESCORTS VIP</h2>
@@ -23,22 +24,43 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		display: grid;
 		place-items: center;
 	}
-	picture{
-		z-index: -1;
+	.wrapper {
+		z-index: 0;
+		position: relative;
+	}
+	.blurred-bg {
 		position: absolute;
 		top: 37%;
 		left: 50%;
-		transform: translate(-50%,-50%);
-	}
-	.woman{
 		width: 400px;
-		mask-image: linear-gradient(var(--third)20%,#00000000);
+		height: 500px;
+		transform: translate(-50%, -50%);
+		background: url('/public/woman.webp') center no-repeat;
+		background-size: contain;
+		filter: blur(25px);
+		z-index: 1;
+	}
+	picture {
+		position: absolute;
+		top: 37%;
+		left: 50%;
+		width: 400px;
+		height: 500px;
+		transform: translate(-50%, -50%);
+		background: url('/public/woman.webp') center no-repeat;
+		background-size: contain;
+		z-index: 2;
+		mask-image: linear-gradient(var(--third)10%,#00000000);
 	}
 	header{
-		z-index: 1;
+		z-index: 2;
 		display: grid;
 		place-items: center;
 		padding-bottom: 50px;
+	}
+	.landing_box_button{
+		position: relative;
+		z-index: 3;
 	}
 	/* .black-circle{
 		z-index: 1;
@@ -49,7 +71,7 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		width: 1000px;
 	} */
 	.circle_bkg{
-		z-index: -1;
+		z-index: 2;
 		position: absolute;
 		width: 100%;
 		height: 100dvh;
