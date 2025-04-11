@@ -4,8 +4,9 @@ import { validateEscort } from '../../../../utils/schema'
 import './createEscort.css'
 import { useState } from 'react'
 import Loader from '../../icons/loader/Loader'
-import uploadImageProfile from '../../../../adapters/profiles/uploadImageProfile'
-import uploadImageGalery from '../../../../adapters/profiles/uploadImageGalery'
+import uploadImageProfile from '../../../../adapters/escorts/uploadImageProfile'
+import uploadImageGalery from '../../../../adapters/escorts/uploadImageGalery'
+import createProfile from '../../../../adapters/escorts/createProfile'
 
 const CreateEscort = ()=>{
     const [loader,setLoader] = useState(false)
@@ -25,13 +26,13 @@ const CreateEscort = ()=>{
                     eyesColor:null,
                     shaved:null,
                     breast:null,
-                    cintura:null,
-                    cadera:null,
+                    waist:null,
+                    hip:null,
                     bodyType:null,
                     breasts:null,
                     ass:null,
                     bioType:null,
-                    tattoos:null,
+                    tattoos:false,
                     description:'',
                     price:null,
                     phone:null,
@@ -42,15 +43,17 @@ const CreateEscort = ()=>{
                 onSubmit={ async (values)=>{
                     try {
                         console.log(values)
-                        setLoader(!loader)
-                        const formData = new FormData()
-                        const profileImg = values.imageProfile
-                        const galeryImgs = values.images
+                        // setLoader(!loader)
+                        // const formData = new FormData()
+                        // const profileImg = values.imageProfile
+                        // const galeryImgs = values.images
 
-                        const urlProfile = await uploadImageProfile(formData, profileImg)
-                        const urlsGalery = await uploadImageGalery(formData,galeryImgs)
-                        setLoader(false)
-                        console.log(urlsGalery)
+                        // const urlProfile = await uploadImageProfile(formData, profileImg)
+                        // const urlsGalery = await uploadImageGalery(formData,galeryImgs)
+
+                        // const profile = await createProfile(values,urlProfile,urlsGalery)
+                        // setLoader(false)
+                        // console.log(urlsGalery)
                     } catch (error) {
                         setLoader(false)
                         console.log(error)
@@ -187,18 +190,18 @@ const CreateEscort = ()=>{
                                         <Field
                                             className='measures_input'
                                             type="number"
-                                            name="cintura"
+                                            name="waist"
                                             placeholder='CINTURA'
                                         />
                                         <Field
                                             className='measures_input'
                                             type="number"
-                                            name="cadera"
+                                            name="hip"
                                             placeholder='CADERA'
                                         />
                                     </div>
                                 </div>
-                                <label htmlFor="">IMAGEN DE PERFIL</label>
+                                <label htmlFor="imageProfile">IMAGEN DE PERFIL</label>
                                 <input 
                                     type="file"
                                     name="imageProfile"
@@ -207,7 +210,7 @@ const CreateEscort = ()=>{
                                         setFieldValue('imageProfile', file)
                                     }}
                                 />
-                                <label htmlFor="">IMÁGENES PARA GALERÍA</label>
+                                <label htmlFor="images">IMÁGENES PARA GALERÍA</label>
                                 <input
                                     type="file"
                                     name="images"
@@ -217,6 +220,16 @@ const CreateEscort = ()=>{
                                         setFieldValue('images', file)
                                     }}
                                 />
+                                <div className='box_checkbox' >
+                                    <label htmlFor="tattoos">TATUAJES</label>
+                                    <Field
+                                        type="checkbox"
+                                        name="tattoos"
+                                        onChange={()=>{
+                                            setFieldValue('tattoos',!values.tattoos)
+                                        }}
+                                    />
+                                </div>
                                 <div className='box_button_create_escort' >
                                     <ButtonReact>
                                         CREAR
