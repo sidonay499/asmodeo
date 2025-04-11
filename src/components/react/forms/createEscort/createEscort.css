@@ -1,7 +1,9 @@
 .form_create_escort{
     display: flex;
     justify-content: center;
-    gap: 45px;
+    align-items: center;
+    gap: 40px;
+    padding-left: 25px;
 }
 .box_create_escort_error{
     display: grid;

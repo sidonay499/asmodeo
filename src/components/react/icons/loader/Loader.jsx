@@ -9,7 +9,8 @@ const Loader = ({size})=>{
             size={size}
             speed="3" 
             color="#FFFFFF"
-            ></l-ping>
+            >
+            </l-ping>
         </div>
     )
 }
