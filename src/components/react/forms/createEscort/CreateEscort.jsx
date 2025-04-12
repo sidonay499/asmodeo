@@ -232,7 +232,7 @@ const CreateEscort = ()=>{
                                         name="breasts"
                                         id="breasts"
                                     >
-                                        <option value="PEQUEÑOS">PEUEÑOS</option>
+                                        <option value="PEQUEÑOS">PEQUEÑOS</option>
                                         <option value="PERFECTOS">PERFECTOS</option>
                                         <option value="GRANDES">GRANDES</option>
                                         <option value="EXTRA GRANDES">EXTRA GRANDES</option>
@@ -305,7 +305,7 @@ const CreateEscort = ()=>{
                                 </div>
                                 <div className='box_button_create_escort' >
                                     <ButtonReact>
-                                        CREAR
+                                        CREAR PERFIL
                                     </ButtonReact>
                                 </div>
                             </div>

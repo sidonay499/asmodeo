@@ -1,7 +1,39 @@
 .section_dashboard{
     display: grid;
-    place-items: center;
+    align-items: flex-start;
+    justify-content: center;
     gap: 40px;
+    height: 900px;
     padding-top: 150px;
     padding-bottom: 50px;
+}
+.header_dashboard{
+    display: grid;
+    place-items: center;
+}
+.box_dashboard{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    h6{
+        cursor: pointer;
+    }
+}
+.item_dashboard{
+    z-index: -1;
+    position: absolute;
+    width: 110px;
+    height: 30px;
+    border-radius: 10px;
+    background: var(--action);
+    transition: all ease-in-out 500ms;
+}
+.true{
+    left: -25px;
+}
+.false{
+    left: 100px;
 }
