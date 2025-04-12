@@ -154,16 +154,6 @@ const CreateEscort = ()=>{
                                         <ErrorMessage name='weigth' component='div' />
                                     </div>
                                 </div>
-                                <div className='box_checkbox' >
-                                    <label htmlFor="tattoos">TATUAJES</label>
-                                    <Field
-                                        type="checkbox"
-                                        name="tattoos"
-                                        onChange={()=>{
-                                            setFieldValue('tattoos',!values.tattoos)
-                                        }}
-                                    />
-                                </div>
                             </div>
                             <div className='box_select' >
                                 <label htmlFor="hairColor">COLOR DE CABELLO</label>
@@ -302,6 +292,16 @@ const CreateEscort = ()=>{
                                             setFieldValue('images', file)
                                         }}
                                     />
+                                </div>
+                                <div className='box_checkbox' >
+                                    <Field
+                                        type="checkbox"
+                                        name="tattoos"
+                                        onChange={()=>{
+                                            setFieldValue('tattoos',!values.tattoos)
+                                        }}
+                                    />
+                                    <label htmlFor="tattoos">TATUAJES</label>
                                 </div>
                                 <div className='box_button_create_escort' >
                                     <ButtonReact>
