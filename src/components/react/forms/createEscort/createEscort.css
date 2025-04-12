@@ -3,13 +3,15 @@
     justify-content: center;
     gap: 40px;
     padding-left: 25px;
+    margin-right: -260px;
 }
 .box_create_escort_error{
     display: grid;
     place-items: left;
     font-size: 10px;
     height: 20px;
-    margin-bottom: 8px;
+    min-width: 260px;
+    max-width: 260px;
     padding-left: 10px;
     width: 100%;
     p{
@@ -17,21 +19,25 @@
     }
 }
 .box_measures{
-    margin-block: 20px;
+    display: grid;
+    margin-top: 20px;
 }
-.measures_input{
-    width: 50px;
-    margin-right: 30px;
-    font-size: 8px;
+.box_input{
+    display: flex;
 }
 .box_inputs{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    h4{
+        margin-top: 0;
+    }
 }
 .box_select{
-    display: grid;
-    place-items: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
     gap: 10px;
 }
 .box_button_create_escort{
@@ -45,4 +51,8 @@
     input{
         width: 25px;
     }
+}
+.box_input_image{
+    display: grid;
+    margin-block: 15px;
 }

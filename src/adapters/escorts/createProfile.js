@@ -2,13 +2,13 @@ import axios from "axios";
 
 const { 
     PUBLIC_PRODUCTION,
-    PUBLIC_URL_ADMIN_SIGNIN_PROD,
-    PUBLIC_URL_ADMIN_SIGNIN_DEV
+    PUBLIC_URL_CREATE_PROFILE_PROD,
+    PUBLIC_URL_CREATE_PROFILE_DEV
 } = import.meta.env
 
 export default async function createProfile(values,urlProfile,urlsGalery){
     
-    const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_URL_ADMIN_SIGNIN_PROD : PUBLIC_URL_ADMIN_SIGNIN_DEV
+    const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_URL_CREATE_PROFILE_PROD : PUBLIC_URL_CREATE_PROFILE_DEV
     
     try {
         const profile = {
@@ -27,15 +27,15 @@ export default async function createProfile(values,urlProfile,urlsGalery){
             ass:values.ass,
             bioType:values.bioType,
             tattoos:values.tattoos,
-            description:'',
-            price:null,
-            phone:null,
-            location:'',
-            state:'',
-            country:''
+            description:values.description,
+            price:values.price,
+            phone:values.phone,
+            location:values.location,
+            state:values.state,
+            country:values.country
         }
     
-        const res = await axios.post(URL,admin,{
+        const res = await axios.post(URL,profile,{
             withCredentials:true
         })
 

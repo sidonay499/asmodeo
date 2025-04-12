@@ -128,6 +128,9 @@ export const validateEscort = Yup.object().shape({
             'EXTRA GRANDES'
         ])
         .required('El tipo de pechos es obligatorio'),
+    breast:Yup.number()
+        .integer('Debe ser un numero entero')
+        .required('El tipo de pechos es obligatorio'),
     ass:Yup.mixed()
         .oneOf([
             'CHICA', 
