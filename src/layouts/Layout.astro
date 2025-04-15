@@ -120,4 +120,18 @@ const path = Astro.url.pathname
 		border: none;
 		font-size: 10px;
 	}
+	textarea{
+		outline: none;
+		margin-top: 5px;
+		font-size: 10px;
+		background-color: transparent;
+		border: solid 1px var(--primary);
+		height: 80px;
+		padding: 10px;
+		color: var(--primary);
+	}
+	textarea::placeholder{
+		font-family: 'Poppins-semi-bold';
+		color: var(--primary);
+	}
 </style>

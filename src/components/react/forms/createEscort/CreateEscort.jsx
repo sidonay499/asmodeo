@@ -153,6 +153,13 @@ const CreateEscort = ()=>{
                                     <div className='box_create_escort_error' >
                                         <ErrorMessage name='weigth' component='div' />
                                     </div>
+                                    <textarea
+                                        name='description'
+                                        placeholder='DESCRIPCIÓN'
+                                    />
+                                    <div className='box_create_escort_error' >
+                                        <ErrorMessage name='description' component='div' />
+                                    </div>
                                 </div>
                             </div>
                             <div className='box_select' >
@@ -292,6 +299,15 @@ const CreateEscort = ()=>{
                                             setFieldValue('images', file)
                                         }}
                                     />
+                                </div>
+                                <Field
+                                    className='measures_input input_price'
+                                    type="number"
+                                    name="price"
+                                    placeholder='PRECIO'
+                                />
+                                <div className='box_create_escort_error' >
+                                    <ErrorMessage name='price' component='div' />
                                 </div>
                                 <div className='box_checkbox' >
                                     <Field
