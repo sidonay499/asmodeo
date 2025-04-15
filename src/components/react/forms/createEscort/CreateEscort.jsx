@@ -108,6 +108,14 @@ const CreateEscort = ()=>{
                                 <div className='box_create_escort_error' >
                                     <ErrorMessage name='country' component='div' />
                                 </div>
+                                <Field
+                                    type="text"
+                                    name='phone'
+                                    placeholder='TELÉFONO'
+                                />
+                                <div className='box_create_escort_error' >
+                                    <ErrorMessage name='phone' component='div' />
+                                </div>
                                 <div className='box_measures' >
                                     <h4>MEDIDAS</h4>
                                     <Field

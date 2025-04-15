@@ -150,13 +150,21 @@ export const validateEscort = Yup.object().shape({
     description:Yup.string()
         .required('La descripción es obligatoria'),
     price:Yup.number()
+        .min(2, 'Caracteres minímos: 2')
         .integer('El precio debe ser un número entero')
         .required('El precio es obligatorio'),
     phone:Yup.string()
         .required('El teléfono es obligatorio'),
     location:Yup.string()
+        .min(10, 'Localidad muy corta')
+        .max(100, 'Localidad muy larga')
         .required('La ubicación es obligatoria'),
-    state:Yup.boolean(),
+    state:Yup.string()
+        .min(10, 'Descripción muy corta')
+        .max(300, 'No debe tener más de 300 caracteres')
+        .required('La descripción es requerida'),
     country:Yup.string()
+        .min(3, 'Nombre de país muy corto')
+        .max(50, 'Nombre de país muy largo')
         .required('El país es obligatorio')
 }) 
