@@ -148,13 +148,17 @@ export const validateEscort = Yup.object().shape({
         .required('El biotipo es obligatorio'),
     tattoos:Yup.boolean(),
     description:Yup.string()
+        .min(10,'Muy corta')
+        .max(300, 'Muy larga')
         .required('La descripción es obligatoria'),
     price:Yup.number()
         .min(2, 'Caracteres minímos: 2')
         .integer('El precio debe ser un número entero')
         .required('El precio es obligatorio'),
     phone:Yup.string()
-        .required('El teléfono es obligatorio'),
+        .min(8,"Teléfono muy corto")
+        .max(22,"Teléfono muy largo")
+        .matches(/^[0-9]+$/, "Solo se permiten números, sin espacios ni símbolos"),
     location:Yup.string()
         .min(10, 'Localidad muy corta')
         .max(100, 'Localidad muy larga')
