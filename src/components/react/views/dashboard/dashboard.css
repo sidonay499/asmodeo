@@ -10,30 +10,41 @@
 .header_dashboard{
     display: grid;
     place-items: center;
+    h2{
+        margin-bottom: 20px;
+    }
 }
 .box_dashboard{
     z-index: 1;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 200px;
+    margin-top: 5px;
+    border: solid 1px var(--primary);
     h6{
         cursor: pointer;
     }
 }
+.cell_options{
+    width: 240px;
+    height: 30px;
+    cursor: pointer;
+}
 .item_dashboard{
     z-index: -1;
     position: absolute;
-    width: 110px;
+    width: 240px;
     height: 30px;
-    border-radius: 10px;
     background: var(--action);
     transition: all ease-in-out 500ms;
 }
 .true{
-    left: -25px;
+    left: 0px;
 }
 .false{
-    left: 100px;
+    left: 240px;
+}
+.cell_options{
+    display: grid;
+    place-items: center;
 }

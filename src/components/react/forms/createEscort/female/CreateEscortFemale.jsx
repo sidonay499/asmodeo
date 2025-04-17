@@ -1,14 +1,14 @@
 import { Field, Formik, Form, ErrorMessage } from 'formik'
-import ButtonReact from '../../buttons/buttonsReact/ButtonReact'
-import { validateEscort } from '../../../../utils/schema'
-import './createEscort.css'
+import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
+import { validateEscort } from '../../../../../utils/schema'
 import { useState } from 'react'
-import Loader from '../../icons/loader/Loader'
-import uploadImageProfile from '../../../../adapters/escorts/uploadImageProfile'
-import uploadImageGalery from '../../../../adapters/escorts/uploadImageGalery'
-import createProfile from '../../../../adapters/escorts/createProfile'
+import Loader from '../../../icons/loader/Loader'
+import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
+import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
+import createProfile from '../../../../../adapters/escorts/createProfile'
+import './createEscortFemale.css'
 
-const CreateEscort = ()=>{
+const CreateEscortFemale = ()=>{
     const [loader,setLoader] = useState(false)
 
     return(
@@ -354,4 +354,4 @@ const CreateEscort = ()=>{
     )
 }
 
-export default CreateEscort
+export default CreateEscortFemale
