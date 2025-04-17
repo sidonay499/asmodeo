@@ -88,7 +88,7 @@ export const validateEscort = Yup.object().shape({
             'CASTAÑO OSCURO',
             'RUBIO OSCURO', 
             'COLORADO'
-        ])
+        ],'Tiene que elegir una opción: NEGRO, RUBIO, CASTAÑO, CASTAÑO OSCURO, RUBIO OSCURO, COLORADO')
         .required('El color de pelo es obligatorio'),
     eyesColor:Yup.mixed()
         .oneOf([
@@ -100,25 +100,31 @@ export const validateEscort = Yup.object().shape({
             'CAFÉ', 
             'MARRON CLARO', 
             'MIEL'
-        ])
+        ],'Tiene que elegir una opción: NEGROS, AZULES, CELESTES, VERDES, MARRONES, CAFÉ, MARRON CLARO, MIEL')
         .required('El color de ojos es obligatorio'),
     shaved:Yup.mixed()
         .oneOf([
             'FULL', 
             'PARCIAL', 
             'NATURAL'
-        ])
+        ],'Tiene que elegir una opción: FULL, PARCIAL, NATURAL')
         .required('La depilación es obligatoria'),
-    measures:Yup.string()
-        .matches(/^\d{2,3}-\d{2,3}-\d{2,3}$/, 'Las medidas deben tener el formato "90-60-90"')
-        .required('Las medidas son obligatorias'),
+    breast:Yup.number()
+        .positive('Debe ser un número positivo')
+        .required('La medida es requerido'),
+    waist:Yup.number()
+        .positive('Debe ser un número positivo')
+        .required('La medida es requerido'),
+    hip:Yup.number()
+        .positive('Debe ser un número positivo')
+        .required('La medida es requerido'),
     bodyType:Yup.mixed()
         .oneOf([
             'DELGADA', 
             'MUY DELGADA', 
             'VOLUPTUOSA', 
             'RELLENA'
-        ])
+        ],'Tiene que elegir una opción: DELGADA, MUY DELGADA, VOLUPTUOSA, RELLENA')
         .required('El tipo de cuerpo es obligatorio'),
     breasts:Yup.mixed()
         .oneOf([
@@ -126,17 +132,14 @@ export const validateEscort = Yup.object().shape({
             'PERFECTOS', 
             'GRANDES', 
             'EXTRA GRANDES'
-        ])
-        .required('El tipo de pechos es obligatorio'),
-    breast:Yup.number()
-        .integer('Debe ser un numero entero')
+        ],'Tiene que elegir una opción: PEQUEÑOS, PERFECTOS, GRANDES, EXTRA GRANDES')
         .required('El tipo de pechos es obligatorio'),
     ass:Yup.mixed()
         .oneOf([
             'CHICA', 
             'PERFECTA', 
             'GRANDE'
-        ])
+        ],'Tiene que elegir una opción: CHICA, PERFECTA, GRANDE')
         .required('El tipo de cola es obligatorio'),
     bioType:Yup.mixed()
         .oneOf([
@@ -144,7 +147,7 @@ export const validateEscort = Yup.object().shape({
             'MUSCÚLOSA', 
             'ATLÉTICA', 
             'NORMAL'
-        ])
+        ],'Tiene que elegir una opción: TONÍFICADA, MUSCÚLOSA, ATLÉTICA, NORMAL')
         .required('El biotipo es obligatorio'),
     tattoos:Yup.boolean(),
     description:Yup.string()
@@ -162,11 +165,11 @@ export const validateEscort = Yup.object().shape({
     location:Yup.string()
         .min(10, 'Localidad muy corta')
         .max(100, 'Localidad muy larga')
-        .required('La ubicación es obligatoria'),
+        .required('La localidad es obligatoria'),
     state:Yup.string()
-        .min(10, 'Descripción muy corta')
+        .min(5, 'Provincia muy corta')
         .max(300, 'No debe tener más de 300 caracteres')
-        .required('La descripción es requerida'),
+        .required('La Provincia es requerida'),
     country:Yup.string()
         .min(3, 'Nombre de país muy corto')
         .max(50, 'Nombre de país muy largo')

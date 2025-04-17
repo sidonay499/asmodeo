@@ -26,8 +26,9 @@ const CreateEscort = ()=>{
                     eyesColor:false,
                     shaved:false,
                     breast:'',
-                    waist:false,
-                    hip:false,
+                    waist:'',
+                    hip:'',
+                    gender:false,
                     bodyType:false,
                     breasts:false,
                     ass:false,
@@ -122,6 +123,7 @@ const CreateEscort = ()=>{
                                         className='measures_input'
                                         type="number"
                                         name="breast"
+                                        id="breast"
                                         placeholder='PECHOS'
                                     />
                                     <div className='box_create_escort_error' >
@@ -131,6 +133,7 @@ const CreateEscort = ()=>{
                                         className='measures_input'
                                         type="number"
                                         name="waist"
+                                        id="waist"
                                         placeholder='CINTURA'
                                     />
                                     <div className='box_create_escort_error' >
@@ -140,6 +143,7 @@ const CreateEscort = ()=>{
                                         className='measures_input'
                                         type="number"
                                         name="hip"
+                                        id="hip"
                                         placeholder='CADERA'
                                     />
                                     <div className='box_create_escort_error' >
@@ -161,7 +165,9 @@ const CreateEscort = ()=>{
                                     <div className='box_create_escort_error' >
                                         <ErrorMessage name='weigth' component='div' />
                                     </div>
-                                    <textarea
+                                    <Field
+                                        as="textarea"
+                                        id="description"
                                         name='description'
                                         placeholder='DESCRIPCIÓN'
                                     />
@@ -290,6 +296,7 @@ const CreateEscort = ()=>{
                                 <div className='box_input_image' >
                                     <label htmlFor="imageProfile">IMAGEN DE PERFIL</label>
                                     <input 
+                  
                                         type="file"
                                         name="imageProfile"
                                         onChange={(event)=>{
@@ -297,6 +304,9 @@ const CreateEscort = ()=>{
                                             setFieldValue('imageProfile', file)
                                         }}
                                     />
+                                    <div className='box_create_escort_error' >
+                                        <ErrorMessage name='imageProfile' component='div' />
+                                    </div>
                                     <label htmlFor="images">IMÁGENES PARA GALERÍA</label>
                                     <input
                                         type="file"
@@ -307,6 +317,9 @@ const CreateEscort = ()=>{
                                             setFieldValue('images', file)
                                         }}
                                     />
+                                    <div className='box_create_escort_error' >
+                                        <ErrorMessage name='imageProfile' component='div' />
+                                    </div>
                                 </div>
                                 <Field
                                     className='measures_input input_price'

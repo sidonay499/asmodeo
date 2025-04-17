@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    margin-top: -20px;
+    margin-top: -8px;
     input{
         width: 20px;
         margin-left: -4px;
@@ -55,9 +55,8 @@
 }
 .box_input_image{
     display: grid;
-    margin-block: 25px;
+    margin-block: 10px;
 }
 .input_price{
-    margin-top: 10px;
     border: solid 2px var(--action);
 }
