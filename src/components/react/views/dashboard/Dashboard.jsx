@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import useIsLogin from '../../hooks/useIsLogin'
 import CreateEscortFemale from '../../forms/createEscort/female/CreateEscortFemale'
 import './dashboard.css'
-import CreateEscortMale from '../../forms/createEscort/male/CreacteEscortMale'
+import CreateEscortMale from '../../forms/createEscort/male/CreateEscortMale'
 
 const Dashboard = ()=>{
     const [item,setItem] = useState(true)

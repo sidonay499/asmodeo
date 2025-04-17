@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import './createEscortMale.css'
-import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
-import { validateEscort } from '../../../../../utils/schema'
+import { validateEscortMale } from '../../../../../utils/schema'
+import { useState } from 'react'
+import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
+import Loader from '../../../icons/loader/Loader'
+import './createEscortMale.css'
 
 const CreateEscortMale = ()=>{
     const [loader,setLoader] = useState(false)
@@ -37,7 +38,7 @@ const CreateEscortMale = ()=>{
                     state:'',
                     country:''
                 }}
-                validationSchema={validateEscort}
+                validationSchema={validateEscortMale}
                 onSubmit={ async (values)=>{
                     try {
                         console.log(values)
