@@ -1,0 +1,6 @@
+.container_cardsPreview{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    animation: fadeInUp 0.5s ease-out forwards;
+}

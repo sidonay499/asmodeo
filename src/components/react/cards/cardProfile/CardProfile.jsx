@@ -1,4 +1,4 @@
-import './card.css'
+import './cardProfile.css'
 
 const Card = ()=>{
     return(

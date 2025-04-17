@@ -1,7 +1,19 @@
 ---
+import CardsPreview from "../components/react/cardsPreview/CardsPreview";
 import Layout from "../layouts/Layout.astro";
 
 ---
 
 <Layout title="Sidonay | Descrube la Mujer Perfecta" >
+    <section>
+        <CardsPreview client:only="react" />
+    </section>
 </Layout>
+
+<style>
+    section{
+        margin-block: 120px;
+        display: grid;
+        place-items: center;
+    }
+</style>

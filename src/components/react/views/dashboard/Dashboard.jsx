@@ -3,6 +3,7 @@ import useIsLogin from '../../hooks/useIsLogin'
 import CreateEscortFemale from '../../forms/createEscort/female/CreateEscortFemale'
 import './dashboard.css'
 import CreateEscortMale from '../../forms/createEscort/male/CreateEscortMale'
+import CardsPreview from '../../cardsPreview/CardsPreview'
 
 const Dashboard = ()=>{
     const [item,setItem] = useState(true)
@@ -57,7 +58,7 @@ const Dashboard = ()=>{
                         </div>
                 }
             </header>
-            {!item ? (gender ? <CreateEscortFemale/> : <CreateEscortMale/>) : null}
+            {!item ? (gender ? <CreateEscortFemale/> : <CreateEscortMale/>) : <CardsPreview/>}
         </section>
     )
 }
