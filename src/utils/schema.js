@@ -61,15 +61,10 @@ export const validateCode = Yup.object().shape({
 })
 
 export const validateEscortFemale = Yup.object().shape({
-    imageProfile:Yup.string()
+    imageProfile:Yup.mixed()
         .required('La imagen de perfil es obligatoria'),
-    images:Yup.array()
-        .of(
-            Yup.string()
-            .required('Cada imagen debe ser una URL válida')
-        )
-        .min(1, 'Debe haber al menos una imagen')
-        .required('Las imágenes son obligatorias'),
+    images:Yup.mixed()
+    .required('Las imágenes son obligatorias'),
     name:Yup.string()
         .required('El nombre es obligatorio'),
     age:Yup.number()
@@ -161,9 +156,9 @@ export const validateEscortFemale = Yup.object().shape({
     phone:Yup.string()
         .min(8,"Teléfono muy corto")
         .max(22,"Teléfono muy largo")
-        .matches(/^[0-9]+$/, "Solo se permiten números, sin espacios ni símbolos"),
+        .matches('^[0-9]+$', "Solo se permiten números, sin espacios ni símbolos"),
     location:Yup.string()
-        .min(10, 'Localidad muy corta')
+        .min(4, 'Localidad muy corta')
         .max(100, 'Localidad muy larga')
         .required('La localidad es obligatoria'),
     state:Yup.string()

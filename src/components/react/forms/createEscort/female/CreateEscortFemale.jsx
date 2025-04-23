@@ -2,10 +2,10 @@ import { Field, Formik, Form, ErrorMessage } from 'formik'
 import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import { validateEscortFemale } from '../../../../../utils/schema'
 import { useState } from 'react'
-import Loader from '../../../icons/loader/Loader'
 import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
 import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
 import createProfile from '../../../../../adapters/escorts/createProfile'
+import Loader from '../../../icons/loader/Loader'
 import './createEscortFemale.css'
 
 const CreateEscortFemale = ()=>{
@@ -44,18 +44,19 @@ const CreateEscortFemale = ()=>{
                 validationSchema={validateEscortFemale}
                 onSubmit={ async (values)=>{
                     try {
-                        console.log(values)
-                        // setLoader(!loader)
-                        // const formData = new FormData()
-                        // const profileImg = values.imageProfile
-                        // const galeryImgs = values.images
+                        console.log('aca entró')
+                        setLoader(!loader)
+                        const formData = new FormData()
+                        const profileImg = values.imageProfile
+                        const galeryImgs = values.images
 
-                        // const urlProfile = await uploadImageProfile(formData, profileImg)
-                        // const urlsGalery = await uploadImageGalery(formData,galeryImgs)
+                        const urlProfile = await uploadImageProfile(formData, profileImg)
+                        const urlsGalery = await uploadImageGalery(formData,galeryImgs)
+                        console.log('images', urlProfile,urlsGalery)
 
-                        // const profile = await createProfile(values,urlProfile,urlsGalery)
-                        // setLoader(false)
-                        // console.log(urlsGalery)
+                        const profile = await createProfile(values,urlProfile,urlsGalery)
+                        setLoader(false)
+                        console.log('resprofile', profile)
                     } catch (error) {
                         setLoader(false)
                         console.log(error)
@@ -341,7 +342,7 @@ const CreateEscortFemale = ()=>{
                                     <label htmlFor="tattoos">TATUAJES</label>
                                 </div>
                                 <div className='box_button_create_escort' >
-                                    <ButtonReact>
+                                    <ButtonReact type='submit' >
                                         CREAR PERFIL
                                     </ButtonReact>
                                 </div>
