@@ -7,13 +7,20 @@ import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery
 import createProfile from '../../../../../adapters/escorts/createProfile'
 import Loader from '../../../icons/loader/Loader'
 import './createEscortFemale.css'
+import Alert from '../../../modals/alerts/Alert'
 
 const CreateEscortFemale = ()=>{
     const [loader,setLoader] = useState(false)
+    const [alert,setAlert] = useState('asa')
+
+    const handleAlert = ()=>{
+        setAlert('')
+    }
 
     return(
         <>
             {loader && <Loader size={80} />}
+            {alert && <Alert handleAlert={handleAlert}>{alert}</Alert>}
             <Formik
                 initialValues={{
                     imageProfile:null,
@@ -54,11 +61,13 @@ const CreateEscortFemale = ()=>{
                         const urlsGalery = await uploadImageGalery(formData,galeryImgs)
                         console.log('images', urlProfile,urlsGalery)
 
-                        const profile = await createProfile(values,urlProfile,urlsGalery)
+                        const profileRes = await createProfile(values,urlProfile,urlsGalery)
                         setLoader(false)
-                        console.log('resprofile', profile)
+                        setAlert(profileRes)
+                        console.log('resprofile', profileRes)
                     } catch (error) {
                         setLoader(false)
+                        setAlert('Ocurrió un error 🧙‍♂️')
                         console.log(error)
                     }   
                 }}
@@ -159,7 +168,7 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='heigth' component='div' />
                                     </div>
                                     <Field
-                                        type="text"
+                                        type="number"
                                         name='weigth'
                                         placeholder='PESO'
                                     />
