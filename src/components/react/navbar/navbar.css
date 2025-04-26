@@ -9,6 +9,7 @@
     padding: 20px;
 }
 .image_navbar{
+    width: 100px;
     transition: all ease-in-out 300ms;
 }
 .image_navbar:hover{

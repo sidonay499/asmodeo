@@ -11,7 +11,7 @@ import Alert from '../../../modals/alerts/Alert'
 
 const CreateEscortFemale = ()=>{
     const [loader,setLoader] = useState(false)
-    const [alert,setAlert] = useState('asa')
+    const [alert,setAlert] = useState('')
 
     const handleAlert = ()=>{
         setAlert('')
