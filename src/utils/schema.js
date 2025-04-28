@@ -64,15 +64,26 @@ export const validateEscortFemale = Yup.object().shape({
     imageProfile:Yup.mixed()
         .required('La imagen de perfil es obligatoria'),
     images:Yup.mixed()
-    .required('Las imágenes son obligatorias'),
+        .required('Las imágenes son obligatorias'),
     name:Yup.string()
+        .min(3,'Nombre demasiado corto')
+        .max(12,'Nombre demasiado largo')
         .required('El nombre es obligatorio'),
     age:Yup.number()
+        .max(100)
+        .positive('Debe ser un número positivo')
         .integer('La edad debe ser un número entero')
         .required('La edad es obligatoria'),
-    heigth:Yup.string()
-        .required('La altura es obligatoria'),
+    heigth:Yup.number()
+        .min(100,'Debe ser mayor a 100cm')
+        .max(280,'Debe der menor a 280cm')
+        .positive('Debe ser un número positivo')
+        .integer('El peso debe ser un número entero')
+        .required('La altura es obligatoria y en centímetros'),
     weigth:Yup.number()
+        .min(30,'Debe ser mayor a 30')
+        .max(200,'Debe ser menor a 200')
+        .positive('Debe ser un número positivo')
         .integer('El peso debe ser un número entero')
         .required('El peso es obligatorio'),
     hairColor:Yup.mixed()
@@ -104,13 +115,32 @@ export const validateEscortFemale = Yup.object().shape({
             'NATURAL'
         ],'Tiene que elegir una opción: FULL, PARCIAL, NATURAL')
         .required('La depilación es obligatoria'),
+    category:Yup.mixed()
+        .oneOf([
+            'UNIVERSOS',
+            'GALAXÍAS',
+            'ESTRELLAS',
+            'PLANETAS',
+            'LUNAS',
+            'PÚLSARES',
+            'QUÁSARES',
+            'COMETAS'
+        ],'Tiene que elegir una opción: UNIVERSOS, GALAXÍAS, ESTRELLAS, PLANETAS, LUNAS, PÚLSARES, QUÁSARES o COMETAS')
+        .required('La categoría es obligatorio'),
+    tattoos:Yup.boolean(),
     breast:Yup.number()
+        .min(30,'Debe ser mayor a 30')
+        .max(400,'Debe ser menor a 400')
         .positive('Debe ser un número positivo')
         .required('La medida es requerido'),
     waist:Yup.number()
+        .min(30,'Debe ser mayor a 30')
+        .max(400,'Debe ser menor a 400')
         .positive('Debe ser un número positivo')
         .required('La medida es requerido'),
     hip:Yup.number()
+        .min(30,'Debe ser mayor a 30')
+        .max(400,'Debe ser menor a 400')
         .positive('Debe ser un número positivo')
         .required('La medida es requerido'),
     bodyType:Yup.mixed()
@@ -182,13 +212,19 @@ export const validateEscortMale = Yup.object().shape({
         .min(1, 'Debe haber al menos una imagen')
         .required('Las imágenes son obligatorias'),
     name:Yup.string()
+        .min(3,'Nombre demasiado corto')
+        .max(12,'Nombre demasiado largo')
         .required('El nombre es obligatorio'),
     age:Yup.number()
         .integer('La edad debe ser un número entero')
         .required('La edad es obligatoria'),
-    heigth:Yup.string()
-        .required('La altura es obligatoria'),
+    heigth:Yup.number()
+        .min(100,'Debe ser mayor a 100cm')
+        .max(280,'Debe der menor a 280cm')
+        .required('La altura es obligatoria y en centímetros'),
     weigth:Yup.number()
+        .min(30,'Debe ser mayor a 30')
+        .max(200,'Debe ser menor a 200')
         .integer('El peso debe ser un número entero')
         .required('El peso es obligatorio'),
     hairColor:Yup.mixed()
@@ -220,46 +256,35 @@ export const validateEscortMale = Yup.object().shape({
             'NATURAL'
         ],'Tiene que elegir una opción: FULL, PARCIAL, NATURAL')
         .required('La depilación es obligatoria'),
-    breast:Yup.number()
-        .positive('Debe ser un número positivo')
-        .required('La medida es requerido'),
-    waist:Yup.number()
-        .positive('Debe ser un número positivo')
-        .required('La medida es requerido'),
-    hip:Yup.number()
-        .positive('Debe ser un número positivo')
-        .required('La medida es requerido'),
     bodyType:Yup.mixed()
         .oneOf([
-            'DELGADA', 
-            'MUY DELGADA', 
-            'VOLUPTUOSA', 
-            'RELLENA'
-        ],'Tiene que elegir una opción: DELGADA, MUY DELGADA, VOLUPTUOSA, RELLENA')
+            'DELGADO', 
+            'MUY DELGADO', 
+            'VOLUPTUOSO', 
+            'RELLEN0',
+            'NORMAL'
+        ],'Tiene que elegir una opción: DELGADA, MUY DELGADA, VOLUPTUOSA, RELLENA o NORMAL')
         .required('El tipo de cuerpo es obligatorio'),
-    breasts:Yup.mixed()
-        .oneOf([
-            'PEQUEÑOS', 
-            'PERFECTOS', 
-            'GRANDES', 
-            'EXTRA GRANDES'
-        ],'Tiene que elegir una opción: PEQUEÑOS, PERFECTOS, GRANDES, EXTRA GRANDES')
-        .required('El tipo de pechos es obligatorio'),
-    ass:Yup.mixed()
-        .oneOf([
-            'CHICA', 
-            'PERFECTA', 
-            'GRANDE'
-        ],'Tiene que elegir una opción: CHICA, PERFECTA, GRANDE')
-        .required('El tipo de cola es obligatorio'),
     bioType:Yup.mixed()
         .oneOf([
-            'TONÍFICADA', 
-            'MUSCÚLOSA', 
-            'ATLÉTICA', 
+            'TONÍFICADO', 
+            'MUSCÚLOSO', 
+            'ATLÉTICO', 
             'NORMAL'
-        ],'Tiene que elegir una opción: TONÍFICADA, MUSCÚLOSA, ATLÉTICA, NORMAL')
+        ],'Tiene que elegir una opción: TONÍFICADA, MUSCÚLOSA, ATLÉTICO o NORMAL')
         .required('El biotipo es obligatorio'),
+    category:Yup.mixed()
+        .oneOf([
+            'UNIVERSOS',
+            'GALAXÍAS',
+            'ESTRELLAS',
+            'PLANETAS',
+            'LUNAS',
+            'PÚLSARES',
+            'QUÁSARES',
+            'COMETAS'
+        ],'Tiene que elegir una opción: UNIVERSOS, GALAXÍAS, ESTRELLAS, PLANETAS, LUNAS, PÚLSARES, QUÁSARES o COMETAS')
+        .required('La categoría es obligatorio'),
     tattoos:Yup.boolean(),
     description:Yup.string()
         .min(10,'Muy corta')

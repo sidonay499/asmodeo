@@ -46,7 +46,8 @@ const CreateEscortFemale = ()=>{
                     phone:'',
                     location:'',
                     state:'',
-                    country:''
+                    country:'',
+                    category:false
                 }}
                 validationSchema={validateEscortFemale}
                 onSubmit={ async (values)=>{
@@ -301,6 +302,26 @@ const CreateEscortFemale = ()=>{
                                     </Field> 
                                     <div className='box_create_escort_error' >
                                         <ErrorMessage name='bioType' component='div' />
+                                    </div>
+                                </div>
+                                <label htmlFor="caterogy">CATEGORÍAS</label>
+                                <div className='box_input' >
+                                    <Field
+                                        as="select"
+                                        name="caterogy"
+                                        id="caterogy"
+                                    >
+                                        <option value="UNIVERSOS">UNIVERSOS</option>
+                                        <option value="GALAXÍAS">GALAXÍAS</option>
+                                        <option value="ESTRELLAS">ESTRELLAS</option>
+                                        <option value="PLANETAS">PLANETAS</option>
+                                        <option value="LUNAS">LUNAS</option>
+                                        <option value="PÚLSARES">PÚLSARES</option>
+                                        <option value="QUÁSARES">QUÁSARES</option>
+                                        <option value="COMETAS">COMETAS</option>
+                                    </Field>
+                                    <div className='box_create_escort_error' >
+                                        <ErrorMessage name='caterogy' component='div' />
                                     </div>
                                 </div>
                                 <div className='box_input_image' >

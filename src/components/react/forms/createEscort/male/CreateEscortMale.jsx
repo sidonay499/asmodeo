@@ -4,13 +4,23 @@ import { useState } from 'react'
 import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import Loader from '../../../icons/loader/Loader'
 import './createEscortMale.css'
+import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
+import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
+import createProfile from '../../../../../adapters/escorts/createProfile'
+import Alert from '../../../modals/alerts/Alert'
 
 const CreateEscortMale = ()=>{
     const [loader,setLoader] = useState(false)
+    const [alert,setAlert] = useState('')
+
+    const handleAlert = ()=>{
+        setAlert('')
+    }
 
     return(
         <>
             {loader && <Loader size={80} />}
+            {alert && <Alert handleAlert={handleAlert}>{alert}</Alert>}
             <Formik
                 initialValues={{
                     imageProfile:null,
@@ -19,16 +29,11 @@ const CreateEscortMale = ()=>{
                     age:'',
                     heigth:'',
                     weigth:'',
+                    penis:'',
                     hairColor:false,
                     eyesColor:false,
                     shaved:false,
-                    breast:'',
-                    waist:'',
-                    hip:'',
-                    gender:false,
                     bodyType:false,
-                    breasts:false,
-                    ass:false,
                     bioType:false,
                     tattoos:false,
                     description:'',
@@ -41,22 +46,25 @@ const CreateEscortMale = ()=>{
                 validationSchema={validateEscortMale}
                 onSubmit={ async (values)=>{
                     try {
-                        console.log(values)
-                        // setLoader(!loader)
-                        // const formData = new FormData()
-                        // const profileImg = values.imageProfile
-                        // const galeryImgs = values.images
+                        console.log('aca entró')
+                        setLoader(!loader)
+                        const formData = new FormData()
+                        const profileImg = values.imageProfile
+                        const galeryImgs = values.images
 
-                        // const urlProfile = await uploadImageProfile(formData, profileImg)
-                        // const urlsGalery = await uploadImageGalery(formData,galeryImgs)
+                        const urlProfile = await uploadImageProfile(formData, profileImg)
+                        const urlsGalery = await uploadImageGalery(formData,galeryImgs)
+                        console.log('images', urlProfile,urlsGalery)
 
-                        // const profile = await createProfile(values,urlProfile,urlsGalery)
-                        // setLoader(false)
-                        // console.log(urlsGalery)
+                        const profileRes = await createProfile(values,urlProfile,urlsGalery)
+                        setLoader(false)
+                        setAlert(profileRes)
+                        console.log('resprofile', profileRes)
                     } catch (error) {
                         setLoader(false)
+                        setAlert('Ocurrió un error 🧙‍♂️')
                         console.log(error)
-                    }   
+                    }  
                 }}
             >
                 {
@@ -125,7 +133,7 @@ const CreateEscortMale = ()=>{
                                         <ErrorMessage name='heigth' component='div' />
                                     </div>
                                     <Field
-                                        type="text"
+                                        type="number"
                                         name='weigth'
                                         placeholder='PESO'
                                     />
@@ -134,11 +142,11 @@ const CreateEscortMale = ()=>{
                                     </div>
                                     <Field
                                         type="number"
-                                        name='heigth'
+                                        name='penis'
                                         placeholder='PENE'
                                     />
                                     <div className='box_create_escort_error' >
-                                        <ErrorMessage name='heigth' component='div' />
+                                        <ErrorMessage name='penis' component='div' />
                                     </div>
                                     <Field
                                         as="textarea"
@@ -212,28 +220,33 @@ const CreateEscortMale = ()=>{
                                         name="bodyType"
                                         id="bodyType"
                                     >
-                                        <option value="DELGADA">DELGADA</option>
-                                        <option value="MUY DELGADA">MUY DELGADA</option>
-                                        <option value="VOLUPTUOSA">VOLUPTUOSA</option>
-                                        <option value="RELLENA">RELLENA</option>
+                                        <option value="DELGAD0">DELGADO</option>
+                                        <option value="MUY DELGADO">MUY DELGADO</option>
+                                        <option value="RELLENO">RELLENO</option>
+                                        <option value="NORMAL">NORMAL</option>
                                     </Field>
                                     <div className='box_create_escort_error' >
                                         <ErrorMessage name='bodyType' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="ass">COLA</label>
+                                <label htmlFor="caterogy">CATEGORÍAS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
-                                        name="ass"
-                                        id="ass"
+                                        name="caterogy"
+                                        id="caterogy"
                                     >
-                                        <option value="CHICA">CHICA</option>
-                                        <option value="PERFECTA">PERFECTA</option>
-                                        <option value="GRANDE">GRANDE</option>
+                                        <option value="UNIVERSOS">UNIVERSOS</option>
+                                        <option value="GALAXÍAS">GALAXÍAS</option>
+                                        <option value="ESTRELLAS">ESTRELLAS</option>
+                                        <option value="PLANETAS">PLANETAS</option>
+                                        <option value="LUNAS">LUNAS</option>
+                                        <option value="PÚLSARES">PÚLSARES</option>
+                                        <option value="QUÁSARES">QUÁSARES</option>
+                                        <option value="COMETAS">COMETAS</option>
                                     </Field>
                                     <div className='box_create_escort_error' >
-                                        <ErrorMessage name='ass' component='div' />
+                                        <ErrorMessage name='caterogy' component='div' />
                                     </div>
                                 </div>
                                 <label htmlFor="bioType">BIOTIPO</label>
@@ -300,7 +313,7 @@ const CreateEscortMale = ()=>{
                                     <label htmlFor="tattoos">TATUAJES</label>
                                 </div>
                                 <div className='box_button_create_escort' >
-                                    <ButtonReact>
+                                    <ButtonReact type='submit' >
                                         CREAR PERFIL
                                     </ButtonReact>
                                 </div>

@@ -32,7 +32,8 @@ export default async function createProfile(values,urlProfile,urlsGalery){
             phone:values.phone,
             location:values.location,
             state:values.state,
-            country:values.country
+            country:values.country,
+            category:values.category
         }
     
         const res = await axios.post(URL,profile,{
