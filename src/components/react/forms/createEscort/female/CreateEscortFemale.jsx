@@ -304,12 +304,12 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='bioType' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="caterogy">CATEGORÍAS</label>
+                                <label htmlFor="category">CATEGORÍAS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
-                                        name="caterogy"
-                                        id="caterogy"
+                                        name="category"
+                                        id="category"
                                     >
                                         <option value="UNIVERSOS">UNIVERSOS</option>
                                         <option value="GALAXÍAS">GALAXÍAS</option>
@@ -321,7 +321,7 @@ const CreateEscortFemale = ()=>{
                                         <option value="COMETAS">COMETAS</option>
                                     </Field>
                                     <div className='box_create_escort_error' >
-                                        <ErrorMessage name='caterogy' component='div' />
+                                        <ErrorMessage name='category' component='div' />
                                     </div>
                                 </div>
                                 <div className='box_input_image' >
