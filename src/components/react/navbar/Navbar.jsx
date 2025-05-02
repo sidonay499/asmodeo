@@ -5,7 +5,7 @@ const Navbar = ({path})=>{
         <section className='aside_navbar' >
             {path != '/' && 
             <div className='box_navbar' >
-                <a href="">SOPORTE</a>
+                <a href="">BLOG</a>
                 <a href="/">
                     <img
                         className='image_navbar'

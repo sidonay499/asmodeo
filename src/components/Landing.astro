@@ -16,7 +16,6 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		<ButtonHeart/>
 	</div>
 	<img class="black-circle" src="./blackcircle.svg" alt="">
-	<!-- <span class="circle_bkg" /> -->
 </section>
 
 <style>
@@ -25,6 +24,7 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		place-items: center;
 	}
 	.wrapper {
+		top: 80%;
 		z-index: 0;
 		position: relative;
 	}
@@ -71,4 +71,14 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		width: 980px;
 		mask-image: linear-gradient(var(--third)55%,#00000000);
 	}
+
+	@media
+		(width < 700px){
+			.black-circle{
+				width: 500px;
+			}
+			h1{
+				font-size: 80px;
+			}
+		}
 </style>
