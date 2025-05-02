@@ -9,6 +9,7 @@
     background-color: var(--third);
     border: solid 2px var(--primary);
     overflow: hidden;
+    cursor: pointer;
 }
 .container_card::after{
     z-index: 2;
@@ -16,7 +17,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: var(--black-transparent);
+    background: linear-gradient(transparent 60%,var(--total-black));
 }
 .label_card{
     z-index: 3;

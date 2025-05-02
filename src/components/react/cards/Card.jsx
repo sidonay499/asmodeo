@@ -18,8 +18,8 @@ const Card = ({item})=>{
             />
             <span className='label_card' >{`$${price} USD`}</span>
             <div className='box_card' >
-                <h2>{`${name} `}<span className='age_card' >{age}</span></h2>
-                <p>{location}</p>
+                <h2>{`${name.toUpperCase()} `}<span className='age_card' >{age}</span></h2>
+                <p>{location.toUpperCase()}</p>
             </div>
         </section>
     )
