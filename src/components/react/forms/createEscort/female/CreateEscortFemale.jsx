@@ -4,7 +4,7 @@ import { validateEscortFemale } from '../../../../../utils/schema'
 import { useState } from 'react'
 import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
 import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
-import createProfile from '../../../../../adapters/escorts/createProfile'
+import createProfileFemale from '../../../../../adapters/escorts/createProfileFemale'
 import Loader from '../../../icons/loader/Loader'
 import './createEscortFemale.css'
 import Alert from '../../../modals/alerts/Alert'
@@ -50,9 +50,8 @@ const CreateEscortFemale = ()=>{
                     category:false
                 }}
                 validationSchema={validateEscortFemale}
-                onSubmit={ async (values)=>{
+                onSubmit={ async (values,actions)=>{
                     try {
-                        console.log('aca entró')
                         setLoader(!loader)
                         const formData = new FormData()
                         const profileImg = values.imageProfile
@@ -62,13 +61,15 @@ const CreateEscortFemale = ()=>{
                         const urlsGalery = await uploadImageGalery(formData,galeryImgs)
                         console.log('images', urlProfile,urlsGalery)
 
-                        const profileRes = await createProfile(values,urlProfile,urlsGalery)
+                        const profileRes = await createProfileFemale(values,urlProfile,urlsGalery)
                         setLoader(false)
                         setAlert(profileRes)
+                        actions.resetForm()
                         console.log('resprofile', profileRes)
                     } catch (error) {
                         setLoader(false)
                         setAlert('Ocurrió un error 🧙‍♂️')
+                        actions.resetForm()
                         console.log(error)
                     }   
                 }}

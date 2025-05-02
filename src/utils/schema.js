@@ -186,7 +186,7 @@ export const validateEscortFemale = Yup.object().shape({
     phone:Yup.string()
         .min(8,"Teléfono muy corto")
         .max(22,"Teléfono muy largo")
-        .matches('^[0-9]+$', "Solo se permiten números, sin espacios ni símbolos"),
+        .matches(/^[0-9]+$/, "Solo se permiten números, sin espacios ni símbolos"),
     location:Yup.string()
         .min(4, 'Localidad muy corta')
         .max(100, 'Localidad muy larga')
@@ -204,27 +204,27 @@ export const validateEscortFemale = Yup.object().shape({
 export const validateEscortMale = Yup.object().shape({
     imageProfile:Yup.string()
         .required('La imagen de perfil es obligatoria'),
-    images:Yup.array()
-        .of(
-            Yup.string()
-            .required('Cada imagen debe ser una URL válida')
-        )
-        .min(1, 'Debe haber al menos una imagen')
+    images:Yup.mixed()
         .required('Las imágenes son obligatorias'),
     name:Yup.string()
         .min(3,'Nombre demasiado corto')
         .max(12,'Nombre demasiado largo')
         .required('El nombre es obligatorio'),
     age:Yup.number()
+        .max(100)
+        .positive('Debe ser un número positivo')
         .integer('La edad debe ser un número entero')
         .required('La edad es obligatoria'),
     heigth:Yup.number()
         .min(100,'Debe ser mayor a 100cm')
         .max(280,'Debe der menor a 280cm')
+        .positive('Debe ser un número positivo')
+        .integer('El peso debe ser un número entero')
         .required('La altura es obligatoria y en centímetros'),
     weigth:Yup.number()
         .min(30,'Debe ser mayor a 30')
         .max(200,'Debe ser menor a 200')
+        .positive('Debe ser un número positivo')
         .integer('El peso debe ser un número entero')
         .required('El peso es obligatorio'),
     hairColor:Yup.mixed()
@@ -260,10 +260,9 @@ export const validateEscortMale = Yup.object().shape({
         .oneOf([
             'DELGADO', 
             'MUY DELGADO', 
-            'VOLUPTUOSO', 
-            'RELLEN0',
+            'RELLENO',
             'NORMAL'
-        ],'Tiene que elegir una opción: DELGADA, MUY DELGADA, VOLUPTUOSA, RELLENA o NORMAL')
+        ],'Tiene que elegir una opción: DELGADO, MUY DELGADO, RELLENO o NORMAL')
         .required('El tipo de cuerpo es obligatorio'),
     bioType:Yup.mixed()
         .oneOf([
@@ -271,7 +270,7 @@ export const validateEscortMale = Yup.object().shape({
             'MUSCÚLOSO', 
             'ATLÉTICO', 
             'NORMAL'
-        ],'Tiene que elegir una opción: TONÍFICADA, MUSCÚLOSA, ATLÉTICO o NORMAL')
+        ],'Tiene que elegir una opción: TONÍFICADO, MUSCÚLOSO, ATLÉTICO o NORMAL')
         .required('El biotipo es obligatorio'),
     category:Yup.mixed()
         .oneOf([
@@ -299,7 +298,7 @@ export const validateEscortMale = Yup.object().shape({
         .max(22,"Teléfono muy largo")
         .matches(/^[0-9]+$/, "Solo se permiten números, sin espacios ni símbolos"),
     location:Yup.string()
-        .min(10, 'Localidad muy corta')
+        .min(4, 'Localidad muy corta')
         .max(100, 'Localidad muy larga')
         .required('La localidad es obligatoria'),
     state:Yup.string()
@@ -309,5 +308,10 @@ export const validateEscortMale = Yup.object().shape({
     country:Yup.string()
         .min(3, 'Nombre de país muy corto')
         .max(50, 'Nombre de país muy largo')
-        .required('El país es obligatorio')
+        .required('El país es obligatorio'),
+    penis:Yup.number()
+        .min(1,'Demasiado corto')
+        .max(50,'Demasiado largo')
+        .positive('Debe ser un numero positivo')
+        .required('La medida de pene es requerida')
 }) 

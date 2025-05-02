@@ -1,13 +1,13 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { validateEscortMale } from '../../../../../utils/schema'
 import { useState } from 'react'
-import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
-import Loader from '../../../icons/loader/Loader'
-import './createEscortMale.css'
 import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
 import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
-import createProfile from '../../../../../adapters/escorts/createProfile'
+import createProfileMale from '../../../../../adapters/escorts/createProfileMale'
+import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
+import Loader from '../../../icons/loader/Loader'
 import Alert from '../../../modals/alerts/Alert'
+import './createEscortMale.css'
 
 const CreateEscortMale = ()=>{
     const [loader,setLoader] = useState(false)
@@ -41,12 +41,13 @@ const CreateEscortMale = ()=>{
                     phone:'',
                     location:'',
                     state:'',
-                    country:''
+                    country:'',
+                    category:false
                 }}
                 validationSchema={validateEscortMale}
-                onSubmit={ async (values)=>{
+                onSubmit={ async (values,actions)=>{
                     try {
-                        console.log('aca entró')
+                        console.log('aca entro')
                         setLoader(!loader)
                         const formData = new FormData()
                         const profileImg = values.imageProfile
@@ -56,13 +57,15 @@ const CreateEscortMale = ()=>{
                         const urlsGalery = await uploadImageGalery(formData,galeryImgs)
                         console.log('images', urlProfile,urlsGalery)
 
-                        const profileRes = await createProfile(values,urlProfile,urlsGalery)
+                        const profileRes = await createProfileMale(values,urlProfile,urlsGalery)
                         setLoader(false)
                         setAlert(profileRes)
+                        actions.resetForm()
                         console.log('resprofile', profileRes)
                     } catch (error) {
                         setLoader(false)
                         setAlert('Ocurrió un error 🧙‍♂️')
+                        actions.resetForm()
                         console.log(error)
                     }  
                 }}
@@ -220,7 +223,7 @@ const CreateEscortMale = ()=>{
                                         name="bodyType"
                                         id="bodyType"
                                     >
-                                        <option value="DELGAD0">DELGADO</option>
+                                        <option value="DELGADO">DELGADO</option>
                                         <option value="MUY DELGADO">MUY DELGADO</option>
                                         <option value="RELLENO">RELLENO</option>
                                         <option value="NORMAL">NORMAL</option>
@@ -229,12 +232,12 @@ const CreateEscortMale = ()=>{
                                         <ErrorMessage name='bodyType' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="caterogy">CATEGORÍAS</label>
+                                <label htmlFor="category">CATEGORÍAS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
-                                        name="caterogy"
-                                        id="caterogy"
+                                        name="category"
+                                        id="category"
                                     >
                                         <option value="UNIVERSOS">UNIVERSOS</option>
                                         <option value="GALAXÍAS">GALAXÍAS</option>
@@ -246,7 +249,7 @@ const CreateEscortMale = ()=>{
                                         <option value="COMETAS">COMETAS</option>
                                     </Field>
                                     <div className='box_create_escort_error' >
-                                        <ErrorMessage name='caterogy' component='div' />
+                                        <ErrorMessage name='category' component='div' />
                                     </div>
                                 </div>
                                 <label htmlFor="bioType">BIOTIPO</label>
@@ -256,9 +259,9 @@ const CreateEscortMale = ()=>{
                                         name="bioType"
                                         id="bioType"
                                     >
-                                        <option value="TONÍFICADA">TONÍFICADO</option>
-                                        <option value="MUSCÚLOSA">MUSCÚLOSO</option>
-                                        <option value="ATLÉTICA">ATLÉTICO</option>
+                                        <option value="TONÍFICADO">TONÍFICADO</option>
+                                        <option value="MUSCÚLOSO">MUSCÚLOSO</option>
+                                        <option value="ATLÉTICO">ATLÉTICO</option>
                                         <option value="NORMAL">NORMAL</option>
                                     </Field> 
                                     <div className='box_create_escort_error' >
