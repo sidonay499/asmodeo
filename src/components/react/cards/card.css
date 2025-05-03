@@ -87,3 +87,10 @@
       transform: translateX(450px);
     }
 }
+
+@media
+    (width < 700){
+        .container_card{
+            width: 150px;
+        }
+    }
