@@ -15,8 +15,8 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 	<div class="landing_box_button" >
 		<ButtonHeart/>
 	</div>
-	<img class="black-circle" src="./blackcircle.svg" alt="">
 	<span class="womans" />
+	<img class="black-circle" src="./blackcircle.svg" alt="">
 </section>
 
 <style>
@@ -25,11 +25,11 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		place-items: center;
 	}
 	.womans{
-		position: absolute;
-		z-index: 10;
-		top: 50%;
-		margin-top:120px;
-		width: 86%;
+		pointer-events: none;
+		z-index: 10;	
+		margin-top:10px;
+		margin-bottom: -200px;
+		width: 90vw;
 		height: 200px;
 		background: url('./Asmodeo-Escorts-Vip.webp') center no-repeat;
 		background-size: contain;
@@ -67,7 +67,7 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		z-index: 2;
 		display: grid;
 		place-items: center;
-		padding-bottom: 20px;
+		padding-bottom: 15px;
 	}
 	.landing_box_button{
 		position: relative;
@@ -99,7 +99,8 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 				font-size: 80px;
 			}
 			.womans{
-				margin-top: 40px;
+				height: 80px;
+				margin-bottom: -100px;
 			}
 		}
 </style>
