@@ -22,7 +22,10 @@ const useStore = create((set)=>({
                 loading:false
             })
         }
-    }
+    },
+    cleanErrors:set({
+        errors:null
+    })
 }))
 
 export default useStore

@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './card.css'
 
-const Card = ({item})=>{
+const Card = ({item,handleDetail})=>{
     const {imageProfile,price,name,age,location} = item
     const [skeleton,setSkeleton] = useState(true)
     
     return(
         <section 
             className={`container_card ${skeleton ? "skeleton" : ""}`}
+            onClick={()=>{handleDetail(item.id)}}
         >
             <img
                 className='image_card'

@@ -4,14 +4,16 @@ import useStore from '../../zustand/store'
 import Loader from '../icons/loader/Loader'
 import { useEffect, useState } from 'react'
 import Detail from '../modals/detail/Detail'
+import Alert from '../modals/alerts/Alert'
 
 const CardsPreview = ()=>{
-    const [modal,setModal] = useState(false)
+    const [detail,serDetail] = useState('')
     const {
         escorts,
         loading,
         errors,
         getEscorts,
+        cleanErrors,
     } = useStore()
 
     useEffect(()=>{
@@ -20,13 +22,22 @@ const CardsPreview = ()=>{
         }
     },[escorts])
 
+    const handleAlert = ()=>{
+        cleanErrors()
+    }
+
+    const handleDetail = (id)=>{
+        serDetail(id)
+    }
+
     return(
         <section className='container_cardsPreview' >
             {loading && <Loader size={80} />}
-            {modal && <Detail/>}
+            {errors && <Alert handleAlert={handleAlert} >{errors}</Alert>}
+            {detail && <Detail handleDetail={handleDetail} id={detail}/>}
             {
                 escorts.map((item)=>(
-                    <Card item={item} key={item.name} />
+                    <Card handleDetail={handleDetail} item={item} key={item.id} />
                 ))
             }
         </section>

@@ -1,20 +1,17 @@
 import useStore from '../../../zustand/store'
-import { useState } from 'react'
 import './detail.css'
 
-const Detail = ({id})=>{
-    const [profile,setProfile] = useState({})
+const Detail = ({id,handleDetail})=>{
     const { escorts } = useStore()
 
-    escorts.find((item)=>{
+    const profile = escorts.find((item)=>{
         if(item.id === id){
-            setProfile(item)
-            return
+            return item
         }
     })
 
     return(
-        <article>
+        <article onClick={()=>handleDetail('')} className='container_detail' >
             <h2>{profile.name}</h2>
         </article>
     )
