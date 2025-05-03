@@ -24,6 +24,6 @@
 @media
     (width < 700px){
         .aside_navbar{
-            width: 400px;
+            width: 300px;
         }
     }
