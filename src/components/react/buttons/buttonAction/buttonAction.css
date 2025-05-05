@@ -1,0 +1,10 @@
+.button_action_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--action);
+    padding: 8px;
+    border-radius: 12px;
+    gap: 5px;
+    font-size: 13px;
+}
