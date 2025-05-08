@@ -70,8 +70,8 @@ const Detail = ({id,handleDetail})=>{
                             <h5>ATRIBUTOS FÍSICOS</h5>
                             <h6>{`BIO TIPO: ${bioType}`}</h6>
                             <h6>{`TIPO DE CUERPO: ${bodyType}`}</h6>
-                            <h6>{`PECHOS: ${breasts}`}</h6>
-                            <h6>{`COLA: ${ass}`}</h6>
+                            {breasts ? <h6>{`PECHOS: ${breasts}`}</h6> : null}
+                            {ass ? <h6>{`COLA: ${ass}`}</h6> : null}
                             <h6>{`DEPILACIÓN: ${shaved}`}</h6>
                             <h6>{tattoos ? `TATUAJES: SI` : `TATUAJES: NO`}</h6>
                         </div>
