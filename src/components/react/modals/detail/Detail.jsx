@@ -1,5 +1,6 @@
 import useStore from '../../../zustand/store'
 import ButtonAction from '../../buttons/buttonAction/ButtonAction'
+import Cross from '../../icons/cross/Cross'
 import './detail.css'
 
 const Detail = ({id,handleDetail})=>{
@@ -16,16 +17,29 @@ const Detail = ({id,handleDetail})=>{
         name,
         location,
         state,
+        phone,
         description,
         age,
         heigth,
         weigth,
-        measures
+        measures,
+        bioType,
+        bodyType,
+        breasts,
+        ass,
+        shaved,
+        tattoos,
+        eyesColor,
+        hairColor,
+        price
     } = profile
 
     return(
-        <article onClick={()=>handleDetail('')} className='container_detail' >
+        <article className='container_detail' >
             <div className='box_detail' >
+                <div onClick={()=>handleDetail()} className='box_cross_detail' >
+                    <Cross/>
+                </div>
                 <header className='header_detail' >
                     <picture>
                         <img className='image_profile_detail'  src={imageProfile} alt="" />
@@ -33,7 +47,7 @@ const Detail = ({id,handleDetail})=>{
                     <div className='container_header' >
                         <div className='box_header' >
                             <h2>{name.toUpperCase()}</h2>
-                            <ButtonAction/>
+                            <ButtonAction phone={phone} />
                         </div>
                         <h5>{location.toUpperCase()}</h5>
                         <h5>{state.toUpperCase()}</h5>
@@ -41,12 +55,31 @@ const Detail = ({id,handleDetail})=>{
                     </div>
                 </header>
                 <div className='container_info_detail' >
-                    <aside>
-                        <h5>DETALLES PERSONALES</h5>
-                        <h6>{`EDAD: ${age}`}</h6>
-                        <h6>{`ALTURA: ${heigth}cm`}</h6>
-                        <h6>{`PESO: ${weigth}kg`}</h6>
-                        <h6>{`MEDIDAS: ${measures}`}</h6>
+                    <aside className='aside_detail' >
+                        <div>
+                            <h5>{`TARIFA: ${price}  USD`}</h5>
+                        </div>
+                        <div>
+                            <h5>DETALLES PERSONALES</h5>
+                            <h6>{`EDAD: ${age}`}</h6>
+                            <h6>{`ALTURA: ${heigth}cm`}</h6>
+                            <h6>{`PESO: ${weigth}kg`}</h6>
+                            <h6>{`MEDIDAS: ${measures}`}</h6>
+                        </div>
+                        <div>
+                            <h5>ATRIBUTOS FÍSICOS</h5>
+                            <h6>{`BIO TIPO: ${bioType}`}</h6>
+                            <h6>{`TIPO DE CUERPO: ${bodyType}`}</h6>
+                            <h6>{`PECHOS: ${breasts}`}</h6>
+                            <h6>{`COLA: ${ass}`}</h6>
+                            <h6>{`DEPILACIÓN: ${shaved}`}</h6>
+                            <h6>{tattoos ? `TATUAJES: SI` : `TATUAJES: NO`}</h6>
+                        </div>
+                        <div>
+                            <h5>APARIENCIA</h5>
+                            <h6>{`COLOR DE OJOS: ${eyesColor}`}</h6>
+                            <h6>{`COLOR DE PELO: ${hairColor}`}</h6>
+                        </div>
                     </aside>
                     <div>
 

@@ -3,7 +3,13 @@ import './buttonAction.css'
 
 const ButtonAction = ({phone})=>{
     return(
-        <a className='button_action_box'  href="">
+        <a 
+            className='button_action_box'  
+            href={`https://wa.me/+549${phone}`}
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Hablar al whatsapp"
+        >
             HABLAR AL WHATSAPP <Whatsapp/>
         </a>
     )
