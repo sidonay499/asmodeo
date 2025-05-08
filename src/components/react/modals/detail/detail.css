@@ -28,7 +28,7 @@
     display: flex;
     width: 100%;
     height: 220px;
-    gap: 15px;
+    gap: 25px;
 }
 .image_profile_detail{
     width: 180px;
@@ -80,7 +80,7 @@
     place-items: center;
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     transition: all ease-in-out 300ms;
 }
 .box_cross_detail:hover{
