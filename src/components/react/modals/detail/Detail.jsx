@@ -82,7 +82,7 @@ const Detail = ({id,handleDetail})=>{
                         </div>
                     </aside>
                     <div>
-
+                 
                     </div>
                 </div>
             </div>
