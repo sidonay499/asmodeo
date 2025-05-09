@@ -84,7 +84,6 @@ const Detail = ({id,handleDetail})=>{
                         </div>
                     </aside>
                     <div className='container_masonry' >
-                        <MasonryGalery client:load='react' images={images} />
                     </div>
                 </div>
             </div>
