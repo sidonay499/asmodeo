@@ -2,7 +2,6 @@ import useStore from '../../../zustand/store'
 import ButtonAction from '../../buttons/buttonAction/ButtonAction'
 import Cross from '../../icons/cross/Cross'
 import MasonryGalery from '../../masonry/Masonry'
-import Viewer from '../viewer/Viewer'
 import './detail.css'
 
 const Detail = ({id,handleDetail})=>{
@@ -85,7 +84,7 @@ const Detail = ({id,handleDetail})=>{
                         </div>
                     </aside>
                     <div className='container_masonry' >
-                        <MasonryGalery images={images} />
+                        <MasonryGalery client:load='react' images={images} />
                     </div>
                 </div>
             </div>
