@@ -1,6 +1,8 @@
 import useStore from '../../../zustand/store'
 import ButtonAction from '../../buttons/buttonAction/ButtonAction'
 import Cross from '../../icons/cross/Cross'
+import MasonryGalery from '../../masonry/Masonry'
+import Viewer from '../viewer/Viewer'
 import './detail.css'
 
 const Detail = ({id,handleDetail})=>{
@@ -14,6 +16,7 @@ const Detail = ({id,handleDetail})=>{
 
     const {
         imageProfile,
+        images,
         name,
         location,
         state,
@@ -81,8 +84,8 @@ const Detail = ({id,handleDetail})=>{
                             <h6>{`COLOR DE PELO: ${hairColor}`}</h6>
                         </div>
                     </aside>
-                    <div>
-                 
+                    <div className='container_masonry' >
+                        <MasonryGalery images={images} />
                     </div>
                 </div>
             </div>

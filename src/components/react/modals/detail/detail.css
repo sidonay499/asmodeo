@@ -86,3 +86,17 @@
 .box_cross_detail:hover{
     transform: rotate(-45deg);
 }
+.container_masonry{
+    display: grid;
+    place-items: center;
+    padding-left: 5px;
+    height: 220px;
+    width: 425px;
+    overflow: auto;
+}
+.container_masonry::-webkit-scrollbar{
+    width: 4px;
+}
+.container_masonry::-webkit-scrollbar-thumb{
+ background-color: var(--third);
+}
