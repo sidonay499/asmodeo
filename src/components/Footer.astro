@@ -1,0 +1,34 @@
+---
+const year = new Date().getFullYear()
+---
+
+<footer>
+    <div>
+        {`TODOS LOS DERECHOS RESERVADO ©ASMODEO ${year} -`}<a href="/legal">TERMINOS Y CONDICIONES</a>
+    </div>
+</footer>
+
+<style>
+    footer{
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+        display: grid;
+        place-items: center;
+        font-size: 8px;
+        padding-block: 5px;
+        width: 100%;
+    }
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        a{
+            font-size: 8px;
+        }
+    }
+    div > a:hover{
+        color: var(--action);
+    }
+</style>

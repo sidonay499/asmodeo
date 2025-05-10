@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions"
 import Navbar from "../components/react/navbar/Navbar"
+import Footer from "../components/Footer.astro"
 
 const {title} = Astro.props
 const path = Astro.url.pathname
@@ -19,6 +20,7 @@ const path = Astro.url.pathname
 	<body>
 		<Navbar client:only="react" path={path} />
 		<slot />
+		<Footer/>
 	</body>
 </html>
 
