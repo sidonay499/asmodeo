@@ -1,9 +1,13 @@
+import Cross from '../../icons/cross/Cross'
 import './viewer.css'
 
-const Viewer = ({img})=>{
+const Viewer = ({img,closeView})=>{
     return(
         <picture className='container_viewer' >
-            <img src='image1.jpeg' alt="" />
+            <div onClick={closeView} className='box_cross_viewer' >
+                <Cross color={'action'} />
+            </div>
+            <img src={img} alt="" />
         </picture>
     )
 }

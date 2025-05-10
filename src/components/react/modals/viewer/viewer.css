@@ -1,11 +1,22 @@
 .container_viewer{
-    position: absolute;
     display: grid;
     place-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100dvh;
+    backdrop-filter: blur(4px);
     img{
         width: auto;
         max-height: 100dvh;
     }
+}
+.box_cross_viewer{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 10px;
+    right: 10px;
+    transition: all ease-in-out 300ms;
+}
+.box_cross_viewer:hover{
+    transform: rotate(-45deg);
 }

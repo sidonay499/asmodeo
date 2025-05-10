@@ -6,7 +6,6 @@
   padding-left: 4px;
   background-clip: padding-box;
 }
-
 .masonry-item {
   margin-bottom: 4px;
   img{
@@ -15,4 +14,14 @@
     object-fit: cover;
     border-radius: 5px;
   }
+}
+.container_view{
+  z-index: 10;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);  
+  backdrop-filter: blur(5px);
 }

@@ -1,0 +1,10 @@
+.white{
+    stroke-width: 2px;
+    stroke: var(--primary);
+}
+.action{
+    width: 30px;
+    height: 30px;
+    stroke-width: 2px;
+    stroke: var(--action);
+}

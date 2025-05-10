@@ -40,7 +40,7 @@ const Detail = ({id,handleDetail})=>{
         <article className='container_detail' >
             <div className='box_detail' >
                 <div onClick={()=>handleDetail()} className='box_cross_detail' >
-                    <Cross/>
+                    <Cross color={'white'} />
                 </div>
                 <header className='header_detail' >
                     <picture>
