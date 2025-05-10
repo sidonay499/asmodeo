@@ -1,0 +1,11 @@
+.aside_filter{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    padding: 5px;
+}
+.box_filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
