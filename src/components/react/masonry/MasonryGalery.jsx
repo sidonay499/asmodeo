@@ -1,5 +1,5 @@
 import Masonry from 'react-masonry-css';
-import './masonry.css'
+import './masonryGalery.css'
 
 const breakpointColumnsObj = {
   default: 3,

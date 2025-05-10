@@ -1,7 +1,7 @@
 import useStore from '../../../zustand/store'
 import ButtonAction from '../../buttons/buttonAction/ButtonAction'
 import Cross from '../../icons/cross/Cross'
-import MasonryGalery from '../../masonry/Masonry'
+import MasonryGalery from '../../masonry/MasonryGalery'
 import './detail.css'
 
 const Detail = ({id,handleDetail})=>{
@@ -84,6 +84,7 @@ const Detail = ({id,handleDetail})=>{
                         </div>
                     </aside>
                     <div className='container_masonry' >
+                        <MasonryGalery images={images} />
                     </div>
                 </div>
             </div>
