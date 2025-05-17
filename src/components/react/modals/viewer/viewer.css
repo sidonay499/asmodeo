@@ -20,3 +20,13 @@
 .box_cross_viewer:hover{
     transform: rotate(-45deg);
 }
+
+@media
+    (width < 700px){
+        .container_viewer{
+            backdrop-filter: none;
+        }
+        .container_viewer img{
+            width: 350px;
+        }
+    }
