@@ -1,11 +1,13 @@
 ---
 import CardsPreview from "../components/react/cardsPreview/CardsPreview";
+import ProfileFilter from "../components/react/profileFilter/ProfileFilter";
 import Layout from "../layouts/Layout.astro";
 
 ---
 
 <Layout title="Asmodeo | Acá Podés Encontrar Lo Que Tanto Buscas!" >
     <section>
+        <ProfileFilter client:only="react" />
         <CardsPreview client:only="react" />
     </section>
 </Layout>

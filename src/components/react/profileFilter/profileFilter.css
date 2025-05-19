@@ -1,11 +1,95 @@
 .aside_filter{
     display: grid;
     place-items: center;
-    width: 100vw;
-    padding: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    p{
+        font-size: 10px;
+    }
 }
 .box_filter{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 40px;
 }
+.box_gender{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    height: 25px;
+    border-radius: 15px;
+    border: solid 1px var(--primary);
+}
+.item_filter{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+}
+.item{
+    z-index: -1;
+    position: absolute;
+    width: 90px;
+    height: 21px;
+    border-radius: 15px;
+    background-color: var(--action);
+    transition: all ease-in-out 300ms;
+}
+.item_rigth{
+    left: 2px;
+}
+.item_left{
+    left: 88px;
+}
+.options_filter{
+    display: grid;
+    align-items: flex-start;
+}
+.options_filter > label{
+    margin-left: 4px;
+    font-size: 10px;
+}
+.select_filter{
+    width: 100px;
+    border: none;
+    border-top: solid 1px var(--primary);
+    padding: 0;
+    margin: 0;
+}
+
+@media
+    (width < 700px){
+        .aside_filter{
+            height: 140px;
+            margin-bottom: 25px;
+        }
+        .box_filter{
+            display: grid;
+        }
+        .item{
+            width: 118px;
+        }
+        .box_gender{
+            width: 240px;
+        }
+        .item_filter{
+            width: 120px;
+        }
+        .item_rigth{
+            left: 2px;
+        }
+        .item_left{
+            left: 118px;
+        }
+        .options_filter{
+            margin-block: 5px;
+        }
+        .select_filter{
+            width: 240px;
+            margin-top: 2px;
+        }
+    }

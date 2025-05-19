@@ -10,6 +10,7 @@ const CardsPreview = ()=>{
     const [detail,serDetail] = useState('')
     const {
         escorts,
+        filtered,
         loading,
         errors,
         getEscorts,
@@ -20,7 +21,7 @@ const CardsPreview = ()=>{
         if(escorts.length === 0){
             getEscorts()
         }
-    },[escorts])
+    },[filtered])
 
     const handleAlert = ()=>{
         cleanErrors()
@@ -36,9 +37,15 @@ const CardsPreview = ()=>{
             {errors && <Alert handleAlert={handleAlert} >{errors}</Alert>}
             {detail && <Detail handleDetail={handleDetail} id={detail}/>}
             {
-                escorts.map((item)=>(
-                    <Card handleDetail={handleDetail} item={item} key={item.id} />
-                ))
+                filtered.length >= 1 ? (
+                    filtered.map((item)=>(
+                        <Card handleDetail={handleDetail} item={item} key={item.id} />
+                    ))
+                ) : (
+                    escorts.map((item)=>(
+                        <Card handleDetail={handleDetail} item={item} key={item.id} />
+                    ))
+                )
             }
         </section>
     )

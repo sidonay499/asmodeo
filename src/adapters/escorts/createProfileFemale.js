@@ -12,6 +12,7 @@ export default async function createProfileFemale(values,urlProfile,urlsGalery){
     
     try {
         const profile = {
+            gender:'FEMALE',
             imageProfile:urlProfile,
             images:urlsGalery,
             name:values.name,
