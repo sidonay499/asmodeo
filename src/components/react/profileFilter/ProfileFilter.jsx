@@ -1,20 +1,27 @@
 import { useState } from 'react'
-import './profileFilter.css'
 import useStore from '../../zustand/store'
+import LocationFilter from '../filters/locationFilter/LocationFilter'
+import AgeFilter from '../filters/ageFilter/AgeFilter'
+import './profileFilter.css'
+import StateFilter from '../filters/stateFilter/StateFilter'
+import CountryFilter from '../filters/countryFilter/CountryFilter'
 
 const ProfileFilter = ()=>{
-    const { filterGenderMale, filterGenderFemale } = useStore()
+    const { searchToParams,cleanFilter } = useStore()
     const [position,setPosition] = useState('left')
 
     return(
         <aside className='aside_filter' >
             <div className='box_filter' >
+                <div onClick={()=>cleanFilter} className='box_all' >
+                    <span>ALL</span>
+                </div>
                 <div className='box_gender' >
                     <span className={`item item_${position}`} />
                     <div
                         onClick={()=>{
                                 setPosition('rigth')
-                                filterGenderMale()
+                                searchToParams('gender','MALE')
                             }}
                         className='item_filter' 
                     >                        
@@ -23,7 +30,7 @@ const ProfileFilter = ()=>{
                     <div 
                         onClick={()=>{
                             setPosition('left')
-                            filterGenderFemale()
+                            searchToParams('gender','FEMALE')
                         }} 
                         className='item_filter' 
                     >                        
@@ -31,18 +38,16 @@ const ProfileFilter = ()=>{
                     </div>
                 </div>
                 <div className="options_filter" >
-                    <label htmlFor="BIOTIPO">BIOTIPO</label>
-                    <select className='select_filter' name="BIOTIPO" id="">
-                        <option value="">DELGADO/A</option>
-                        <option value="">VOLUPTUOSA</option>
-                    </select>
+                    <AgeFilter/>
                 </div>
                 <div className="options_filter" >
-                    <label htmlFor="BIOTIPO">DEPELACIÓN</label>
-                    <select className='select_filter' name="BIOTIPO" id="">
-                        <option value="">FULL</option>
-                        <option value="">NATURAL</option>
-                    </select>
+                    <LocationFilter/>
+                </div>
+                <div className="options_filter" >
+                    <StateFilter/>
+                </div>
+                <div className="options_filter" >
+                    <CountryFilter/>
                 </div>
             </div>
         </aside>

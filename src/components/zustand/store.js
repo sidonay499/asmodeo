@@ -23,24 +23,14 @@ const useStore = create((set,get)=>({
             })
         }
     },
-    filterGenderMale: ()=>{
+    searchToParams: (params,value)=>{
         const { escorts }= get()
 
-        const maleProfiles = escorts.filter((item)=>{
-            if(item.gender === 'MALE') return item
+        const profiles = escorts.filter((item)=>{
+            if(item[params] === value) return item
         })
         set({
-            filtered:maleProfiles
-        })
-    },
-    filterGenderFemale: ()=>{
-        const { escorts }= get()
-
-        const femaleProfile = escorts.filter((item)=>{
-            if(item.gender === 'FEMALE') return item
-        })
-        set({
-            filtered:femaleProfile
+            filtered: profiles
         })
     },
     cleanFilter:set({

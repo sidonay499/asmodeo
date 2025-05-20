@@ -13,6 +13,24 @@
     justify-content: center;
     height: 40px;
 }
+.box_all{
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 26px;
+    border-radius: 30px;
+    border: solid 1px var(--action);
+    font-size: 10px;
+    color: var(--primary);
+    background-color: var(--action);
+    margin-right: 5px;
+    transition: all ease-in-out 300ms;
+    cursor: pointer;
+}
+.box_all:hover{
+    border-color: var(--primary);
+    background-color: var(--third);
+}
 .box_gender{
     position: relative;
     display: flex;
@@ -56,9 +74,16 @@
 .select_filter{
     width: 100px;
     border: none;
-    border-top: solid 1px var(--primary);
-    padding: 0;
-    margin: 0;
+    border-radius: 25px;
+    background-color: var(--third);
+    padding: 7px;
+    margin-inline: 2px;
+}
+.select_filter::-webkit-scrollbar-thumb{
+    background-color: var(--third);
+}
+.select_filter::-webkit-scrollbar{
+    width: 4px;
 }
 
 @media

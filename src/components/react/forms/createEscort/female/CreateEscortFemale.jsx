@@ -189,13 +189,13 @@ const CreateEscortFemale = ()=>{
                                 </div>
                             </div>
                             <div className='box_select' >
-                                <label htmlFor="hairColor">COLOR DE CABELLO</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="hairColor"
                                         id="hairColor"
                                     >
+                                        <option value="">COLOR DE PELO</option>
                                         <option value="NEGRO">NEGRO</option>
                                         <option value="RUBIO">RUBIO</option>
                                         <option value="CASTAÑO">CASTAÑO</option>
