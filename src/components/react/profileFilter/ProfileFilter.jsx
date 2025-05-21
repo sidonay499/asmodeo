@@ -5,6 +5,9 @@ import AgeFilter from '../filters/ageFilter/AgeFilter'
 import './profileFilter.css'
 import StateFilter from '../filters/stateFilter/StateFilter'
 import CountryFilter from '../filters/countryFilter/CountryFilter'
+import HairFilter from '../filters/hairFilter/HairFilter'
+import EyesColor from '../filters/eyesColor/EyesColor'
+import ShavedFilter from '../filters/shavedFilter/ShavedFilter'
 
 const ProfileFilter = ()=>{
     const { searchToParams,cleanFilter } = useStore()
@@ -48,6 +51,15 @@ const ProfileFilter = ()=>{
                 </div>
                 <div className="options_filter" >
                     <CountryFilter/>
+                </div>
+                <div className="options_filter" >
+                    <HairFilter/>
+                </div>
+                <div className="options_filter" >
+                    <EyesColor/>
+                </div>
+                <div className="options_filter" >
+                    <ShavedFilter/>
                 </div>
             </div>
         </aside>
