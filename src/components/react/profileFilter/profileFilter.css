@@ -8,10 +8,14 @@
     }
 }
 .box_filter{
+    display: grid;
+    place-items: center;
+}
+.boxes_fil{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
+    padding-block: 5px;
 }
 .box_all{
     display: grid;
@@ -88,12 +92,12 @@
 
 @media
     (width < 700px){
-        .aside_filter{
-            height: 140px;
-            margin-bottom: 25px;
-        }
-        .box_filter{
+        .boxes_fil{
             display: grid;
+        }
+        .box_all{
+            width: 240px;
+            margin-bottom: 10px;
         }
         .item{
             width: 118px;
