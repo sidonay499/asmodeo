@@ -9,6 +9,9 @@
     background-color: var(--action);
     cursor: pointer;
 }
+.button_navigation:hover{
+    background-color: var(--third);
+}
 .navigation_icons{
     stroke-width: 2px;
     stroke: var(--primary);
