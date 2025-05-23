@@ -7,11 +7,11 @@ const useStore = create((set,get)=>({
     loading:false,
     errors:null,
 
-    getEscorts: async ()=>{
+    getEscorts: async (page)=>{
         try {
             set({loading:true})
 
-            const data = await getAllEscorts()
+            const data = await getAllEscorts(page)
             set({
                 escorts:data,
                 loading:false

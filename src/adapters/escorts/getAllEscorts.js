@@ -6,12 +6,12 @@ const {
     PUBLIC_GET_ALL_ESCORTS_DEV
 } = import.meta.env
 
-export default async function getAllEscorts(){
+export default async function getAllEscorts(page){
     
     const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_GET_ALL_ESCORTS_PROD : PUBLIC_GET_ALL_ESCORTS_DEV
 
     try {
-        const res = await axios.get(URL)
+        const res = await axios.get(`${URL}/${page}`)
         console.log('allEscorts',res.data)
         return res.data
     } catch (error) {

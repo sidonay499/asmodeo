@@ -1,0 +1,15 @@
+.button_navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--action);
+    cursor: pointer;
+}
+.navigation_icons{
+    stroke-width: 2px;
+    stroke: var(--primary);
+}
