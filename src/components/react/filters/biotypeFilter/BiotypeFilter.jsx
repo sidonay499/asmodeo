@@ -7,7 +7,7 @@ const BiotypeFilter = ()=>{
         <select 
             className='select_filter' 
             name="biotype"
-            onChange={(event)=>searchToParams('biotype',event.target.value)}
+            onChange={(event)=>searchToParams('bioType',event.target.value)}
         >
             <option value="">BIOTIPO</option>
             <option value="TONÍFICADO">TONÍFICADO</option>

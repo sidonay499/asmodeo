@@ -2,7 +2,6 @@ import { useState } from 'react'
 import useStore from '../../zustand/store'
 import LocationFilter from '../filters/locationFilter/LocationFilter'
 import AgeFilter from '../filters/ageFilter/AgeFilter'
-import './profileFilter.css'
 import StateFilter from '../filters/stateFilter/StateFilter'
 import CountryFilter from '../filters/countryFilter/CountryFilter'
 import HairFilter from '../filters/hairFilter/HairFilter'
@@ -10,6 +9,7 @@ import EyesColor from '../filters/eyesColor/EyesColor'
 import ShavedFilter from '../filters/shavedFilter/ShavedFilter'
 import CategoryFilter from '../filters/categoryFilter/CaterogyFilter'
 import BiotypeFilter from '../filters/biotypeFilter/BiotypeFilter'
+import './profileFilter.css'
 
 const ProfileFilter = ()=>{
     const { searchToParams,cleanFilter } = useStore()
@@ -19,7 +19,7 @@ const ProfileFilter = ()=>{
         <aside className='aside_filter' >
             <div className='box_filter' >
                 <div className='boxes_fil' >
-                    <div onClick={()=>cleanFilter} className='box_all' >
+                    <div onClick={()=>cleanFilter()} className='box_all' >
                         <span>ALL</span>
                     </div>
                     <div className='box_gender' >

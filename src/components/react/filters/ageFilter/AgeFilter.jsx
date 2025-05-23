@@ -19,7 +19,7 @@ const AgeFilter = ()=>{
         <select 
             className='select_filter' 
             name="age"
-            onChange={(event)=>searchToParams('age',event.target.value)}
+            onChange={(event)=>searchToParams('age',Number(event.target.value))}
         >
             <option value="">EDAD</option>
             {

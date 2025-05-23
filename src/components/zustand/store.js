@@ -24,21 +24,35 @@ const useStore = create((set,get)=>({
         }
     },
     searchToParams: (params,value)=>{
-        const { escorts }= get()
-
-        const profiles = escorts.filter((item)=>{
-            if(item[params] === value) return item
-        })
+        if(value){
+            const { escorts }= get()
+    
+            const profiles = escorts.filter((item)=>{
+                if(item[params] === value) return item
+            })
+            if(profiles.length){
+                set({
+                    filtered: profiles,
+                })
+            }else{
+                set({
+                    filtered: profiles,
+                    errors:'No se encontraron perfiles'
+                })
+            }
+        }
+    },
+    cleanFilter:()=>{
         set({
-            filtered: profiles
+            filtered:[]
         })
     },
-    cleanFilter:set({
-        filtered:[]
-    }),
-    cleanErrors:set({
-        errors:null
-    })
+    cleanErrors:()=>{
+        set({
+            errors:null
+        })
+    
+    } 
 }))
 
 export default useStore
