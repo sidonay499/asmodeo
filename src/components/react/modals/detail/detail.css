@@ -103,11 +103,14 @@
 
 @media
     (width < 700px){
+        .container_detail{
+            position: absolute;
+        }
         .box_detail{
             width: 320px;
-            height: 80%;
-            margin-block: 80px;
+            height: 990px;
             align-items: center;
+            overflow-x: auto;
         }
         .header_detail{
             display: grid;
@@ -130,6 +133,7 @@
         .container_info_detail{
             display: grid;
             width: 350px;
+            height: 500px;
         }
         .box_cross_detail{
             top: 30px;
@@ -137,7 +141,7 @@
         }
         .container_masonry{
             width: 350px;
-            height: 600px;
+            height:700px;
             margin-top: 0px;
             margin-bottom: 30px;
             padding: 0;

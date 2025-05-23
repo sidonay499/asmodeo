@@ -23,9 +23,6 @@
 
 @media
     (width < 700px){
-        .container_viewer{
-            backdrop-filter: none;
-        }
         .container_viewer img{
             width: 350px;
         }

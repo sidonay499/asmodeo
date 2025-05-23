@@ -51,10 +51,10 @@ const CardsPreview = ()=>{
 
     return(
         <section>
+            {loading && <Loader size={80} />}
+            {errors && <Alert handleAlert={handleAlert} >{errors}</Alert>}
+            {detail && <Detail handleDetail={handleDetail} id={detail}/>}
             <div className='container_cardsPreview' >
-                {loading && <Loader size={80} />}
-                {errors && <Alert handleAlert={handleAlert} >{errors}</Alert>}
-                {detail && <Detail handleDetail={handleDetail} id={detail}/>}
                 {
                     filtered.length >= 1 ? (
                         filtered.map((item)=>(
