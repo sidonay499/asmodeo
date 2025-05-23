@@ -14,7 +14,7 @@ const CountryFilter = ()=>{
             const countriesNotDuplicates = [... new Set(countriesArray)]
             setCountries(countriesNotDuplicates)
         }
-    },[])
+    },[escorts])
 
     return(
         <select 

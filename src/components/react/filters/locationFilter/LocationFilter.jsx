@@ -14,7 +14,7 @@ const LocationFilter = ()=>{
             const locationNotDuplicates = [... new Set(locationArray)]
             setLocations(locationNotDuplicates)
         }
-    },[])
+    },[escorts])
 
     return(
         <select 

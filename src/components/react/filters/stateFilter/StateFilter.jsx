@@ -14,7 +14,7 @@ const StateFilter = ()=>{
             const statesNotDuplicates = [... new Set(statesArray)]
             setStates(statesNotDuplicates)
         }
-    },[])
+    },[escorts])
 
     return(
         <select 
