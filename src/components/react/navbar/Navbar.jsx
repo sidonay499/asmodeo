@@ -14,7 +14,7 @@ const Navbar = ({path})=>{
                         alt=""
                     />
                 </a>
-                <a href="">PUBLICAR</a>
+                <a href="/publica">PUBLICAR</a>
             </div>
             }
         </section>
