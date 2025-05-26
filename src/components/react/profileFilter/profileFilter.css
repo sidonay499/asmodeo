@@ -1,6 +1,6 @@
 .aside_filter{
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: flex-start;
     width: 100%;
     margin-bottom: 20px;
     p{
@@ -10,6 +10,8 @@
 .box_filter{
     display: grid;
     place-items: center;
+    overflow: hidden;
+    transition: all ease-in-out 300ms;
 }
 .boxes_fil{
     display: flex;
@@ -89,6 +91,24 @@
 .select_filter::-webkit-scrollbar{
     width: 4px;
 }
+.visible_filter{
+    display: grid;
+    margin-top: 5px;
+    margin-left: 5px;
+    transition: all ease-in-out 300ms;
+}
+.rotate_true{
+    transform: rotate(90deg);
+}
+.rotate_false{
+    transform: rotate(-90deg);
+}
+.visible_true{
+    height: 75px;
+}
+.visible_false{
+    height: 0px;
+}
 
 @media
     (width < 700px){
@@ -120,5 +140,8 @@
         .select_filter{
             width: 320px;
             margin-top: 2px;
+        }
+        .visible_true{
+            height: 426px;
         }
     }

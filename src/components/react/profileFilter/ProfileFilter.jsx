@@ -10,14 +10,20 @@ import ShavedFilter from '../filters/shavedFilter/ShavedFilter'
 import CategoryFilter from '../filters/categoryFilter/CaterogyFilter'
 import BiotypeFilter from '../filters/biotypeFilter/BiotypeFilter'
 import './profileFilter.css'
+import ArrowLeft from '../icons/navigation/ArrowLeft'
 
 const ProfileFilter = ()=>{
     const { searchToParams,cleanFilter } = useStore()
+    const [visible,setVisible] = useState(true)
     const [position,setPosition] = useState('left')
+
+    const handleVisible = ()=>{
+        setVisible(!visible)
+    }
 
     return(
         <aside className='aside_filter' >
-            <div className='box_filter' >
+            <div className={`box_filter visible_${visible}`} >
                 <div className='boxes_fil' >
                     <div onClick={()=>cleanFilter()} className='box_all' >
                         <span>ALL</span>
@@ -73,6 +79,9 @@ const ProfileFilter = ()=>{
                         <BiotypeFilter/>
                     </div>
                 </div>
+            </div>
+            <div onClick={handleVisible} className={`visible_filter rotate_${visible}`}>
+                <ArrowLeft/>
             </div>
         </aside>
     )
