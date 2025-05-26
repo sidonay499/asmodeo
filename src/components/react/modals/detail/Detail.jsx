@@ -53,7 +53,7 @@ const Detail = ({id,handleDetail})=>{
                         </div>
                         <h5>{location.toUpperCase()}</h5>
                         <h5>{state.toUpperCase()}</h5>
-                        <p>Hola, estoy disponible y este es mi perfil, soy de buenos aires, en la zona de palermo centro</p>
+                        <p>{description}</p>
                     </div>
                 </header>
                 <div className='container_info_detail' >
