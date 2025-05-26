@@ -5,7 +5,8 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Asmodeo | Publicá en Asmodeo" >
     <section>
-          <h2>Publicá tu perfil como escort en Asmodeo</h2>
+        <div>
+            <h2>Publicá tu perfil como escort en Asmodeo</h2>
             <h3>Destacá tu presencia profesional en una plataforma exclusiva</h3>
             <p>
                 Si sos escort o acompañante masculino y querés aumentar tu visibilidad en un entorno serio y profesional, 
@@ -21,5 +22,37 @@ import Layout from "../layouts/Layout.astro";
                 <strong>escort masculino</strong>, <strong>acompañante profesional</strong> o <strong>modelo independiente</strong> 
                 en un espacio donde la discreción y el profesionalismo son clave.
             </p>
+        </div>
+        <div>
+            <img src="/woman-asmodeo-escorts.webp" alt="">
+        </div>
     </section>
 </Layout>
+
+<style>
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    }
+    h3{
+        font-size: 15px;
+    }
+    p{
+        font-size: 12px;
+    }
+    img{
+        height: 500px;
+        mask-image: linear-gradient(var(--third)10%,#00000000);
+    }
+
+    @media
+        (width < 700px){
+            section{
+                width: 350px;
+                padding-block: 80px;
+                flex-direction: column;
+            }
+        }
+</style>
