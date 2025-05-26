@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout tittle="Próximamente en Asmodeo | Blog" >
+    <section>
+        <header>
+            <h1>Próximamente en Asmodeo</h1>
+            <h4>BLOG PARA ESCORTS</h4>
+        </header>
+    </section>
+</Layout>
+
+<style>
+    section{
+        display: grid;
+        place-items: center;
+        padding-block: 100px;
+    }
+    header{
+        display: grid;
+        place-items: center;
+    }
+    h1{
+        font-size: 80px;
+    }
+
+    @media
+        (width < 700px){
+            h1{
+                font-size: 30px;
+            }
+        }
+</style>
