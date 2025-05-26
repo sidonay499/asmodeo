@@ -20,6 +20,7 @@
     width: 650px;
     height: 450px;
     padding: 30px;
+    margin-top: 40px;
     border-radius: 15px;
     border: solid 2px var(--primary);
     background: linear-gradient(var(--third),var(--secundary));
