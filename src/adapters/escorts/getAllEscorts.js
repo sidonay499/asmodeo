@@ -12,7 +12,6 @@ export default async function getAllEscorts(page){
 
     try {
         const res = await axios.get(`${URL}/${page}`)
-        console.log('allEscorts',res.data)
         return res.data
     } catch (error) {
         return error.response.data.error
