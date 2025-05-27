@@ -163,13 +163,13 @@ const CreateEscortMale = ()=>{
                                 </div>
                             </div>
                             <div className='box_select' >
-                                <label htmlFor="hairColor">COLOR DE CABELLO</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="hairColor"
                                         id="hairColor"
                                     >
+                                        <option value="">COLOR DE PELO</option>
                                         <option value="NEGRO">NEGRO</option>
                                         <option value="RUBIO">RUBIO</option>
                                         <option value="CASTAÑO">CASTAÑO</option>
@@ -181,13 +181,13 @@ const CreateEscortMale = ()=>{
                                         <ErrorMessage name='hairColor' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="eyesColor">COLOR DE OJOS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="eyesColor"
                                         id="eyesColor"
                                     >
+                                        <option value="">COLOR DE OJOS</option>
                                         <option value="NEGRO">NEGRO</option>
                                         <option value="AZULES">AZULES</option>
                                         <option value="CELESTES">CELESTES</option>
@@ -201,13 +201,13 @@ const CreateEscortMale = ()=>{
                                         <ErrorMessage name='eyesColor' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="shaved">DEPILACIÓN</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="shaved"
                                         id="shaved"
                                     >
+                                        <option value="">DEPILACION</option>
                                         <option value="FULL">FULL</option>
                                         <option value="PARCIAL">PARCIAL</option>
                                         <option value="NATURAL">NATURAL</option>
@@ -216,13 +216,13 @@ const CreateEscortMale = ()=>{
                                         <ErrorMessage name='shaved' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="bodyType">CONTEXTURA</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="bodyType"
                                         id="bodyType"
                                     >
+                                        <option value="">CONTEXTURA</option>
                                         <option value="DELGADO">DELGADO</option>
                                         <option value="MUY DELGADO">MUY DELGADO</option>
                                         <option value="RELLENO">RELLENO</option>
@@ -232,13 +232,13 @@ const CreateEscortMale = ()=>{
                                         <ErrorMessage name='bodyType' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="category">CATEGORÍAS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="category"
                                         id="category"
                                     >
+                                        <option value="">CATEGORIA</option>
                                         <option value="UNIVERSOS">UNIVERSOS</option>
                                         <option value="GALAXÍAS">GALAXÍAS</option>
                                         <option value="ESTRELLAS">ESTRELLAS</option>
@@ -252,13 +252,13 @@ const CreateEscortMale = ()=>{
                                         <ErrorMessage name='category' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="bioType">BIOTIPO</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="bioType"
                                         id="bioType"
                                     >
+                                        <option value="">BIOTIPO</option>
                                         <option value="TONÍFICADO">TONÍFICADO</option>
                                         <option value="MUSCÚLOSO">MUSCÚLOSO</option>
                                         <option value="ATLÉTICO">ATLÉTICO</option>
