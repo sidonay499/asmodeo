@@ -207,13 +207,13 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='hairColor' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="eyesColor">COLOR DE OJOS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="eyesColor"
                                         id="eyesColor"
                                     >
+                                        <option value="">COLOR DE OJOS</option>
                                         <option value="NEGRO">NEGRO</option>
                                         <option value="AZULES">AZULES</option>
                                         <option value="CELESTES">CELESTES</option>
@@ -227,13 +227,13 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='eyesColor' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="shaved">DEPILACIÓN</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="shaved"
                                         id="shaved"
                                     >
+                                        <option value="">DEPILACIÓN</option>
                                         <option value="FULL">FULL</option>
                                         <option value="PARCIAL">PARCIAL</option>
                                         <option value="NATURAL">NATURAL</option>
@@ -242,13 +242,13 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='shaved' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="bodyType">CONTEXTURA</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="bodyType"
                                         id="bodyType"
                                     >
+                                        <option value="">CONTEXTURA</option>
                                         <option value="DELGADA">DELGADA</option>
                                         <option value="MUY DELGADA">MUY DELGADA</option>
                                         <option value="VOLUPTUOSA">VOLUPTUOSA</option>
@@ -258,13 +258,13 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='bodyType' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="breasts">PECHOS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="breasts"
                                         id="breasts"
                                     >
+                                        <option value="">PECHOS</option>
                                         <option value="PEQUEÑOS">PEQUEÑOS</option>
                                         <option value="PERFECTOS">PERFECTOS</option>
                                         <option value="GRANDES">GRANDES</option>
@@ -274,13 +274,13 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='breasts' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="ass">COLA</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="ass"
                                         id="ass"
                                     >
+                                        <option value="">COLA</option>
                                         <option value="CHICA">CHICA</option>
                                         <option value="PERFECTA">PERFECTA</option>
                                         <option value="GRANDE">GRANDE</option>
@@ -289,13 +289,13 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='ass' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="bioType">BIOTIPO</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="bioType"
                                         id="bioType"
                                     >
+                                        <option value="">BIOTIPO</option>
                                         <option value="TONÍFICADA">TONÍFICADA</option>
                                         <option value="MUSCÚLOSA">MUSCÚLOSA</option>
                                         <option value="ATLÉTICA">ATLÉTICA</option>
@@ -305,13 +305,13 @@ const CreateEscortFemale = ()=>{
                                         <ErrorMessage name='bioType' component='div' />
                                     </div>
                                 </div>
-                                <label htmlFor="category">CATEGORÍAS</label>
                                 <div className='box_input' >
                                     <Field
                                         as="select"
                                         name="category"
                                         id="category"
                                     >
+                                        <option value="">CATEGORIA</option>
                                         <option value="UNIVERSOS">UNIVERSOS</option>
                                         <option value="GALAXÍAS">GALAXÍAS</option>
                                         <option value="ESTRELLAS">ESTRELLAS</option>
