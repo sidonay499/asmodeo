@@ -28,7 +28,7 @@ const MasonryGalery = ({images}) => {
       >
         {images.map((item) => (
           <div key={[item]} className="masonry-item">
-              <img onClick={()=>setView(item)} src={item} alt="" />
+              <img onClick={()=>setView(item)} src={item} alt="Imágen Escort Vip en Argentina, Servicos Escorts" />
           </div>
         ))}
       </Masonry>

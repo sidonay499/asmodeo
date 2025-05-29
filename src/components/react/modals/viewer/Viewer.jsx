@@ -7,7 +7,7 @@ const Viewer = ({img,closeView})=>{
             <div onClick={closeView} className='box_cross_viewer' >
                 <Cross color={'action'} />
             </div>
-            <img src={img} alt="" />
+            <img src={img} alt="Imágen de Escort Vip, Asmodeo Argentina" />
         </picture>
     )
 }

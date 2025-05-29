@@ -44,7 +44,7 @@ const Detail = ({id,handleDetail})=>{
                 </div>
                 <header className='header_detail' >
                     <picture>
-                        <img className='image_profile_detail'  src={imageProfile} alt="" />
+                        <img className='image_profile_detail'  src={imageProfile} alt="Escort Vip en Argentina, Asmodeo Guia Escort Vip" />
                     </picture>
                     <div className='container_header' >
                         <div className='box_header' >
