@@ -47,7 +47,6 @@ const CreateEscortMale = ()=>{
                 validationSchema={validateEscortMale}
                 onSubmit={ async (values,actions)=>{
                     try {
-                        console.log('aca entro')
                         setLoader(!loader)
                         const formData = new FormData()
                         const profileImg = values.imageProfile
@@ -55,13 +54,11 @@ const CreateEscortMale = ()=>{
 
                         const urlProfile = await uploadImageProfile(formData, profileImg)
                         const urlsGalery = await uploadImageGalery(formData,galeryImgs)
-                        console.log('images', urlProfile,urlsGalery)
 
                         const profileRes = await createProfileMale(values,urlProfile,urlsGalery)
                         setLoader(false)
                         setAlert(profileRes)
                         actions.resetForm()
-                        console.log('resprofile', profileRes)
                     } catch (error) {
                         setLoader(false)
                         setAlert('Ocurrió un error 🧙‍♂️')

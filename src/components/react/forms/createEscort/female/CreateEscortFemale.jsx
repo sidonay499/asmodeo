@@ -59,13 +59,11 @@ const CreateEscortFemale = ()=>{
 
                         const urlProfile = await uploadImageProfile(formData, profileImg)
                         const urlsGalery = await uploadImageGalery(formData,galeryImgs)
-                        console.log('images', urlProfile,urlsGalery)
 
                         const profileRes = await createProfileFemale(values,urlProfile,urlsGalery)
                         setLoader(false)
                         setAlert(profileRes)
                         actions.resetForm()
-                        console.log('resprofile', profileRes)
                     } catch (error) {
                         setLoader(false)
                         setAlert('Ocurrió un error 🧙‍♂️')

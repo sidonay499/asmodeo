@@ -18,7 +18,6 @@ export default async function adminLogin(values){
         const res = await axios.post(URL,admin,{
             withCredentials:true
         })
-        console.log('adminLog',res.data)
         return res.data
     } catch (error) {
         return error.response.data.error

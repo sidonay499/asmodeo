@@ -9,7 +9,6 @@ const uploadImageGalery = async (formData,galeryImgs)=>{
 
     for (let i = 0; i < galeryImgs.length; i++) {
         const element = galeryImgs[i];
-        console.log('element:',element)
         
         formData.append('file', element);
         formData.append('upload_preset', 'preset_asmodeo');

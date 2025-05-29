@@ -25,7 +25,6 @@ const SigninForm = ()=>{
         onSubmit: async (values)=>{
             setLoader(!loader)
             const res = await postAdmin(values)
-            console.log('res:',res)
             setLoader(false)
             if(res.name){
                 setAlert(`Se creo el admin ${res.name} 👌`)

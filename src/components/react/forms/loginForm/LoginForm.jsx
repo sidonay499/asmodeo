@@ -27,7 +27,6 @@ const LoginForm = ()=>{
             setLoader(true)
             const res = await adminLogin(values)
             setLoader(false)
-            console.log('form:',res.name)
 
             if(res.name){
                 setStorage(res,'admin')
