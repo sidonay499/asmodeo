@@ -117,14 +117,14 @@ export const validateEscortFemale = Yup.object().shape({
         .required('La depilación es obligatoria'),
     category:Yup.mixed()
         .oneOf([
-            'UNIVERSOS',
-            'GALAXÍAS',
-            'ESTRELLAS',
-            'PLANETAS',
-            'LUNAS',
-            'PÚLSARES',
-            'QUÁSARES',
-            'COMETAS'
+            'UNIVERSE',
+            'GALAXY',
+            'STAR',
+            'ECLIPSE',
+            'EQUINOX',
+            'MOON',
+            'MASSAGE',
+            'VIRTUAL'
         ],'Tiene que elegir una opción: UNIVERSOS, GALAXÍAS, ESTRELLAS, PLANETAS, LUNAS, PÚLSARES, QUÁSARES o COMETAS')
         .required('La categoría es obligatorio'),
     tattoos:Yup.boolean(),
