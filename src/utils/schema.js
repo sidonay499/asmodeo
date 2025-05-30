@@ -94,7 +94,7 @@ export const validateEscortFemale = Yup.object().shape({
             'CASTAÑO OSCURO',
             'RUBIO OSCURO', 
             'COLORADO'
-        ],'Tiene que elegir una opción: NEGRO, RUBIO, CASTAÑO, CASTAÑO OSCURO, RUBIO OSCURO, COLORADO')
+        ],'Elija una opción: NEGRO, RUBIO, CASTAÑO, CASTAÑO OSCURO, RUBIO OSCURO, COLORADO')
         .required('El color de pelo es obligatorio'),
     eyesColor:Yup.mixed()
         .oneOf([
@@ -106,14 +106,14 @@ export const validateEscortFemale = Yup.object().shape({
             'CAFÉ', 
             'MARRON CLARO', 
             'MIEL'
-        ],'Tiene que elegir una opción: NEGROS, AZULES, CELESTES, VERDES, MARRONES, CAFÉ, MARRON CLARO, MIEL')
+        ],'Elija una opción: NEGROS, AZULES, CELESTES, VERDES, MARRONES, CAFÉ, MARRON CLARO, MIEL')
         .required('El color de ojos es obligatorio'),
     shaved:Yup.mixed()
         .oneOf([
             'FULL', 
             'PARCIAL', 
             'NATURAL'
-        ],'Tiene que elegir una opción: FULL, PARCIAL, NATURAL')
+        ],'Elija una opción: FULL, PARCIAL, NATURAL')
         .required('La depilación es obligatoria'),
     category:Yup.mixed()
         .oneOf([
@@ -125,7 +125,7 @@ export const validateEscortFemale = Yup.object().shape({
             'MOON',
             'MASSAGE',
             'VIRTUAL'
-        ],'Tiene que elegir una opción: UNIVERSE, GALAXY, STAR, ECLIPSE, EQUINOX, MOON, MASSAGE o VIRTUAL')
+        ],'Elija una opción: UNIVERSE, GALAXY, STAR, ECLIPSE, EQUINOX, MOON, MASSAGE o VIRTUAL')
         .required('La categoría es obligatorio'),
     tattoos:Yup.boolean(),
     breast:Yup.number()
@@ -149,7 +149,7 @@ export const validateEscortFemale = Yup.object().shape({
             'MUY DELGADA', 
             'VOLUPTUOSA', 
             'RELLENA'
-        ],'Tiene que elegir una opción: DELGADA, MUY DELGADA, VOLUPTUOSA, RELLENA')
+        ],'Elija una opción: DELGADA, MUY DELGADA, VOLUPTUOSA, RELLENA')
         .required('El tipo de cuerpo es obligatorio'),
     breasts:Yup.mixed()
         .oneOf([
@@ -157,14 +157,14 @@ export const validateEscortFemale = Yup.object().shape({
             'PERFECTOS', 
             'GRANDES', 
             'EXTRA GRANDES'
-        ],'Tiene que elegir una opción: PEQUEÑOS, PERFECTOS, GRANDES, EXTRA GRANDES')
+        ],'Elija una opción: PEQUEÑOS, PERFECTOS, GRANDES, EXTRA GRANDES')
         .required('El tipo de pechos es obligatorio'),
     ass:Yup.mixed()
         .oneOf([
             'CHICA', 
             'PERFECTA', 
             'GRANDE'
-        ],'Tiene que elegir una opción: CHICA, PERFECTA, GRANDE')
+        ],'Elija una opción: CHICA, PERFECTA, GRANDE')
         .required('El tipo de cola es obligatorio'),
     bioType:Yup.mixed()
         .oneOf([
@@ -172,7 +172,7 @@ export const validateEscortFemale = Yup.object().shape({
             'MUSCÚLOSA', 
             'ATLÉTICA', 
             'NORMAL'
-        ],'Tiene que elegir una opción: TONÍFICADA, MUSCÚLOSA, ATLÉTICA, NORMAL')
+        ],'Elija una opción: TONÍFICADA, MUSCÚLOSA, ATLÉTICA, NORMAL')
         .required('El biotipo es obligatorio'),
     tattoos:Yup.boolean(),
     description:Yup.string()
@@ -235,7 +235,7 @@ export const validateEscortMale = Yup.object().shape({
             'CASTAÑO OSCURO',
             'RUBIO OSCURO', 
             'COLORADO'
-        ],'Tiene que elegir una opción: NEGRO, RUBIO, CASTAÑO, CASTAÑO OSCURO, RUBIO OSCURO, COLORADO')
+        ],'Elija una opción: NEGRO, RUBIO, CASTAÑO, CASTAÑO OSCURO, RUBIO OSCURO, COLORADO')
         .required('El color de pelo es obligatorio'),
     eyesColor:Yup.mixed()
         .oneOf([
@@ -247,14 +247,14 @@ export const validateEscortMale = Yup.object().shape({
             'CAFÉ', 
             'MARRON CLARO', 
             'MIEL'
-        ],'Tiene que elegir una opción: NEGROS, AZULES, CELESTES, VERDES, MARRONES, CAFÉ, MARRON CLARO, MIEL')
+        ],'Elija una opción: NEGROS, AZULES, CELESTES, VERDES, MARRONES, CAFÉ, MARRON CLARO, MIEL')
         .required('El color de ojos es obligatorio'),
     shaved:Yup.mixed()
         .oneOf([
             'FULL', 
             'PARCIAL', 
             'NATURAL'
-        ],'Tiene que elegir una opción: FULL, PARCIAL, NATURAL')
+        ],'Elija una opción: FULL, PARCIAL, NATURAL')
         .required('La depilación es obligatoria'),
     bodyType:Yup.mixed()
         .oneOf([
@@ -262,7 +262,7 @@ export const validateEscortMale = Yup.object().shape({
             'MUY DELGADO', 
             'RELLENO',
             'NORMAL'
-        ],'Tiene que elegir una opción: DELGADO, MUY DELGADO, RELLENO o NORMAL')
+        ],'Elija una opción: DELGADO, MUY DELGADO, RELLENO o NORMAL')
         .required('El tipo de cuerpo es obligatorio'),
     bioType:Yup.mixed()
         .oneOf([
@@ -270,7 +270,7 @@ export const validateEscortMale = Yup.object().shape({
             'MUSCÚLOSO', 
             'ATLÉTICO', 
             'NORMAL'
-        ],'Tiene que elegir una opción: TONÍFICADO, MUSCÚLOSO, ATLÉTICO o NORMAL')
+        ],'Elija una opción: TONÍFICADO, MUSCÚLOSO, ATLÉTICO o NORMAL')
         .required('El biotipo es obligatorio'),
     category:Yup.mixed()
         .oneOf([
@@ -282,7 +282,7 @@ export const validateEscortMale = Yup.object().shape({
             'MOON',
             'MASSAGE',
             'VIRTUAL'
-        ],'Tiene que elegir una opción: UNIVERSE, GALAXY, STAR, ECLIPSE, EQUINOX, MOON, MASSAGE o VIRTUAL')
+        ],'Elija una opción: UNIVERSE, GALAXY, STAR, ECLIPSE, EQUINOX, MOON, MASSAGE o VIRTUAL')
         .required('La categoría es obligatorio'),
     tattoos:Yup.boolean(),
     description:Yup.string()

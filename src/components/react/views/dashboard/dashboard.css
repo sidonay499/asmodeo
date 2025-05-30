@@ -47,3 +47,19 @@
     display: grid;
     place-items: center;
 }
+
+@media
+    (width < 700px){
+        .item_dashboard{
+            width: 174px;
+        }
+        .cell_options{
+            width: 174px;
+        }
+        .box_dashboard{
+            width: 348px;
+        }
+        .false{
+            left: 174px;
+        }
+    }

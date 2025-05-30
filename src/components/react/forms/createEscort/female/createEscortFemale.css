@@ -2,8 +2,6 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding-left: 25px;
-    margin-right: -260px;
     animation: fadeInUp 0.5s ease-out forwards;
 }
 .box_create_escort_error{
@@ -23,9 +21,7 @@
     display: grid;
     margin-top: 20px;
 }
-.box_input{
-    display: flex;
-}
+
 .box_inputs{
     display: flex;
     flex-direction: column;
@@ -61,3 +57,10 @@
 .input_price{
     border: solid 2px var(--action);
 }
+
+@media
+    (width < 700px){
+        .form_create_escort{
+            display: grid;
+        }
+    }
