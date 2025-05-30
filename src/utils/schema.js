@@ -125,7 +125,7 @@ export const validateEscortFemale = Yup.object().shape({
             'MOON',
             'MASSAGE',
             'VIRTUAL'
-        ],'Tiene que elegir una opción: UNIVERSOS, GALAXÍAS, ESTRELLAS, PLANETAS, LUNAS, PÚLSARES, QUÁSARES o COMETAS')
+        ],'Tiene que elegir una opción: UNIVERSE, GALAXY, STAR, ECLIPSE, EQUINOX, MOON, MASSAGE o VIRTUAL')
         .required('La categoría es obligatorio'),
     tattoos:Yup.boolean(),
     breast:Yup.number()
