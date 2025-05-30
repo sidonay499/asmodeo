@@ -317,7 +317,7 @@ const CreateEscortFemale = ()=>{
                                         <option value="EQUINOX">EQUINOX</option>
                                         <option value="MOON">MOON</option>
                                         <option value="MASSAGE">MASSAGE</option>
-                                        <option value="VIRTUAL">COMETAS</option>
+                                        <option value="VIRTUAL">VIRTUAL</option>
                                     </Field>
                                     <div className='box_create_escort_error' >
                                         <ErrorMessage name='category' component='div' />
