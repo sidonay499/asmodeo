@@ -177,7 +177,7 @@ export const validateEscortFemale = Yup.object().shape({
     tattoos:Yup.boolean(),
     description:Yup.string()
         .min(10,'Muy corta')
-        .max(300, 'Muy larga')
+        .max(1000, 'Muy larga')
         .required('La descripción es obligatoria'),
     price:Yup.number()
         .min(2, 'Caracteres minímos: 2')
@@ -287,7 +287,7 @@ export const validateEscortMale = Yup.object().shape({
     tattoos:Yup.boolean(),
     description:Yup.string()
         .min(10,'Muy corta')
-        .max(300, 'Muy larga')
+        .max(1000, 'Muy larga')
         .required('La descripción es obligatoria'),
     price:Yup.number()
         .min(2, 'Caracteres minímos: 2')
