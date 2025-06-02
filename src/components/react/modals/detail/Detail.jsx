@@ -33,7 +33,8 @@ const Detail = ({id,handleDetail})=>{
         tattoos,
         eyesColor,
         hairColor,
-        price
+        price,
+        penis,
     } = profile
 
     return(
@@ -74,6 +75,7 @@ const Detail = ({id,handleDetail})=>{
                             <h6>{`TIPO DE CUERPO: ${bodyType}`}</h6>
                             {breasts ? <h6>{`PECHOS: ${breasts}`}</h6> : null}
                             {ass ? <h6>{`COLA: ${ass}`}</h6> : null}
+                            {penis ? <h6>{`PENE: ${penis}cm`}</h6>: null}
                             <h6>{`DEPILACIÓN: ${shaved}`}</h6>
                             <h6>{tattoos ? `TATUAJES: SI` : `TATUAJES: NO`}</h6>
                         </div>
