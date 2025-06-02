@@ -66,7 +66,7 @@ const Detail = ({id,handleDetail})=>{
                             <h6>{`EDAD: ${age}`}</h6>
                             <h6>{`ALTURA: ${heigth}cm`}</h6>
                             <h6>{`PESO: ${weigth}kg`}</h6>
-                            <h6>{`MEDIDAS: ${measures}`}</h6>
+                            {measures ? <h6>{`MEDIDAS: ${measures}`}</h6> : null}
                         </div>
                         <div>
                             <h5>ATRIBUTOS FÍSICOS</h5>
