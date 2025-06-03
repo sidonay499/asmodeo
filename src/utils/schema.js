@@ -180,7 +180,8 @@ export const validateEscortFemale = Yup.object().shape({
         .max(1000, 'Muy larga')
         .required('La descripción es obligatoria'),
     price:Yup.number()
-        .min(2, 'Caracteres minímos: 2')
+        .min(2, 'Precio minímo: 2')
+        .max(20000,'Precio maximo : 20.000')
         .integer('El precio debe ser un número entero')
         .required('El precio es obligatorio'),
     phone:Yup.string()
