@@ -313,5 +313,4 @@ export const validateEscortMale = Yup.object().shape({
         .min(1,'Demasiado corto')
         .max(50,'Demasiado largo')
         .positive('Debe ser un numero positivo')
-        .required('La medida de pene es requerida')
 }) 

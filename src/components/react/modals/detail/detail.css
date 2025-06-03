@@ -63,6 +63,7 @@
 .aside_detail{
     display: grid;
     height: 220px;
+    width: 190px;
     overflow: auto;
     padding: 5px;
     gap: 10px;

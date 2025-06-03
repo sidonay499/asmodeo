@@ -12,7 +12,7 @@ const Detail = ({id,handleDetail})=>{
             return item
         }
     })
-
+    console.log('profile',profile)
     const {
         imageProfile,
         images,

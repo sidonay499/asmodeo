@@ -29,7 +29,7 @@ const CreateEscortMale = ()=>{
                     age:'',
                     heigth:'',
                     weigth:'',
-                    penis:'',
+                    penis:null,
                     hairColor:false,
                     eyesColor:false,
                     shaved:false,

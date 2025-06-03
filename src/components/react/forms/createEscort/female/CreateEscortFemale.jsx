@@ -326,7 +326,6 @@ const CreateEscortFemale = ()=>{
                                 <div className='box_input_image' >
                                     <label htmlFor="imageProfile">IMAGEN DE PERFIL</label>
                                     <input 
-                  
                                         type="file"
                                         name="imageProfile"
                                         onChange={(event)=>{
