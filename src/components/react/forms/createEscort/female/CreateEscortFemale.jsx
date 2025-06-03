@@ -212,7 +212,7 @@ const CreateEscortFemale = ()=>{
                                         id="eyesColor"
                                     >
                                         <option value="">COLOR DE OJOS</option>
-                                        <option value="NEGRO">NEGRO</option>
+                                        <option value="NEGROS">NEGROS</option>
                                         <option value="AZULES">AZULES</option>
                                         <option value="CELESTES">CELESTES</option>
                                         <option value="VERDES">VERDES</option>
