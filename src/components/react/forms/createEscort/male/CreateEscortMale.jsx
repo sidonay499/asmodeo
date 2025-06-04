@@ -8,6 +8,7 @@ import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import Loader from '../../../icons/loader/Loader'
 import Alert from '../../../modals/alerts/Alert'
 import './createEscortMale.css'
+import updateProfile from '../../../../../adapters/escorts/updateProfile'
 
 const CreateEscortMale = ()=>{
     const [loader,setLoader] = useState(false)
@@ -29,7 +30,7 @@ const CreateEscortMale = ()=>{
                     age:'',
                     heigth:'',
                     weigth:'',
-                    penis:null,
+                    penis:false,
                     hairColor:false,
                     eyesColor:false,
                     shaved:false,
@@ -51,11 +52,18 @@ const CreateEscortMale = ()=>{
                         const formData = new FormData()
                         const profileImg = values.imageProfile
                         const galeryImgs = values.images
+                        const profileRes = await createProfileMale(values)
 
-                        const urlProfile = await uploadImageProfile(formData, profileImg)
-                        const urlsGalery = await uploadImageGalery(formData,galeryImgs)
+                        if(profileRes.success){
+                            await uploadImageProfile(formData, profileImg)
+                            await uploadImageGalery(formData,galeryImgs)
+    
+                            const updateProfile = await updateProfile(profileRes.id,'imagesProfile',urlProfile)
+                            console.log('updateProfile',updateProfile)
+                            const updateImages = await updateProfile(profileRes.id,'images',urlsGalery)
+                            console.log('updateImages',updateImages)
+                        }
 
-                        const profileRes = await createProfileMale(values,urlProfile,urlsGalery)
                         setLoader(false)
                         setAlert(profileRes)
                         actions.resetForm()
