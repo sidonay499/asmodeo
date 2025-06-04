@@ -1,13 +1,14 @@
 import { Field, Formik, Form, ErrorMessage } from 'formik'
-import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
-import { validateEscortFemale } from '../../../../../utils/schema'
 import { useState } from 'react'
+import { validateEscortFemale } from '../../../../../utils/schema'
+import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
 import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
 import createProfileFemale from '../../../../../adapters/escorts/createProfileFemale'
 import Loader from '../../../icons/loader/Loader'
-import './createEscortFemale.css'
 import Alert from '../../../modals/alerts/Alert'
+import './createEscortFemale.css'
+import updateProfile from '../../../../../adapters/escorts/updateProfile'
 
 const CreateEscortFemale = ()=>{
     const [loader,setLoader] = useState(false)
@@ -57,18 +58,24 @@ const CreateEscortFemale = ()=>{
                         const profileImg = values.imageProfile
                         const galeryImgs = values.images
 
-                        const urlProfile = await uploadImageProfile(formData, profileImg)
-                        const urlsGalery = await uploadImageGalery(formData,galeryImgs)
+                        const profileRes = await createProfileFemale(values)
 
-                        const profileRes = await createProfileFemale(values,urlProfile,urlsGalery)
+                        await uploadImageProfile(formData, profileImg)
+                        await uploadImageGalery(formData,galeryImgs)
+
+                        const updateProfile = await updateProfile(profileRes.id,'imagesProfile',urlProfile)
+                        console.log('updateProfile',updateProfile)
+                        const updateImages = await updateProfile(profileRes.id,'images',urlsGalery)
+                        console.log('updateImages',updateImages)
+
                         setLoader(false)
-                        setAlert(profileRes)
+                        setAlert(profileRes.message)
                         actions.resetForm()
                     } catch (error) {
                         setLoader(false)
+                        console.log(error)
                         setAlert('Ocurrió un error 🧙‍♂️')
                         actions.resetForm()
-                        console.log(error)
                     }   
                 }}
             >

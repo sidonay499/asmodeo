@@ -6,15 +6,13 @@ const {
     PUBLIC_URL_CREATE_PROFILE_DEV
 } = import.meta.env
 
-export default async function createProfileFemale(values,urlProfile,urlsGalery){
+export default async function createProfileFemale(values){
     
     const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_URL_CREATE_PROFILE_PROD : PUBLIC_URL_CREATE_PROFILE_DEV
     
     try {
         const profile = {
             gender:'FEMALE',
-            imageProfile:urlProfile,
-            images:urlsGalery,
             name:values.name,
             age:values.age,
             heigth:values.heigth,
