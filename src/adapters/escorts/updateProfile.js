@@ -21,8 +21,9 @@ export default async function updateProfile(id,prop,valueProp){
                 withCredentials:true    
             }
         )
-        return res.data
+        console.log('update',res)
+        return res.data.message
     } catch (error) {
-        return error.response.data.error
+        return error
     }
 }

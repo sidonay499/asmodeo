@@ -55,11 +55,11 @@ const CreateEscortMale = ()=>{
                         const profileRes = await createProfileMale(values)
 
                         if(profileRes.success){
-                            await uploadImageProfile(formData, profileImg)
-                            await uploadImageGalery(formData,galeryImgs)
+                            const urlProfile = await uploadImageProfile(formData, profileImg)
+                            const urlsGalery = await uploadImageGalery(formData,galeryImgs)
     
-                            const updateProfile = await updateProfile(profileRes.id,'imagesProfile',urlProfile)
-                            console.log('updateProfile',updateProfile)
+                            const updateP = await updateProfile(profileRes.id,'imagesProfile',urlProfile)
+                            console.log('updateProfile',updateP)
                             const updateImages = await updateProfile(profileRes.id,'images',urlsGalery)
                             console.log('updateImages',updateImages)
                         }
