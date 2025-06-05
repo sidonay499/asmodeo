@@ -18,9 +18,16 @@
 .box_navbar{
     display: flex;
     align-items: center;
+    
     gap: 40px;
 }
 
+@media
+    (width < 900px){
+        .aside_navbar{
+            width: 700px;
+        }
+    }
 @media
     (width < 700px){
         .aside_navbar{
