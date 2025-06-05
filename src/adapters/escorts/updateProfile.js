@@ -7,7 +7,9 @@ const {
 } = import.meta.env
 
 export default async function updateProfile(id,prop,valueProp){
-    console.log('value',valueProp)
+    console.log('valueProp',valueProp)
+    console.log('prop',prop)
+    console.log('id',id)
     
     const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_URL_UPDATE_PROFILE_PROD : PUBLIC_URL_UPDATE_PROFILE_DEV
 
