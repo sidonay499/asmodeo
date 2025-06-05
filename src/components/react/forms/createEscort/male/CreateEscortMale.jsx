@@ -58,14 +58,12 @@ const CreateEscortMale = ()=>{
                             const urlProfile = await uploadImageProfile(formData, profileImg)
                             const urlsGalery = await uploadImageGalery(formData,galeryImgs)
     
-                            const updateP = await updateProfile(profileRes.id,'imageProfile',urlProfile)
-                            console.log('updateProfile',updateP)
-                            const updateImages = await updateProfile(profileRes.id,'images',urlsGalery)
-                            console.log('updateImages',updateImages)
+                            await updateProfile(profileRes.id,'imageProfile',urlProfile)
+                            await updateProfile(profileRes.id,'images',urlsGalery)
                         }
 
                         setLoader(false)
-                        setAlert(profileRes)
+                        setAlert(profileRes.message)
                         actions.resetForm()
                     } catch (error) {
                         setLoader(false)
