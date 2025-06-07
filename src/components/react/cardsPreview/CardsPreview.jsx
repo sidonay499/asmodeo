@@ -19,12 +19,6 @@ const CardsPreview = ()=>{
         cleanErrors,
     } = useStore()
 
-    useEffect(()=>{
-        if(escorts.length === 0){
-            getEscorts(page)
-        }
-    },[filtered,page])
-
     const handleAlert = ()=>{
         cleanErrors()
     }
@@ -34,7 +28,7 @@ const CardsPreview = ()=>{
     }
 
     const fowardPage = ()=>{
-        if(escorts.length > 14){
+        if(escorts.length >= 15){
             setPage(page+1)
         }
     }
@@ -48,6 +42,11 @@ const CardsPreview = ()=>{
     const startPage = ()=>{
         setPage(1)
     }
+
+    useEffect(()=>{
+        getEscorts(page)
+
+    },[page])
 
     return(
         <section>
