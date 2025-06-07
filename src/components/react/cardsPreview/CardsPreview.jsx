@@ -8,6 +8,8 @@ import Alert from '../modals/alerts/Alert'
 import PageNavigator from '../pageNavigator/PageNavigator'
 
 const CardsPreview = ()=>{
+    const limitPage = 15
+    
     const [detail,serDetail] = useState('')
     const [page,setPage] = useState(1)
     const {
@@ -28,7 +30,7 @@ const CardsPreview = ()=>{
     }
 
     const fowardPage = ()=>{
-        if(escorts.length >= 15){
+        if(escorts.length >= limitPage){
             setPage(page+1)
         }
     }
