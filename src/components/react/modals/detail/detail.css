@@ -56,6 +56,20 @@
     justify-content: space-between;
     margin-bottom: 5px;
 }
+.box_description{
+    overflow-y: auto;
+    width: 415px;
+    height: 120px;
+}
+.box_description > p{
+    width: 100%;
+}
+.box_description::-webkit-scrollbar{
+    width: 4px;
+}
+.box_description::-webkit-scrollbar-thumb{
+ background-color: var(--third);
+}
 .container_info_detail{
     display: flex;
     align-items: center;
@@ -154,5 +168,8 @@
             margin-top: 0px;
             margin-bottom: 30px;
             padding: 0;
+        }
+        .box_description{
+            width: 350px;
         }
     }

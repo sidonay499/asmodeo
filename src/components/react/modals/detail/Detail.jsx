@@ -53,7 +53,9 @@ const Detail = ({id,handleDetail})=>{
                         </div>
                         <h5>{location.toUpperCase()}</h5>
                         <h5>{state.toUpperCase()}</h5>
-                        <p>{description}</p>
+                        <div className='box_description' >
+                            <p>{description}</p>
+                        </div>
                     </div>
                 </header>
                 <div className='container_info_detail' >
