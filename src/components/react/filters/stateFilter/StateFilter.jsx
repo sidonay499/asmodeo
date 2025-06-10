@@ -8,10 +8,15 @@ const StateFilter = ()=>{
     useEffect(()=>{
         if(escorts.length){
             const statesArray = escorts.map((item)=>{
-                return item.state
+                const tieneEspacios = /^\s|\s$/.test(item.state);
+                if(tieneEspacios){
+                    console.log(item.state)
+                    return item.state.trim().toUpperCase()
+                }
+                return item.state.toUpperCase()
             })
 
-            const statesNotDuplicates = [... new Set(statesArray)]
+            const statesNotDuplicates = statesArray.filter((item, index) => statesArray.indexOf(item) === index)
             setStates(statesNotDuplicates)
         }
     },[escorts])
@@ -26,7 +31,7 @@ const StateFilter = ()=>{
             {
                 states.map((l)=>(
                     <option key={l} value={l}>
-                        {l.toUpperCase()}
+                        {l}
                     </option>
                 ))
             }

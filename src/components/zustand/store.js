@@ -28,7 +28,11 @@ const useStore = create((set,get)=>({
             const { escorts }= get()
     
             const profiles = escorts.filter((item)=>{
-                if(item[params] === value) return item
+                const tieneEspacios = /^\s|\s$/.test(params)
+                if(tieneEspacios){
+                    if(item[params].trim().toUpperCase() === value.toUpperCase()) return item
+                }
+                if(item[params].toUpperCase() === value.toUpperCase()) return item
             })
             if(profiles.length){
                 set({

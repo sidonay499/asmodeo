@@ -8,10 +8,10 @@ const CountryFilter = ()=>{
     useEffect(()=>{
         if(escorts.length){
             const countriesArray = escorts.map((item)=>{
-                return item.country
+                return item.country.trim().toUpperCase()
             })
-
-            const countriesNotDuplicates = [... new Set(countriesArray)]
+    
+            const countriesNotDuplicates =  countriesArray.filter((item, index) => countriesArray.indexOf(item) === index);
             setCountries(countriesNotDuplicates)
         }
     },[escorts])
@@ -26,7 +26,7 @@ const CountryFilter = ()=>{
             {
                 countries.map((l)=>(
                     <option key={l} value={l}>
-                        {l.toUpperCase()}
+                        {l}
                     </option>
                 ))
             }

@@ -10,14 +10,14 @@ const CategoryFilter = ()=>{
             onChange={(event)=>searchToParams('category',event.target.value)}
         >
             <option value="">CATEGORIAS</option>
-            <option value="UNIVERSOS">UNIVERSOS</option>
-            <option value="GALAXÍAS">GALAXÍAS</option>
-            <option value="ESTRELLAS">ESTRELLAS</option>
-            <option value="PLANETAS">PLANETAS</option>
-            <option value="LUNAS">LUNAS</option>
-            <option value="PÚLSARES">PÚLSARES</option>
-            <option value="QUÁSARES">QUÁSARES</option>
-            <option value="COMETAS">COMETAS</option>
+            <option value="UNIVERSE">UNIVERSE</option>
+            <option value="GALAXY">GALAXY</option>
+            <option value="STAR">START</option>
+            <option value="ECLIPSE">ECLIPSE</option>
+            <option value="EQUINOX">EQUINOX</option>
+            <option value="MOON">MOON</option>
+            <option value="MASSAGE">MASSAGE</option>
+            <option value="VIRTUAL">VIRTUAL</option>
         </select>
     )
 }

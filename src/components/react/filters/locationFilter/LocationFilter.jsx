@@ -8,10 +8,10 @@ const LocationFilter = ()=>{
     useEffect(()=>{
         if(escorts.length){
             const locationArray = escorts.map((item)=>{
-                return item.location
+                return item.location.trim().toUpperCase()
             })
 
-            const locationNotDuplicates = [... new Set(locationArray)]
+            const locationNotDuplicates = locationArray.filter((item, index) => locationArray.indexOf(item) === index);
             setLocations(locationNotDuplicates)
         }
     },[escorts])
@@ -26,7 +26,7 @@ const LocationFilter = ()=>{
             {
                 locations.map((l)=>(
                     <option key={l} value={l}>
-                        {l.toUpperCase()}
+                        {l}
                     </option>
                 ))
             }
