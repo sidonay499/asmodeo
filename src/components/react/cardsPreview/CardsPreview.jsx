@@ -30,7 +30,7 @@ const CardsPreview = ()=>{
     }
 
     const fowardPage = ()=>{
-        if(escorts.length >= limitPage){
+        if(escorts.length > limitPage){
             setPage(page+1)
         }
     }
@@ -47,7 +47,6 @@ const CardsPreview = ()=>{
 
     useEffect(()=>{
         getEscorts(page)
-
     },[page])
 
     return(

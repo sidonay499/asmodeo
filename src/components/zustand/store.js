@@ -40,10 +40,25 @@ const useStore = create((set,get)=>({
                 })
             }else{
                 set({
-                    filtered: profiles,
                     errors:'No se encontraron perfiles'
                 })
             }
+        }
+    },
+    searchToAge: (age)=>{
+        const { escorts } = get()
+
+        const profiles = escorts.filter((item)=>{
+            if(item.age === age) return item
+        })
+        if(profiles.length){
+            set({
+                filtered:profiles
+            })
+        }else{
+            set({
+                errors:'No se encontraron perfiles'
+            })
         }
     },
     cleanFilter:()=>{
