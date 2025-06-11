@@ -50,7 +50,7 @@ const CardsPreview = ()=>{
     },[page])
 
     return(
-        <section>
+        <section className='box_section_preview' >
             {loading && <Loader size={80} />}
             {errors && <Alert handleAlert={handleAlert} >{errors}</Alert>}
             {detail && <Detail handleDetail={handleDetail} id={detail}/>}
