@@ -8,7 +8,7 @@ import Alert from '../modals/alerts/Alert'
 import PageNavigator from '../pageNavigator/PageNavigator'
 
 const CardsPreview = ()=>{
-    const limitPage = 15
+    const limitPage = 14
     
     const [detail,serDetail] = useState('')
     const [page,setPage] = useState(1)
