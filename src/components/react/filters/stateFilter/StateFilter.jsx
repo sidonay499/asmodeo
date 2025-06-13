@@ -10,7 +10,6 @@ const StateFilter = ()=>{
             const statesArray = escorts.map((item)=>{
                 const tieneEspacios = /^\s|\s$/.test(item.state);
                 if(tieneEspacios){
-                    console.log(item.state)
                     return item.state.trim().toUpperCase()
                 }
                 return item.state.toUpperCase()

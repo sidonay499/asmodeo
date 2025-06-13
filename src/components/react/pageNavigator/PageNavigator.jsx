@@ -4,13 +4,13 @@ import ArrowStart from "../icons/navigation/ArrowStart"
 // import ArrowEnd from "../icons/navigation/ArrrowEnd"
 import'./pageNavigator.css'
 
-const PageNavigator = ({page,fowardPage,backPage,startPage})=>{
+const PageNavigator = ({page,countPages,fowardPage,backPage,startPage})=>{
     return(
         <div className="box_navigator_handler" >
             <ArrowStart startPage={startPage} />
             <ArrowLeft backPage={backPage} />
             <span className="current_page" >
-                {page}
+                {`${page} DE ${countPages}`}
             </span>
             <ArrowRigth fowardPage={fowardPage} />
             {/* <ArrowEnd/> */}

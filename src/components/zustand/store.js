@@ -3,6 +3,7 @@ import getAllEscorts from "../../adapters/escorts/getAllEscorts"
 
 const useStore = create((set,get)=>({
     escorts:[],
+    pages:1,
     filtered:[],
     loading:false,
     errors:null,
@@ -13,7 +14,8 @@ const useStore = create((set,get)=>({
 
             const data = await getAllEscorts(page)
             set({
-                escorts:data,
+                escorts:data.escorts,
+                pages:data.pages,
                 loading:false
             })
         } catch (error) {
