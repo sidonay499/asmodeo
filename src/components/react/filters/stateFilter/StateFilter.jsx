@@ -3,10 +3,10 @@ import useStore from "../../../zustand/store"
 
 const StateFilter = ()=>{
     const [ states,setStates ] = useState([])
-    const { escorts,searchToParams } = useStore()
+    const { escorts,getEscorts,errors,setCurrentPage } = useStore()
 
     useEffect(()=>{
-        if(escorts.length){
+        if(!errors && escorts.length){
             const statesArray = escorts.map((item)=>{
                 const tieneEspacios = /^\s|\s$/.test(item.state);
                 if(tieneEspacios){
@@ -24,7 +24,10 @@ const StateFilter = ()=>{
         <select 
             className='select_filter' 
             name="state"
-            onChange={(event)=>searchToParams('state',event.target.value)}
+            onChange={(event)=>{
+                setCurrentPage(1)
+                getEscorts('state',event.target.value)
+            }}
         >
             <option value="">PROVINCIA</option>
             {

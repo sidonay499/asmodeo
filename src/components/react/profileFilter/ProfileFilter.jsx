@@ -9,11 +9,11 @@ import EyesColor from '../filters/eyesColor/EyesColor'
 import ShavedFilter from '../filters/shavedFilter/ShavedFilter'
 import CategoryFilter from '../filters/categoryFilter/CaterogyFilter'
 import BiotypeFilter from '../filters/biotypeFilter/BiotypeFilter'
-import './profileFilter.css'
 import ArrowLeft from '../icons/navigation/ArrowLeft'
+import './profileFilter.css'
 
 const ProfileFilter = ()=>{
-    const { searchToParams,cleanFilter } = useStore()
+    const { getEscorts, setCurrentPage } = useStore()
     const [visible,setVisible] = useState(true)
     const [position,setPosition] = useState('left')
 
@@ -25,7 +25,7 @@ const ProfileFilter = ()=>{
         <aside className='aside_filter' >
             <div className={`box_filter visible_${visible}`} >
                 <div className='boxes_fil' >
-                    <div onClick={()=>cleanFilter()} className='box_all' >
+                    <div onClick={()=>getEscorts()} className='box_all' >
                         <span>ALL</span>
                     </div>
                     <div className='box_gender' >
@@ -33,7 +33,8 @@ const ProfileFilter = ()=>{
                         <div
                             onClick={()=>{
                                     setPosition('rigth')
-                                    searchToParams('gender','MALE')
+                                    setCurrentPage(1)
+                                    getEscorts('gender','MALE')
                                 }}
                             className='item_filter' 
                         >                        
@@ -42,7 +43,8 @@ const ProfileFilter = ()=>{
                         <div 
                             onClick={()=>{
                                 setPosition('left')
-                                searchToParams('gender','FEMALE')
+                                setCurrentPage(1)
+                                getEscorts('gender','FEMALE')
                             }} 
                             className='item_filter' 
                         >                        

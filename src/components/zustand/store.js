@@ -4,15 +4,22 @@ import getAllEscorts from "../../adapters/escorts/getAllEscorts"
 const useStore = create((set,get)=>({
     escorts:[],
     pages:1,
-    filtered:[],
+    currentPage:1,
     loading:false,
     errors:null,
 
-    getEscorts: async (page)=>{
+    getEscorts: async (param,value)=>{
         try {
+            const { currentPage }= get()
             set({loading:true})
 
-            const data = await getAllEscorts(page)
+            const data = await getAllEscorts(currentPage,param,value)
+            if(data.length){
+                set({
+                    loading:false,
+                    errors:'NO SE ENCONTRARON PERFILES'
+                })
+            }
             set({
                 escorts:data.escorts,
                 pages:data.pages,
@@ -25,47 +32,9 @@ const useStore = create((set,get)=>({
             })
         }
     },
-    searchToParams: (params,value)=>{
-        if(value){
-            const { escorts }= get()
-    
-            const profiles = escorts.filter((item)=>{
-                const tieneEspacios = /^\s|\s$/.test(params)
-                if(tieneEspacios){
-                    if(item[params].trim().toUpperCase() === value.toUpperCase()) return item
-                }
-                if(item[params].toUpperCase() === value.toUpperCase()) return item
-            })
-            if(profiles.length){
-                set({
-                    filtered: profiles,
-                })
-            }else{
-                set({
-                    errors:'No se encontraron perfiles'
-                })
-            }
-        }
-    },
-    searchToAge: (age)=>{
-        const { escorts } = get()
-
-        const profiles = escorts.filter((item)=>{
-            if(item.age === age) return item
-        })
-        if(profiles.length){
-            set({
-                filtered:profiles
-            })
-        }else{
-            set({
-                errors:'No se encontraron perfiles'
-            })
-        }
-    },
-    cleanFilter:()=>{
+    setCurrentPage:(page)=>{
         set({
-            filtered:[]
+            currentPage:page
         })
     },
     cleanErrors:()=>{

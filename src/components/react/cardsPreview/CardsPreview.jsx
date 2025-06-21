@@ -1,26 +1,21 @@
-import Card from '../cards/Card'
-import './cardsPreview.css'
-import useStore from '../../zustand/store'
-import Loader from '../icons/loader/Loader'
 import { useEffect, useState } from 'react'
+import useStore from '../../zustand/store'
+import PageNavigator from '../pageNavigator/PageNavigator'
+import Card from '../cards/Card'
+import Loader from '../icons/loader/Loader'
 import Detail from '../modals/detail/Detail'
 import Alert from '../modals/alerts/Alert'
-import PageNavigator from '../pageNavigator/PageNavigator'
+import './cardsPreview.css'
 
 const CardsPreview = ()=>{
     const [detail,serDetail] = useState('')
-    const [page,setPage] = useState(1)
     const {
         escorts,
-        pages,
-        filtered,
         loading,
         errors,
         getEscorts,
         cleanErrors,
     } = useStore()
-
-    const limitPage = 14
 
     const handleAlert = ()=>{
         cleanErrors()
@@ -30,25 +25,9 @@ const CardsPreview = ()=>{
         serDetail(id)
     }
 
-    const fowardPage = ()=>{
-        if(escorts.length > limitPage){
-            setPage(page+1)
-        }
-    }
-
-    const backPage = ()=>{
-        if(page >= 2){
-            setPage(page - 1)
-        }
-    }
-
-    const startPage = ()=>{
-        setPage(1)
-    }
-
     useEffect(()=>{
-        getEscorts(page)
-    },[page])
+        getEscorts()
+    },[errors])
 
     return(
         <section className='box_section_preview' >
@@ -57,24 +36,12 @@ const CardsPreview = ()=>{
             {detail && <Detail handleDetail={handleDetail} id={detail}/>}
             <div className='container_cardsPreview' >
                 {
-                    filtered.length >= 1 ? (
-                        filtered.map((item)=>(
-                            <Card handleDetail={handleDetail} item={item} key={item.id} />
-                        ))
-                    ) : (
-                        escorts.map((item)=>(
-                            <Card handleDetail={handleDetail} item={item} key={item.id} />
-                        ))
-                    )
+                    !errors && escorts.map((item)=>(
+                        <Card handleDetail={handleDetail} item={item} key={item.id} />
+                    ))
                 }
             </div>
-            <PageNavigator 
-                page={page}
-                countPages={pages}
-                fowardPage={fowardPage}
-                backPage={backPage}
-                startPage={startPage}
-            />
+            <PageNavigator/>
         </section>
     )
 }

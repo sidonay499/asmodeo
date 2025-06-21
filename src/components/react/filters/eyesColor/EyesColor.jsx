@@ -1,13 +1,16 @@
 import useStore from "../../../zustand/store"
 
 const EyesColor = ()=>{
-    const { searchToParams } = useStore()
+    const { getEscorts,setCurrentPage } = useStore()
 
     return(
         <select 
             className='select_filter' 
             name="eyesColor"
-            onChange={(event)=>searchToParams('eyesColor',event.target.value)}
+            onChange={(event)=>{
+                setCurrentPage(1)
+                getEscorts('eyesColor',event.target.value)
+            }}
         >
             <option value="">COLOR DE OJOS</option>
             <option value="NEGRO">NEGRO</option>

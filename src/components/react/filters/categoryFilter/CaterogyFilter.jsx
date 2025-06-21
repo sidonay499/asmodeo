@@ -1,13 +1,16 @@
 import useStore from "../../../zustand/store"
 
 const CategoryFilter = ()=>{
-    const { searchToParams } = useStore()
+    const { getEscorts,setCurrentPage } = useStore()
 
     return(
         <select 
             className='select_filter' 
             name="category"
-            onChange={(event)=>searchToParams('category',event.target.value)}
+            onChange={(event)=>{
+                setCurrentPage(1)
+                getEscorts('category',event.target.value)
+            }}
         >
             <option value="">CATEGORIAS</option>
             <option value="UNIVERSE">UNIVERSE</option>

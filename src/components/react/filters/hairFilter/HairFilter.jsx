@@ -1,13 +1,16 @@
 import useStore from "../../../zustand/store"
 
 const HairFilter = ()=>{
-    const { searchToParams } = useStore()
+    const { getEscorts,setCurrentPage } = useStore()
 
     return(
         <select 
             className='select_filter' 
             name="hairColor"
-            onChange={(event)=>searchToParams('hairColor',event.target.value)}
+            onChange={(event)=>{
+                setCurrentPage(1)
+                getEscorts('hairColor',event.target.value)
+            }}
         >
             <option value="">COLOR DE PELO</option>
             <option value="NEGRO">NEGRO</option>

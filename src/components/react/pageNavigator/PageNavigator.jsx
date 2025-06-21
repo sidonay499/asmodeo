@@ -1,16 +1,45 @@
+import useStore from "../../zustand/store"
 import ArrowLeft from "../icons/navigation/ArrowLeft"
 import ArrowRigth from "../icons/navigation/ArrowRigth"
 import ArrowStart from "../icons/navigation/ArrowStart"
 // import ArrowEnd from "../icons/navigation/ArrrowEnd"
 import'./pageNavigator.css'
 
-const PageNavigator = ({page,countPages,fowardPage,backPage,startPage})=>{
+const PageNavigator = ()=>{
+    const { 
+        currentPage, 
+        getEscorts,
+        pages, 
+        setCurrentPage, 
+        escorts 
+    } = useStore()
+    const limitPage = 14
+
+    const fowardPage = ()=>{
+        if(escorts.length > limitPage){
+            setCurrentPage(currentPage + 1)
+            getEscorts()
+        }
+    }
+
+    const backPage = ()=>{
+        if(currentPage >= 2){
+            setCurrentPage(currentPage - 1)
+            getEscorts()
+        }
+    }
+
+    const startPage = ()=>{
+        setCurrentPage(1)
+        getEscorts()
+    }    
+
     return(
         <div className="box_navigator_handler" >
             <ArrowStart startPage={startPage} />
             <ArrowLeft backPage={backPage} />
             <span className="current_page" >
-                {`${page} DE ${countPages}`}
+                {`${currentPage} DE ${pages}`}
             </span>
             <ArrowRigth fowardPage={fowardPage} />
             {/* <ArrowEnd/> */}

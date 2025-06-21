@@ -3,10 +3,10 @@ import useStore from "../../../zustand/store"
 
 const LocationFilter = ()=>{
     const [ locations,setLocations ] = useState([])
-    const { escorts,searchToParams } = useStore()
+    const { escorts,getEscorts,errors,setCurrentPage } = useStore()
 
     useEffect(()=>{
-        if(escorts.length){
+        if(!errors && escorts.length){
             const locationArray = escorts.map((item)=>{
                 return item.location.trim().toUpperCase()
             })
@@ -20,7 +20,10 @@ const LocationFilter = ()=>{
         <select 
             className='select_filter' 
             name="location"
-            onChange={(event)=>searchToParams('location',event.target.value)}
+            onChange={(event)=>{
+                setCurrentPage(1)
+                getEscorts('location',event.target.value)
+            }}
         >
             <option value="">LOCALIDAD</option>
             {

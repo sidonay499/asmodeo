@@ -3,10 +3,10 @@ import useStore from "../../../zustand/store"
 
 const CountryFilter = ()=>{
     const [ countries,setCountries ] = useState([])
-    const { escorts,searchToParams } = useStore()
+    const { escorts,getEscorts,errors,setCurrentPage } = useStore()
 
     useEffect(()=>{
-        if(escorts.length){
+        if(!errors && escorts.length){
             const countriesArray = escorts.map((item)=>{
                 return item.country.trim().toUpperCase()
             })
@@ -20,7 +20,10 @@ const CountryFilter = ()=>{
         <select 
             className='select_filter' 
             name="country"
-            onChange={(event)=>searchToParams('country',event.target.value)}
+            onChange={(event)=>{
+                setCurrentPage(1)
+                getEscorts('country',event.target.value)
+            }}
         >
             <option value="">PAÍS</option>
             {
