@@ -7,7 +7,7 @@ const Alert = ({children,handleAlert})=>{
             <div onClick={handleAlert} className='container_alert_modal'/>
             <div className='box_alert_modal' >
                 <div className='box_cross' onClick={handleAlert} >
-                    <Cross/>
+                    <Cross color={'white'} />
                 </div>
                 <p>{children}</p>
             </div>

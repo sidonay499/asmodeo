@@ -8,6 +8,7 @@
 }
 .masonry-item {
   margin-bottom: 4px;
+  cursor: pointer;
   img{
     width: 100%;
     display: block;
