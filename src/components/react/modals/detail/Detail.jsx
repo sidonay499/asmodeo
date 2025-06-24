@@ -90,6 +90,9 @@ const Detail = ({id,handleDetail})=>{
                         <MasonryGalery images={images} />
                     </div>
                 </div>
+                <div>
+                    
+                </div>
             </div>
         </article>
     )
