@@ -39,10 +39,13 @@ import Layout from "../layouts/Layout.astro";
                 <li>En caso de denuncia sobre la falsedad del perfil publicado o de estafa en la prestación de servicios, la página (contando con las pruebas pertinentes) tiene el derecho a terminar de manera unilateral el contrato sin reembolso.</li>
             </ul>
         </section>
-        <h3>Pagínas amigas</h3>
-        <a href="https://www.escortdude.com" target="_blank" title="Escortdude.com"><img style="width:468px;height:60px;" src="https://cdn.escortdude.com/static/bn/f6tjm6v40p.gif"></a>
-        <a href="https://www.topescort.me" target="_blank" title="Escort Dubai & Middle East"><img style="width:468px;height:60px;" src="https://cdn.topescort.me/static/bn/h3hos8nqez.gif"></a>
-        <a href="https://escortnews.eu" title="Escort Girls" target="_blank"><img src="https://static.escortnews.eu/728x90.gif" style="width:468px;height:60px;" alt="Escort Girls"></a>
+        <div class="box_links" >
+            <h3>Pagínas amigas</h3>
+            <a href="https://www.escortdude.com" target="_blank" title="Escortdude.com"><img style="width:468px;height:60px;" src="https://cdn.escortdude.com/static/bn/f6tjm6v40p.gif"></a>
+            <a href="https://www.topescort.me" target="_blank" title="Escort Dubai & Middle East"><img style="width:468px;height:60px;" src="https://cdn.topescort.me/static/bn/h3hos8nqez.gif"></a>
+            <a href="https://escortnews.eu" title="Escort Girls" target="_blank"><img src="https://static.escortnews.eu/728x90.gif" style="width:468px;height:60px;" alt="Escort Girls"></a>
+            <a href="https://www.worldescortindex.com/" target="_blank" title="worldescortindex.com"><img src="https://www.worldescortindex.com/images/style/standardSmall.png" alt="worldescortindex.com"></a>
+        </div>
     </article>
 </Layout>
 
@@ -66,5 +69,10 @@ import Layout from "../layouts/Layout.astro";
     }
     ul li{
         font-size: 12px;
+    }
+    .box_links{
+        display: grid;
+        place-items: center;
+        width: 900px;
     }
 </style>
