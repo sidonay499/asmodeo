@@ -128,7 +128,6 @@
     place-items: center;
     padding-block: 25px;
     margin-top: 25px;
-    width: 350px;
     border-top: solid 1px var(--primary);
     gap: 15px;
 }
@@ -136,7 +135,6 @@
     display: grid;
     place-items: center;
     padding-block: 25px;
-    width: 350px;
     border-top: solid 1px var(--primary);
     margin-top: 35px;
     gap: 25px;
