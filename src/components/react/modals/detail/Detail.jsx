@@ -95,7 +95,7 @@ const Detail = ({id,handleDetail})=>{
                     </div>
                 </div >
                 <div className='box_experience' >
-                    <h5>{`EXPERIENCIAS CON ${name.toUpperCase()}`}</h5>
+                    <h5>{`EXPERIENCIAS CON ${name.toUpperCase()} (${Inboxes.length})`}</h5>
                     {
                         Inboxes?.map((i)=>(
                             <>

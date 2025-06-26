@@ -50,7 +50,7 @@ const CreateInbox = ({id})=>{
                                 type="text"
                                 name='name'
                                 placeholder='NOMBRE'
-                                className="input_textarea"
+                                className="input_inbox"
                             />
                             <div className='box_inbox_error' >
                                 <ErrorMessage name='name' component='div' />
@@ -60,7 +60,7 @@ const CreateInbox = ({id})=>{
                                 as="textarea"
                                 name='message'
                                 placeholder='MENSAJE'
-                                className="input_textarea"
+                                className="input_inbox"
                             />
                             <div className='box_inbox_error' >
                                 <ErrorMessage name='message' component='div' />
