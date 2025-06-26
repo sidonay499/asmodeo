@@ -1,7 +1,7 @@
 .form_inbox{
     display: grid;
     place-items: center;
-    width: 400px;
+    width: 350px;
 }
 .box_inbox_error{
     display: grid;
@@ -16,8 +16,8 @@
     }
 }
 .input_inbox{
-    width: 350px;
+    width: 330px;
 }
 .box_button_inbox > button{
-    width: 373px;
+    width: 350px;
 }
