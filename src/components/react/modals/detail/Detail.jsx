@@ -15,7 +15,6 @@ const Detail = ({id,handleDetail})=>{
         }
     })
 
-    console.log(profile)
     const {
         Inboxes,
         imageProfile,
