@@ -1,12 +1,13 @@
+import { validateInbox } from "../../../../utils/schema"
+import { ErrorMessage, Field, Form, Formik } from "formik"
 import { useState } from "react"
+import createInbox from "../../../../adapters/inbox/createInbox"
+import ButtonReact from "../../buttons/buttonsReact/ButtonReact"
 import Loader from "../../icons/loader/Loader"
 import Alert from "../../modals/alerts/Alert"
-import { validateInbox } from "../../../../utils/schema"
-import createInbox from "../../../../adapters/inbox/createInbox"
-import { ErrorMessage, Field, Form, Formik } from "formik"
-import ButtonReact from "../../buttons/buttonsReact/ButtonReact"
+import './createInbox.css'
 
-const CreateInbox = ()=>{
+const CreateInbox = ({id})=>{
     const [loader,setLoader] = useState(false)
     const [alert,setAlert] = useState('')
 
@@ -20,6 +21,7 @@ const CreateInbox = ()=>{
             {alert && <Alert handleAlert={handleAlert}>{alert}</Alert>}
             <Formik
                 initialValues={{
+                    id:id,
                     name:'',
                     message:''
                 }}
@@ -48,21 +50,24 @@ const CreateInbox = ()=>{
                                 type="text"
                                 name='name'
                                 placeholder='NOMBRE'
+                                className="input_textarea"
                             />
                             <div className='box_inbox_error' >
                                 <ErrorMessage name='name' component='div' />
                             </div>
                             <Field
                                 type="text"
+                                as="textarea"
                                 name='message'
                                 placeholder='MENSAJE'
+                                className="input_textarea"
                             />
                             <div className='box_inbox_error' >
                                 <ErrorMessage name='message' component='div' />
                             </div>
                             <div className='box_button_inbox' >
                                 <ButtonReact type='submit' >
-                                    CREAR PERFIL
+                                    ENVIAR
                                 </ButtonReact>
                             </div>
                         </Form>

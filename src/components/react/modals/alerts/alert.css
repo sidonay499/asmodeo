@@ -31,5 +31,5 @@
     transition: all ease-in-out 300ms;
 }
 .box_cross:hover{
-    transform: rotate(-45deg);
+    transform: rotate(-90deg);
 }

@@ -1,0 +1,23 @@
+.form_inbox{
+    display: grid;
+    place-items: center;
+    width: 400px;
+}
+.box_inbox_error{
+    display: grid;
+    place-items: left;
+    font-size: 10px;
+    height: 20px;
+    min-width: 260px;
+    max-width: 350px;
+    width: 100%;
+    p{
+        height: 10px;
+    }
+}
+.input_textarea{
+    width: 350px;
+}
+.box_button_inbox > button{
+    width: 373px;
+}

@@ -11,9 +11,10 @@ export default async function createInbox(values){
     const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_URL_INBOX_PROD : PUBLIC_URL_INBOX_DEV
 
     try {
-        const { name,message } = values
+        const { name,message,id } = values
 
         const admin = {
+            id:id,
             name:name,
             message:message
         }

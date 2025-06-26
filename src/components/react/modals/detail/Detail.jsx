@@ -1,7 +1,9 @@
 import useStore from '../../../zustand/store'
 import ButtonAction from '../../buttons/buttonAction/ButtonAction'
+import CreateInbox from '../../forms/inbox/CreateInbox'
 import Cross from '../../icons/cross/Cross'
 import MasonryGalery from '../../masonry/MasonryGalery'
+import Experience from '../experience/Experience'
 import './detail.css'
 
 const Detail = ({id,handleDetail})=>{
@@ -12,7 +14,10 @@ const Detail = ({id,handleDetail})=>{
             return item
         }
     })
+
+    console.log(profile)
     const {
+        Inboxes,
         imageProfile,
         images,
         name,
@@ -89,9 +94,20 @@ const Detail = ({id,handleDetail})=>{
                     <div className='container_masonry' >
                         <MasonryGalery images={images} />
                     </div>
+                </div >
+                <div className='box_experience' >
+                    <h5>{`EXPERIENCIAS CON ${name.toUpperCase()}`}</h5>
+                    {
+                        Inboxes?.map((i)=>(
+                            <>
+                                <Experience inbox={i} />
+                            </>
+                        ))
+                    }
                 </div>
-                <div>
-                    
+                <div className='box_inbox' >
+                    <h5>{`DEJA TU COMENTARIO A CERCA DE ${name.toUpperCase()}`}</h5>
+                    <CreateInbox id={id}/>
                 </div>
             </div>
         </article>

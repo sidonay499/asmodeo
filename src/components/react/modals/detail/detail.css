@@ -1,7 +1,7 @@
 .container_detail{
     z-index: 10;
     position: fixed;
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
     top: 50%;
@@ -18,12 +18,15 @@
     align-items: flex-start;
     justify-content: center;
     width: 650px;
-    height: 450px;
+    height: 520px;
     padding: 30px;
-    margin-top: 40px;
     border-radius: 15px;
     border: solid 2px var(--primary);
     background: linear-gradient(var(--third),var(--secundary));
+    overflow-y: auto;
+}
+.box_detail::-webkit-scrollbar{
+    width: 0px;
 }
 .header_detail{
     display: flex;
@@ -93,14 +96,18 @@
 }
 .box_cross_detail{
     display: grid;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
     position: absolute;
+    width: 30px;
+    height: 30px;
     top: 10px;
     left: 10px;
+    overflow: hidden;
     transition: all ease-in-out 300ms;
 }
 .box_cross_detail:hover{
-    transform: rotate(-45deg);
+    transform: rotate(-90deg);
 }
 .container_masonry{
     display: grid;
@@ -115,6 +122,22 @@
 }
 .container_masonry::-webkit-scrollbar-thumb{
  background-color: var(--third);
+}
+.box_experience{
+    display: grid;
+    place-items: center;
+    padding-block: 25px;
+    margin-top: 25px;
+    border-top: solid 1px var(--primary);
+    gap: 15px;
+}
+.box_inbox{
+    display: grid;
+    place-items: center;
+    padding-block: 25px;
+    border-top: solid 1px var(--primary);
+    margin-top: 35px;
+    gap: 25px;
 }
 
 @media
