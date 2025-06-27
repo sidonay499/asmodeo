@@ -2,7 +2,7 @@ import useStore from "../../zustand/store"
 import ArrowLeft from "../icons/navigation/ArrowLeft"
 import ArrowRigth from "../icons/navigation/ArrowRigth"
 import ArrowStart from "../icons/navigation/ArrowStart"
-// import ArrowEnd from "../icons/navigation/ArrrowEnd"
+import ArrowEnd from "../icons/navigation/ArrrowEnd"
 import'./pageNavigator.css'
 
 const PageNavigator = ()=>{
@@ -32,6 +32,11 @@ const PageNavigator = ()=>{
     const startPage = ()=>{
         setCurrentPage(1)
         getEscorts()
+    }   
+
+    const endPage = ()=>{
+        setCurrentPage(pages)
+        getEscorts()
     }    
 
     return(
@@ -42,7 +47,7 @@ const PageNavigator = ()=>{
                 {`${currentPage} DE ${pages}`}
             </span>
             <ArrowRigth fowardPage={fowardPage} />
-            {/* <ArrowEnd/> */}
+            {<ArrowEnd endPage={endPage} />}
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import './styleNavigation.css'
 
-const ArrowEnd = ()=>{
+const ArrowEnd = ({endPage})=>{
     return(
-        <span className='button_navigation' >
+        <span onClick={endPage} className='button_navigation' >
             <svg
                 className="navigation_icons"
                 width="24"  
