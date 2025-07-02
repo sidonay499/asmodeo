@@ -7,10 +7,10 @@ import createProfileMale from '../../../../../adapters/escorts/createProfileMale
 import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import Loader from '../../../icons/loader/Loader'
 import Alert from '../../../modals/alerts/Alert'
-import './createEscortMale.css'
 import updateProfile from '../../../../../adapters/escorts/updateProfile'
 import setStorage from '../../../../../utils/setStorage'
 import { useNavigate } from 'react-router-dom'
+import './createEscortMale.css'
 
 const CreateEscortMale = ()=>{
     const [loader,setLoader] = useState(false)
