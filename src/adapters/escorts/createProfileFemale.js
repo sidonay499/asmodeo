@@ -41,6 +41,7 @@ export default async function createProfileFemale(values){
 
         return res.data
     } catch (error) {
+        console.log(error)
         return error.response.data.error
     }
 }

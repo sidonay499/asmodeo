@@ -9,10 +9,13 @@ import Loader from '../../../icons/loader/Loader'
 import Alert from '../../../modals/alerts/Alert'
 import './createEscortFemale.css'
 import updateProfile from '../../../../../adapters/escorts/updateProfile'
+import setStorage from '../../../../../utils/setStorage'
+import { useNavigate } from 'react-router-dom'
 
 const CreateEscortFemale = ()=>{
     const [loader,setLoader] = useState(false)
     const [alert,setAlert] = useState('')
+    const navigate = useNavigate()
 
     const handleAlert = ()=>{
         setAlert('')
@@ -68,7 +71,15 @@ const CreateEscortFemale = ()=>{
                         }
 
                         setLoader(false)
-                        setAlert(profileRes.message)
+                        if(profileRes.message){
+                            setAlert(profileRes.message)
+                        }else{
+                            setAlert(profileRes)
+                            if(profileRes === "jwt must be provided"){
+                                setStorage('clear')
+                                navigate('/admin/login')
+                            }
+                        }
                         actions.resetForm()
                     } catch (error) {
                         setLoader(false)
