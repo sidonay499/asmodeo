@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import useStore from '../../zustand/store'
 import PageNavigator from '../pageNavigator/PageNavigator'
-import Card from '../cards/Card'
+import Card from '../cards/card/Card'
 import Loader from '../icons/loader/Loader'
 import Detail from '../modals/detail/Detail'
 import Alert from '../modals/alerts/Alert'

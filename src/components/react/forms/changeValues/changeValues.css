@@ -1,0 +1,20 @@
+.form_change_value{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.box_change_error{
+    display: grid;
+    place-items: left;
+    font-size: 10px;
+    height: 20px;
+    min-width: 260px;
+    max-width: 260px;
+    padding-left: 10px;
+    width: 100%;
+    p{
+        height: 10px;
+    }
+}

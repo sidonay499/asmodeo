@@ -1,0 +1,26 @@
+.container_card-ad{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 2px 10px;
+    border: solid 1px var(--primary);
+}
+.box_status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.box_status > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.box_values{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

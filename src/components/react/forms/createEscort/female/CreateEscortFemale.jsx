@@ -4,13 +4,13 @@ import { validateEscortFemale } from '../../../../../utils/schema'
 import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
 import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
-import createProfileFemale from '../../../../../adapters/escorts/createProfileFemale'
 import Loader from '../../../icons/loader/Loader'
 import Alert from '../../../modals/alerts/Alert'
 import './createEscortFemale.css'
 import updateProfile from '../../../../../adapters/escorts/updateProfile'
 import setStorage from '../../../../../utils/setStorage'
 import { useNavigate } from 'react-router-dom'
+import createProfile from '../../../../../adapters/escorts/createProfile'
 
 const CreateEscortFemale = ()=>{
     const [loader,setLoader] = useState(false)
@@ -27,6 +27,7 @@ const CreateEscortFemale = ()=>{
             {alert && <Alert handleAlert={handleAlert}>{alert}</Alert>}
             <Formik
                 initialValues={{
+                    gender:'FEMALE',
                     imageProfile:null,
                     images:[],
                     name:'',
@@ -60,7 +61,7 @@ const CreateEscortFemale = ()=>{
                         const formData = new FormData()
                         const profileImg = values.imageProfile
                         const galeryImgs = values.images
-                        const profileRes = await createProfileFemale(values)
+                        const profileRes = await createProfile(values)
 
                         if(profileRes.success){
                             const urlProfile = await uploadImageProfile(formData, profileImg)

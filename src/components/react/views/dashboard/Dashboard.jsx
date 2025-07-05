@@ -3,15 +3,19 @@ import useIsLogin from '../../hooks/useIsLogin'
 import CreateEscortFemale from '../../forms/createEscort/female/CreateEscortFemale'
 import './dashboard.css'
 import CreateEscortMale from '../../forms/createEscort/male/CreateEscortMale'
-import CardsPreview from '../../cardsPreview/CardsPreview'
+import useStore from '../../../zustand/store'
+import CardAdmin from '../../cards/cardAdmin/CardAdmin'
+import PageNavigator from '../../pageNavigator/PageNavigator'
 
 const Dashboard = ()=>{
+    const { escorts,getEscorts } = useStore()
     const [item,setItem] = useState(true)
     const [gender,setGender] = useState(true)
     const login = useIsLogin()
     
     useEffect(()=>{
         login()
+        getEscorts()
     },[])
 
     const handlerItem = ()=>{
@@ -58,7 +62,20 @@ const Dashboard = ()=>{
                         </div>
                 }
             </header>
-            {!item ? (gender ? <CreateEscortFemale/> : <CreateEscortMale/>) : <CardsPreview/>}
+            {!item ? (gender ? <CreateEscortFemale/> : <CreateEscortMale/>) : (
+                <>
+                    <div className='container_card' >
+                        {
+                            escorts.map(p => (
+                                <div key={p.id}>
+                                    <CardAdmin item={p} />
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <PageNavigator/>
+                </>
+            )}
         </section>
     )
 }

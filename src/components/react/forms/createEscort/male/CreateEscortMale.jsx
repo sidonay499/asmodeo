@@ -3,13 +3,13 @@ import { validateEscortMale } from '../../../../../utils/schema'
 import { useState } from 'react'
 import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
 import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
-import createProfileMale from '../../../../../adapters/escorts/createProfileMale'
 import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import Loader from '../../../icons/loader/Loader'
 import Alert from '../../../modals/alerts/Alert'
 import updateProfile from '../../../../../adapters/escorts/updateProfile'
 import setStorage from '../../../../../utils/setStorage'
 import { useNavigate } from 'react-router-dom'
+import createProfile from '../../../../../adapters/escorts/createProfile'
 import './createEscortMale.css'
 
 const CreateEscortMale = ()=>{
@@ -55,7 +55,7 @@ const CreateEscortMale = ()=>{
                         const formData = new FormData()
                         const profileImg = values.imageProfile
                         const galeryImgs = values.images
-                        const profileRes = await createProfileMale(values)
+                        const profileRes = await createProfile(values)
 
                         if(profileRes.success){
                             const urlProfile = await uploadImageProfile(formData, profileImg)

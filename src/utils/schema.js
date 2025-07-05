@@ -289,7 +289,8 @@ export const validateEscortMale = Yup.object().shape({
     phone:Yup.string()
         .min(8,"Teléfono muy corto")
         .max(22,"Teléfono muy largo")
-        .matches(/^[0-9]+$/, "Solo se permiten números, sin espacios ni símbolos"),
+        .matches(/^[0-9]+$/, "Solo se permiten números, sin espacios ni símbolos")
+        .required('El teléfono es obligatorio'),
     location:Yup.string()
         .min(4, 'Localidad muy corta')
         .max(100, 'Localidad muy larga')
@@ -306,4 +307,5 @@ export const validateEscortMale = Yup.object().shape({
         .min(1,'Demasiado corto')
         .max(50,'Demasiado largo')
         .positive('Debe ser un numero positivo')
+        .required('La medida es obligatorio'),
 }) 
