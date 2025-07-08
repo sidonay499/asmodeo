@@ -5,7 +5,7 @@ const ButtonAction = ({phone})=>{
     return(
         <a 
             className='button_action_box'  
-            href={`https://wa.me/+549${phone}`}
+            href={`https://wa.me/${phone}`}
             rel="noreferrer"
             target="_blank"
             aria-label="Hablar al whatsapp"

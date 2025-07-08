@@ -4,7 +4,6 @@
     justify-content: center;
     gap: 10px;
 }
-
 .box_change_error{
     display: grid;
     place-items: left;
@@ -17,4 +16,7 @@
     p{
         height: 10px;
     }
+}
+.box_input_change{
+    width: 280px;
 }

@@ -1,7 +1,7 @@
 
-const ButtonReact = ({children})=>{
+const ButtonReact = ({children,submit})=>{
     return(
-        <button>
+        <button onClick={submit} >
             {children}
         </button>
     )
