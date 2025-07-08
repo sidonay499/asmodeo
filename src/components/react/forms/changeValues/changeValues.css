@@ -4,6 +4,12 @@
     justify-content: center;
     gap: 10px;
 }
+.input_change::-webkit-scrollbar-thumb{
+    background-color: var(--third);
+}
+.input_change::-webkit-scrollbar{
+    width: 4px;
+}
 .box_change_error{
     display: grid;
     place-items: left;

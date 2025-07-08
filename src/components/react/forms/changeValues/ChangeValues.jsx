@@ -5,6 +5,7 @@ import parameters from '../../../../utils/parameters.json'
 import './changeValues.css'
 import ButtonReact from '../../buttons/buttonsReact/ButtonReact'
 import updateParam from '../../../../adapters/escorts/updateParam'
+import translations from '../../../../utils/translations'
 
 const ChangeValues = ({item})=>{
     const [loader,setLoader] = useState(false)
@@ -55,7 +56,7 @@ const ChangeValues = ({item})=>{
                                 const key = Object.keys(param)[0];
                                 return (
                                     <option value={key} key={index}>
-                                        {key.toUpperCase()}
+                                        {translations(key)}
                                     </option>
                                 )
                             })
