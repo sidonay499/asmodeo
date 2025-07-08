@@ -1,6 +1,5 @@
 
 const translations = (word)=>{
-    console.log(word)
     let parseWord = ''
 
     if(word === 'name') parseWord = 'NOMBRE'

@@ -33,8 +33,6 @@ const ChangeValues = ({item})=>{
         setParamValue(value)
     },[param])
 
-    console.log(values)
-
     return(
         <>
             {loader && <Loader size={80} />}
