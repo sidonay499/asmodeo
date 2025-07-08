@@ -191,7 +191,7 @@ export const validateEscortFemale = Yup.object().shape({
     country:Yup.string()
         .min(3, 'Nombre de país muy corto')
         .max(50, 'Nombre de país muy largo')
-        .required('El país es obligatorio')
+        .required('El país es obligatorio')   
 })
 
 export const validateEscortMale = Yup.object().shape({

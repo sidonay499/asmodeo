@@ -27,7 +27,6 @@ const CreateEscortFemale = ()=>{
             {alert && <Alert handleAlert={handleAlert}>{alert}</Alert>}
             <Formik
                 initialValues={{
-                    gender:'FEMALE',
                     imageProfile:null,
                     images:[],
                     name:'',
@@ -40,7 +39,6 @@ const CreateEscortFemale = ()=>{
                     breast:'',
                     waist:'',
                     hip:'',
-                    gender:false,
                     bodyType:false,
                     breasts:false,
                     ass:false,
@@ -61,7 +59,7 @@ const CreateEscortFemale = ()=>{
                         const formData = new FormData()
                         const profileImg = values.imageProfile
                         const galeryImgs = values.images
-                        const profileRes = await createProfile(values)
+                        const profileRes = await createProfile(values,'FEMALE')
 
                         if(profileRes.success){
                             const urlProfile = await uploadImageProfile(formData, profileImg)

@@ -55,7 +55,7 @@ const CreateEscortMale = ()=>{
                         const formData = new FormData()
                         const profileImg = values.imageProfile
                         const galeryImgs = values.images
-                        const profileRes = await createProfile(values)
+                        const profileRes = await createProfile(values,'MALE')
 
                         if(profileRes.success){
                             const urlProfile = await uploadImageProfile(formData, profileImg)
