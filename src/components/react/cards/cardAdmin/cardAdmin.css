@@ -18,9 +18,11 @@
     border-radius: 20px;
     object-fit: cover;
 }
-.box_values{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
+
+
+@media
+    (width < 700px){
+        .container_card-ad{
+            flex-direction: column;
+        }
+    }

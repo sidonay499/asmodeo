@@ -24,5 +24,14 @@
     }
 }
 .box_input_change{
-    width: 280px;
+    width: 270px;
+    height: 35px;
 }
+
+@media
+    (width < 700px){
+        .form_change_value{
+            flex-direction: column;
+            padding-block: 10px;
+        }
+    }
