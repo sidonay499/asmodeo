@@ -12,7 +12,7 @@
   { "ass": ["CHICA", "PERFECTA", "GRANDE"] },
   { "penis": 0 },
   { "bioType": ["TONÍFICADA", "TONÍFICADO", "MUSCÚLOSA", "MUSCÚLOSO", "ATLÉTICA", "ATLÉTICO", "NORMAL"] },
-  { "tattoos": false },
+  { "tattoos": [true,false] },
   { "active": true },
   { "description": "" },
   { "price": 0 },

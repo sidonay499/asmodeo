@@ -4,8 +4,8 @@ import Alert from '../../modals/alerts/Alert'
 import parameters from '../../../../utils/parameters.json'
 import './changeValues.css'
 import ButtonReact from '../../buttons/buttonsReact/ButtonReact'
-import updateParam from '../../../../adapters/escorts/updateParam'
 import translations from '../../../../utils/translations'
+import updateProfile from '../../../../adapters/escorts/updateProfile'
 
 const ChangeValues = ({item})=>{
     const [loader,setLoader] = useState(false)
@@ -19,10 +19,18 @@ const ChangeValues = ({item})=>{
     }
 
     const onSubmit = async ()=>{
-        setLoader(!loader)
-        const res = await updateParam(param,values,item.id)
-        setLoader(false)
-        setAlert(res)
+        try {
+            setLoader(!loader)
+            await updateProfile(item.id,param,values)
+            setLoader(false)
+            setTimeout(()=>{
+                setAlert('Se actualizo con exito')
+            },6000)
+        } catch (error) {
+            setTimeout(()=>{
+                setAlert('ocurrio un error')
+            },6000)
+        }
     }
 
     useEffect(()=>{
@@ -81,6 +89,7 @@ const ChangeValues = ({item})=>{
                         paramValue && typeof paramValue[param] === 'string' && (
                             <input 
                                 type="text" 
+                                onChange={(e)=>setValues(e.target.value)}
                             />
                         )
                     }
@@ -88,12 +97,16 @@ const ChangeValues = ({item})=>{
                         paramValue && typeof paramValue[param] === 'number' && (
                             <input
                                 type="number" 
+                                onChange={(e)=>setValues(e.target.value)}
                             />
                         )
                     }
                     {
                         paramValue && typeof paramValue[param] === 'boolean' && (
-                            <input type="checkbox" name="" id="" />
+                            <select onChange={(e)=>setValues(e.target.value)} name="" id="">
+                                <option value={true}>TRUE</option>
+                                <option value={false}>FALSE</option>
+                            </select>
                         )
                     }
                 </div>
