@@ -8,7 +8,7 @@ const LocationFilter = ()=>{
     useEffect(()=>{
         if(!errors && escorts.length){
             const locationArray = escorts.map((item)=>{
-                return item.location.trim().toUpperCase()
+                return item.location.trim()
             })
 
             const locationNotDuplicates = locationArray.filter((item, index) => locationArray.indexOf(item) === index);
