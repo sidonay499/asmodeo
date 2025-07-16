@@ -25,6 +25,7 @@ export default defineConfig({
                 // Si es una página de perfil dinámico, obtener todos los perfiles
                 if (item.url.includes('[name]') || item.url.includes('[id]')) {
                     const profiles = await getAllEscorts();
+                    console.log('Perfiles obtenidos:', profiles);
                     
                     // Retornar un array con todas las URLs de perfiles
                     return profiles.map(profile => ({
