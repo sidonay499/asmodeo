@@ -1,0 +1,302 @@
+---
+import getAllEscorts from "../../adapters/escorts/getAllEscorts"
+import ButtonAction from "../../components/react/buttons/buttonAction/ButtonAction"
+import CreateInbox from "../../components/react/forms/inbox/CreateInbox"
+import MasonryGalery from "../../components/react/masonry/MasonryGalery"
+import Experience from "../../components/react/modals/experience/Experience"
+import Layout from "../../layouts/Layout.astro"
+
+const { name,id } = Astro.params
+
+const p = await getAllEscorts("1","id",id)
+const profile = p && p.escorts && p.escorts[0]
+const {
+    Inboxes,
+    imageProfile,
+    images,
+    location,
+    state,
+    phone,
+    description,
+    age,
+    heigth,
+    weigth,
+    measures,
+    bioType,
+    bodyType,
+    breasts,
+    ass,
+    shaved,
+    tattoos,
+    eyesColor,
+    hairColor,
+    price,
+    penis,
+} = profile ? profile : {}
+---
+
+<Layout 
+    title=`Mirá el Perfil de ${name} en Asmodeo Escorts Vip en ${location}` 
+>
+    <article class='container_detail' >
+            <div class='box_detail' >
+                <header class='header_detail' >
+                    <picture>
+                        <img class='image_profile_detail'  src={imageProfile} alt="Escort Vip en Argentina, Asmodeo Guia Escort Vip" />
+                    </picture>
+                    <div class='container_header' >
+                        <div class='box_header' >
+                            <h2>{name?.toUpperCase()}</h2>
+                            <ButtonAction phone={phone} />
+                        </div>
+                        <h5>{location?.toUpperCase()}</h5>
+                        <h5>{state?.toUpperCase()}</h5>
+                        <div class='box_description' >
+                            <p>{description}</p>
+                        </div>
+                    </div>
+                </header>
+                <div class='container_info_detail' >
+                    <aside class='aside_detail' >
+                        <div>
+                            <h5>{`TARIFA: ${price}  USD`}</h5>
+                        </div>
+                        <div>
+                            <h5>DETALLES PERSONALES</h5>
+                            <h6>{`EDAD: ${age}`}</h6>
+                            <h6>{`ALTURA: ${heigth}cm`}</h6>
+                            <h6>{`PESO: ${weigth}kg`}</h6>
+                            {measures ? <h6>{`MEDIDAS: ${measures}`}</h6> : null}
+                        </div>
+                        <div>
+                            <h5>ATRIBUTOS FÍSICOS</h5>
+                            <h6>{`BIO TIPO: ${bioType}`}</h6>
+                            <h6>{`TIPO DE CUERPO: ${bodyType}`}</h6>
+                            {breasts ? <h6>{`PECHOS: ${breasts}`}</h6> : null}
+                            {ass ? <h6>{`COLA: ${ass}`}</h6> : null}
+                            {penis ? <h6>{`PENE: ${penis}cm`}</h6>: null}
+                            <h6>{`DEPILACIÓN: ${shaved}`}</h6>
+                            <h6>{tattoos ? `TATUAJES: SI` : `TATUAJES: NO`}</h6>
+                        </div>
+                        <div>
+                            <h5>APARIENCIA</h5>
+                            <h6>{`COLOR DE OJOS: ${eyesColor}`}</h6>
+                            <h6>{`COLOR DE PELO: ${hairColor}`}</h6>
+                        </div>
+                    </aside>
+                    <div class='container_masonry' >
+                        {images ? <MasonryGalery client:only="react" images={images} /> : null}
+                    </div>
+                </div >
+                {Inboxes ? (<div class='box_experience' >
+                    <h5>{`EXPERIENCIAS CON ${name?.toUpperCase()} (${Inboxes.length})`}</h5>
+                    {
+                        Inboxes?.map((i:object)=>(
+                            <>
+                                <Experience inbox={i} />
+                            </>
+                        ))
+                    }
+                </div>) : null}
+                <div class='box_inbox' >
+                    <h5>{`DEJA TU COMENTARIO A CERCA DE ${name?.toUpperCase()}`}</h5>
+                    <CreateInbox client:only="react" id={id}/>
+                </div>
+            </div>
+        </article>
+</Layout>
+
+<style>
+    .container_detail{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block: 80px;
+    }
+    .box_detail{
+        position: relative;
+        display: grid;
+        align-items: flex-start;
+        justify-content: center;
+        width: 650px;
+        padding: 30px;
+    }
+    .box_detail::-webkit-scrollbar{
+        width: 0px;
+    }
+    .header_detail{
+        display: flex;
+        width: 100%;
+        height: 220px;
+        gap: 25px;
+    }
+    .image_profile_detail{
+        width: 180px;
+        height: 180px;
+        border: solid 4px var(--primary);
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+    }
+    .container_header{
+        width: 410px;
+        p{
+            font-family: 'Poppins-Light';
+            display: flex;
+            font-size: 11px;
+            font-weight: thin;
+            text-wrap: balance;
+            width: 410px;
+        }
+    }
+    .box_header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    .box_description{
+        overflow-y: auto;
+        width: 415px;
+        height: 120px;
+    }
+    .box_description > p{
+        width: 100%;
+    }
+    .box_description::-webkit-scrollbar{
+        width: 4px;
+    }
+    .box_description::-webkit-scrollbar-thumb{
+        background-color: var(--third);
+    }
+    .container_info_detail{
+        display: flex;
+        align-items: center;
+    }
+    .aside_detail{
+        display: grid;
+        height: 220px;
+        width: 190px;
+        overflow: auto;
+        padding: 5px;
+        gap: 10px;
+        h5{
+            margin-bottom: 2px;
+        }
+    }
+    .aside_detail::-webkit-scrollbar{
+        width: 4px;
+    }
+    .aside_detail::-webkit-scrollbar-thumb{
+        background-color: var(--third);
+    }
+    .box_cross_detail{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        left: 10px;
+        overflow: hidden;
+        transition: all ease-in-out 300ms;
+    }
+    .box_cross_detail:hover{
+        transform: rotate(-90deg);
+    }
+    .container_masonry{
+        display: grid;
+        place-items: center;
+        padding-left: 5px;
+        height: 220px;
+        width: 425px;
+        overflow: auto;
+    }
+    .container_masonry::-webkit-scrollbar{
+        width: 4px;
+    }
+    .container_masonry::-webkit-scrollbar-thumb{
+        background-color: var(--third);
+    }
+    .box_experience{
+        display: grid;
+        place-items: center;
+        padding-block: 25px;
+        margin-top: 25px;
+        border-top: solid 1px var(--primary);
+        gap: 15px;
+    }
+    .box_inbox{
+        display: grid;
+        place-items: center;
+        padding-block: 25px;
+        border-top: solid 1px var(--primary);
+        margin-top: 35px;
+        gap: 25px;
+    }
+
+    @media
+        (width < 700px){
+            .box_detail{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                margin-top: 0px;
+                width: 330px;
+                height: 650px;
+                overflow-y: auto;
+            }
+            .header_detail{
+                display: grid;
+                width: 100%;
+                height: 450px;
+            }
+            .aside_detail{
+                height: 200px;
+                padding: 0;
+            }
+            picture{
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                width: 320px;
+            }
+            .container_header{
+                width: 320px;
+                height: 300px;
+                p{
+                    width: 100%;
+                }
+            }
+            .box_header{
+                width: 320px;
+            }
+            .container_info_detail{
+                display: grid;
+                align-items: center;
+                width: 330px;
+                height: 550px;
+        
+            }
+            .aside_detail{
+                width: 320px;
+            }
+            .box_cross_detail{
+                top: 30px;
+                left: 30px;
+            }
+            .container_masonry{
+                width: 330px;
+                height:350px;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                padding: 0;
+            }
+            .box_description{
+                width: 320px;
+                height: 150px;
+            }
+        }
+</style>

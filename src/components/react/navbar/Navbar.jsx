@@ -6,11 +6,11 @@ const Navbar = ({path})=>{
             {path != '/' && 
             <div className='box_navbar' >
                 <a href="/blog" aria-label='Blog Asmodeo, Escorts Vip en Argentina' >BLOG</a>
-                <a href="/" aria-label='Landing Asmodeo, Escorts Vip en Argentina' >
+                <a href="/home" aria-label='Landing Asmodeo, Escorts Vip en Argentina' >
                     <img
                         className='image_navbar'
                         style={{viewTransitionName:'asmodeo'}}
-                        src="./logo.svg" 
+                        src="/logo.svg" 
                         alt="Logo Asmodeo, Guía de Escorts Vip en Toda Argentina"
                     />
                 </a>

@@ -12,7 +12,7 @@ const useStore = create((set,get)=>({
         try {
             const { currentPage }= get()
             set({loading:true})
-
+    
             const data = await getAllEscorts(currentPage,param,value)
             if(data.length){
                 set({

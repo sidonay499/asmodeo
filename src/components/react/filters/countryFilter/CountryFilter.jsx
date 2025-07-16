@@ -8,7 +8,7 @@ const CountryFilter = ()=>{
     useEffect(()=>{
         if(!errors && escorts.length){
             const countriesArray = escorts.map((item)=>{
-                return item.country.trim().toUpperCase()
+                return item.country.trim()
             })
     
             const countriesNotDuplicates =  countriesArray.filter((item, index) => countriesArray.indexOf(item) === index);

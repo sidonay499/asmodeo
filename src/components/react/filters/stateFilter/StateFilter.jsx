@@ -10,9 +10,9 @@ const StateFilter = ()=>{
             const statesArray = escorts.map((item)=>{
                 const tieneEspacios = /^\s|\s$/.test(item.state);
                 if(tieneEspacios){
-                    return item.state.trim().toUpperCase()
+                    return item.state.trim()
                 }
-                return item.state.toUpperCase()
+                return item.state
             })
 
             const statesNotDuplicates = statesArray.filter((item, index) => statesArray.indexOf(item) === index)

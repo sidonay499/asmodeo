@@ -59,7 +59,7 @@ export const validateEscortFemale = Yup.object().shape({
         .required('Las imágenes son obligatorias'),
     name:Yup.string()
         .min(3,'Nombre demasiado corto')
-        .max(12,'Nombre demasiado largo')
+        .max(100,'Nombre demasiado largo')
         .required('El nombre es obligatorio'),
     age:Yup.number()
         .max(100)
@@ -202,7 +202,7 @@ export const validateEscortMale = Yup.object().shape({
         .required('Las imágenes son obligatorias'),
     name:Yup.string()
         .min(3,'Nombre demasiado corto')
-        .max(12,'Nombre demasiado largo')
+        .max(100,'Nombre demasiado largo')
         .required('El nombre es obligatorio'),
     age:Yup.number()
         .max(100)
