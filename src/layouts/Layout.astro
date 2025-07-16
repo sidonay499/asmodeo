@@ -3,7 +3,7 @@ import { ClientRouter } from "astro:transitions"
 import Navbar from "../components/react/navbar/Navbar"
 import Footer from "../components/Footer.astro"
 
-const {title} = Astro.props
+const { title, description} = Astro.props
 const path = Astro.url.pathname
 ---
 
@@ -15,7 +15,7 @@ const path = Astro.url.pathname
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 		<link rel="canonical" href="https://asmodeo.net">
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Descubrí las mejores escorts VIP independientes en Buenos Aires. Acompañantes de alto nivel te esperan en Asmodeo Escorts para una experiencia exclusiva y discreta.">
+		<meta name="description" content={!description ? "Descubrí las mejores escorts VIP independientes en Buenos Aires. Acompañantes de alto nivel te esperan en Asmodeo Escorts para una experiencia exclusiva y discreta." : description}>
 		<title>{title ? title : 'ESCORTS VIP en Buenos Aires | Las Mejores Escorts Mujeres y Hombres en Argentina'}</title>
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
