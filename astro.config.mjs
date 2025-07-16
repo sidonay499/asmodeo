@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site:'https://asmodeo.net',
     adapter:vercel(),
-    output:'static',
+    output:'server',
     integrations:[
         react(), 
         sitemap({
