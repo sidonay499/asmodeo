@@ -14,15 +14,15 @@ export default defineConfig({
     integrations: [
         react(),
         sitemap({
-            // Define aquí las páginas personalizadas, además del resto de rutas
-            customPages: async () => {
+            // customPages debe ser un array, por eso usamos una IIFE async
+            customPages: await (async () => {
                 const { escorts } = await getAllEscorts();
-                return escorts.map(escort => `/` + escort.name + `/` + escort.id);
-            },
+                return escorts.map(profile => `/${profile.name}/${profile.id}`);
+            })(),
             serialize: (item) => ({
                 url: item.url,
                 lastmod: new Date(),
-                priority: item.url.includes('/') ? 0.9 : 0.8,
+                priority: item.url.startsWith('/contacto') ? 0.6 : 0.8,
                 changefreq: 'weekly'
             })
         })
