@@ -16,8 +16,8 @@ export default defineConfig({
         sitemap({
             // customPages debe ser un array, por eso usamos una IIFE async
             customPages: await (async () => {
-                const { escorts } = await getAllEscorts();
-                return escorts.map(profile => `/${profile.name}/${profile.id}`);
+                const data = await getAllEscorts();
+                return data.escorts.map(profile => `/${profile.name}/${profile.id}`);
             })(),
             serialize: (item) => ({
                 url: item.url,
