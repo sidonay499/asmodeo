@@ -14,31 +14,17 @@ export default defineConfig({
     integrations: [
         react(),
         sitemap({
-            serialize: async (item) => {
-                // Configuración por defecto para todas las páginas
-                const defaultConfig = {
-                    url: item.url,
-                    lastmod: new Date(),
-                    priority: 0.8
-                };
-
-                // Si es una página de perfil dinámico, obtener todos los perfiles
-                if (item.url.includes('[name]') || item.url.includes('[id]')) {
-                    const profiles = await getAllEscorts();
-                    console.log('Perfiles obtenidos:', profiles);
-                    
-                    // Retornar un array con todas las URLs de perfiles
-                    return profiles.map(profile => ({
-                        url: `https://asmodeo.net/${profile.name}/${profile.id}`,
-                        lastmod: profile.updatedAt ? new Date(profile.updatedAt) : new Date(),
-                        priority: 0.9,
-                        changefreq: 'weekly'
-                    }));
-                }
-
-                // Para páginas estáticas, retornar configuración por defecto
-                return defaultConfig;
-            }
+            // Define aquí las páginas personalizadas, además del resto de rutas
+            customPages: async () => {
+                const { escorts } = await getAllEscorts();
+                return escorts.map(escort => `/` + escort.name + `/` + escort.id);
+            },
+            serialize: (item) => ({
+                url: item.url,
+                lastmod: new Date(),
+                priority: item.url.includes('/') ? 0.9 : 0.8,
+                changefreq: 'weekly'
+            })
         })
     ]
 });
