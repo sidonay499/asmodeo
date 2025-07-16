@@ -17,6 +17,7 @@ export default defineConfig({
             // customPages debe ser un array, por eso usamos una IIFE async
             customPages: await (async () => {
                 const data = await getAllEscorts();
+                console.log(data);
                 return data.escorts.map(profile => `/${profile.name}/${profile.id}`);
             })(),
             serialize: (item) => ({
