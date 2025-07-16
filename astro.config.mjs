@@ -18,7 +18,7 @@ export default defineConfig({
             customPages: await (async () => {
                 const data = await getAllEscorts('1');
                 console.log(data);
-                return data.escorts.map(profile => `/${profile.name}/${profile.id}`);
+                return data.map(profile => `/${profile.name}/${profile.id}`);
             })(),
             serialize: (item) => ({
                 url: item.url,
