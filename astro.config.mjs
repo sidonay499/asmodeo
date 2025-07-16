@@ -14,18 +14,7 @@ export default defineConfig({
     integrations: [
         react(),
         sitemap({
-            // customPages debe ser un array, por eso usamos una IIFE async
-            customPages: await (async () => {
-                const data = await getAllEscorts('1');
-                console.log(data);
-                return data.map(profile => `/${profile.name}/${profile.id}`);
-            })(),
-            serialize: (item) => ({
-                url: item.url,
-                lastmod: new Date(),
-                priority: item.url.startsWith('/contacto') ? 0.6 : 0.8,
-                changefreq: 'weekly'
-            })
-        })
+            customPages: (await getAllEscorts('1')).map(p => `/${p.name}/${p.id}`)
+        }),
     ]
 });
