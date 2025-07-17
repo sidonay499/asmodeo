@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel'
 import sitemap from '@astrojs/sitemap';
 import getAllEscorts from './src/adapters/escorts/getAllEscorts';
 
-export default async function () {
+export default function () {
 
   return defineConfig({
     site: 'https://tusitio.com',
