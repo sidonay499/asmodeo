@@ -13,6 +13,7 @@ export default async function () {
     output: 'server',
     integrations: [
       react(),
+      vercel(),
       sitemap({
         serialize: async (item) => {
           const data = await getAllEscorts()
