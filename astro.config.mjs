@@ -14,7 +14,7 @@ export default async function () {
     integrations: [
       react(),
       sitemap({
-        async serialize(item) {
+        serialize: async (item) => {
           const data = await getAllEscorts()
           const slugs = data?.escorts.map((p) => `/${p.name}/${p.id}`) ?? [];
           return slugs.includes(item.url) ? {
