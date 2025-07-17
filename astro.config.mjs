@@ -7,8 +7,6 @@ import sitemap from '@astrojs/sitemap';
 import getAllEscorts from './src/adapters/escorts/getAllEscorts';
 
 export default async function () {
-  const data = await getAllEscorts();
-  const slugs = data?.escorts.map((p) => `/${p.name}/${p.id}`) ?? [];
 
   return defineConfig({
     site: 'https://tusitio.com',
@@ -16,7 +14,15 @@ export default async function () {
     integrations: [
       react(),
       sitemap({
-        customPages: slugs
+        async serialize(item) {
+          const data = await getAllEscorts()
+          const slugs = data?.escorts.map((p) => `/${p.name}/${p.id}`) ?? [];
+          return slugs.includes(item.url) ? {
+            url: item.url,
+            lastmod: new Date(),
+            priority: 1
+          } : null; 
+        }
       })
     ]
   });
