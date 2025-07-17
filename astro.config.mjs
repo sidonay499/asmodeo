@@ -5,8 +5,7 @@ import react from "@astrojs/react"
 import vercel from '@astrojs/vercel'
 import sitemap from '@astrojs/sitemap';
 
-
-export default defineConfig ({
+export default defineConfig({
   site: 'https://asmodeo.net',
   output: 'server',
   integrations: [
