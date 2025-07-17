@@ -8,9 +8,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://asmodeo.net',
   output: 'server',
+  adapter: vercel(),
   integrations: [
     react(),
-    vercel(),
     sitemap({
       lastmod:new Date(),
       priority:1
