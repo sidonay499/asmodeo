@@ -1,30 +1,29 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import react from '@astrojs/react'
+import react from "@astrojs/react"
 import vercel from '@astrojs/vercel'
 import sitemap from '@astrojs/sitemap';
 import getAllEscorts from './src/adapters/escorts/getAllEscorts';
 
-export default function () {
-
-  return defineConfig({
-    site: 'https://tusitio.com',
-    output: 'server',
-    integrations: [
-      react(),
-      vercel(),
-      sitemap({
-        serialize: async (item) => {
-          const data = await getAllEscorts()
-          const slugs = data?.escorts.map((p) => `/${p.name}/${p.id}`) ?? [];
-          return slugs.includes(item.url) ? {
-            url: item.url,
-            lastmod: new Date(),
-            priority: 1
-          } : null; 
-        }
-      })
-    ]
-  });
-}
+export default defineConfig ({
+  site: 'https://asmodeo.net',
+  output: 'server',
+  integrations: [
+    react(),
+    vercel(),
+    sitemap({
+      serialize: async (item)=>{
+        const data = await getAllEscorts()
+        data.escorts.map(escort => {
+          return {
+            url: `https://asmode.net/${escort.name}/${escort.id}`,
+            lastmod: new Date(escort.updatedAt).toISOString(),
+            changefreq: 'weekly',
+            priority: 0.8,
+          }
+        })
+      }
+    }),
+  ]
+})
