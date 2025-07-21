@@ -1,8 +1,9 @@
 import useStore from "../../../zustand/store"
 import { useEffect, useState } from "react"
+import '../index.css'
 
 const AgeFilter = ()=>{
-    const { getEscorts,setCurrentPage } = useStore()
+    const { getEscorts,setCurrentPage,filterActive,setFilterActive } = useStore()
     const [ages,setAges] = useState([])
     const minAge = 18
     const maxAge = 100
@@ -17,11 +18,12 @@ const AgeFilter = ()=>{
 
     return(
         <select 
-            className='select_filter' 
+            className={`select_filter ${filterActive ? 'filter-active-true' : ''}`}
             name="age"
             onChange={(event)=>{
                 setCurrentPage(1)
                 getEscorts('age',Number(event.target.value))
+                setFilterActive(true)
             }}
         >
             <option value="">EDAD</option>

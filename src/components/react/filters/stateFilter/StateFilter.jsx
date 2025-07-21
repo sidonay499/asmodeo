@@ -3,7 +3,7 @@ import useStore from "../../../zustand/store"
 
 const StateFilter = ()=>{
     const [ states,setStates ] = useState([])
-    const { escorts,getEscorts,errors,setCurrentPage } = useStore()
+    const { escorts,getEscorts,errors,setCurrentPage,filterActive } = useStore()
 
     useEffect(()=>{
         if(!errors && escorts.length){
@@ -22,7 +22,7 @@ const StateFilter = ()=>{
 
     return(
         <select 
-            className='select_filter' 
+            className={`select_filter ${filterActive ? 'filter-active-true' : ''}`}
             name="state"
             onChange={(event)=>{
                 setCurrentPage(1)

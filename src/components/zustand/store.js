@@ -4,6 +4,7 @@ import getAllEscorts from "../../adapters/escorts/getAllEscorts"
 const useStore = create((set,get)=>({
     escorts:[],
     pages:1,
+    filterActive:false,
     currentPage:1,
     loading:false,
     errors:null,
@@ -42,7 +43,12 @@ const useStore = create((set,get)=>({
             errors:null
         })
     
-    } 
+    },
+    setFilterActive:(value)=>{
+        set({
+            filterActive:value
+        })
+    }
 }))
 
 export default useStore

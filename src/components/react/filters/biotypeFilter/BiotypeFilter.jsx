@@ -1,14 +1,15 @@
 import useStore from "../../../zustand/store"
 
 const BiotypeFilter = ()=>{
-    const { getEscorts,setCurrentPage } = useStore()
+    const { getEscorts,setCurrentPage,filterActive } = useStore()
 
     return(
         <select 
-            className='select_filter' 
+            className={`select_filter ${filterActive ? 'filter-active-true' : ''}`} 
             name="biotype"
             onChange={(event)=>{
                 setCurrentPage(1)
+                setFilterActive(true)
                 getEscorts('bioType',event.target.value)
             }}
         >

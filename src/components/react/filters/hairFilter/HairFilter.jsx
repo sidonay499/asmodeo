@@ -1,14 +1,15 @@
 import useStore from "../../../zustand/store"
 
 const HairFilter = ()=>{
-    const { getEscorts,setCurrentPage } = useStore()
+    const { getEscorts,setCurrentPage,filterActive,setFilterActive } = useStore()
 
     return(
         <select 
-            className='select_filter' 
+            className={`select_filter ${filterActive ? 'filter-active-true' : ''}`} 
             name="hairColor"
             onChange={(event)=>{
                 setCurrentPage(1)
+                setFilterActive(true)
                 getEscorts('hairColor',event.target.value)
             }}
         >

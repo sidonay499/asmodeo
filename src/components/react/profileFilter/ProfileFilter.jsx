@@ -13,7 +13,7 @@ import ArrowLeft from '../icons/navigation/ArrowLeft'
 import './profileFilter.css'
 
 const ProfileFilter = ()=>{
-    const { getEscorts, setCurrentPage } = useStore()
+    const { getEscorts, setCurrentPage, filterActive, setFilterActive } = useStore()
     const [visible,setVisible] = useState(true)
     const [position,setPosition] = useState('left')
 
@@ -25,7 +25,10 @@ const ProfileFilter = ()=>{
         <aside className='aside_filter' >
             <div className={`box_filter visible_${visible}`} >
                 <div className='boxes_fil' >
-                    <div onClick={()=>getEscorts()} className='box_all' >
+                    <div onClick={()=>{
+                        getEscorts()
+                        setFilterActive(false)
+                    }} className='box_all' >
                         <span>ALL</span>
                     </div>
                     <div className='box_gender' >
