@@ -10,6 +10,12 @@
     border: solid 2px var(--primary);
     overflow: hidden;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.container_card:hover{
+    z-index: 10;
+    transform: rotate(2deg) scale(1.1);
+    box-shadow: 0 0 10px var(--pink);
 }
 .container_card::after{
     z-index: 2;

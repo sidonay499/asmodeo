@@ -14,9 +14,14 @@
     border: none;
     font-size: 12px;
     border-radius: 30px;
+    border: solid 1px var(--action);
     background-color: var(--action);
     color: var(--white);
     cursor: pointer;
+}
+.box_navigator_handler button:hover{
+    background-color: var(--thid);
+    border: solid 1px var(--primary);
 }
 .current_page{
     display: flex;

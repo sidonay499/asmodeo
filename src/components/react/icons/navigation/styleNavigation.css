@@ -7,10 +7,13 @@
     border: none;
     border-radius: 50%;
     background-color: var(--action);
+    border: solid 1px var(--action);
     cursor: pointer;
+    transition: all ease-in-out 300ms;
 }
 .button_navigation:hover{
     background-color: var(--third);
+    border: solid 1px var(--primary);
 }
 .navigation_icons{
     stroke-width: 2px;
