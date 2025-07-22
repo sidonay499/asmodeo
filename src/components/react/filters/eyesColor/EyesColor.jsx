@@ -1,7 +1,7 @@
 import useStore from "../../../zustand/store"
 
 const EyesColor = ()=>{
-    const { getEscorts,setCurrentPage,filterActive,setFilterActive } = useStore()
+    const { getEscorts,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
 
     return(
         <select 
@@ -10,7 +10,8 @@ const EyesColor = ()=>{
             onChange={(event)=>{
                 setCurrentPage(1)
                 setFilterActive(true)
-                getEscorts('eyesColor',event.target.value)
+                setFilter('eyesColor', event.target.value)
+                getEscorts()
             }}
         >
             <option value="">COLOR DE OJOS</option>

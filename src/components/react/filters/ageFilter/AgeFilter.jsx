@@ -23,8 +23,8 @@ const AgeFilter = ()=>{
             onChange={(event)=>{
                 setCurrentPage(1)
                 setFilter('age',event.target.value)
-                getEscorts()
                 setFilterActive(true)
+                getEscorts()
             }}
         >
             <option value="">EDAD</option>

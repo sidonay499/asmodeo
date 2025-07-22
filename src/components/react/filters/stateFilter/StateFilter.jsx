@@ -3,7 +3,7 @@ import useStore from "../../../zustand/store"
 
 const StateFilter = ()=>{
     const [ states,setStates ] = useState([])
-    const { escorts,getEscorts,errors,setCurrentPage,filterActive } = useStore()
+    const { escorts,getEscorts,errors,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
 
     useEffect(()=>{
         if(!errors && escorts.length){
@@ -26,7 +26,9 @@ const StateFilter = ()=>{
             name="state"
             onChange={(event)=>{
                 setCurrentPage(1)
-                getEscorts('state',event.target.value)
+                setFilterActive(true)
+                setFilter('state',event.target.value)
+                getEscorts()
             }}
         >
             <option value="">PROVINCIA</option>

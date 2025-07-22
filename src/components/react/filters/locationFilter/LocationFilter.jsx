@@ -3,7 +3,7 @@ import useStore from "../../../zustand/store"
 
 const LocationFilter = ()=>{
     const [ locations,setLocations ] = useState([])
-    const { escorts,getEscorts,errors,setCurrentPage,setFilterActive,filterActive } = useStore()
+    const { escorts,getEscorts,errors,setCurrentPage,setFilterActive,filterActive,setFilter } = useStore()
 
     useEffect(()=>{
         if(!errors && escorts.length){
@@ -23,7 +23,8 @@ const LocationFilter = ()=>{
             onChange={(event)=>{
                 setCurrentPage(1)
                 setFilterActive(true)
-                getEscorts('location',event.target.value)
+                setFilter('location', event.target.value)
+                getEscorts()
             }}
         >
             <option value="">LOCALIDAD</option>
