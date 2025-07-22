@@ -9,16 +9,17 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		<picture></picture>
 	</div>  
 	<header>
-		<h1 style="view-transition-name: asmodeo;" >Asmodeo</h1>
-		<h2>ESCORTS VIP</h2>
+		<h1>
+			Asmodeo
+			<span>ESCORTS VIP</span>
+		</h1>
+		<p>
+			Coordiná encuentros con chicas de compañía en tu lugar favorito. Contacto directo y sin intermediarios. Mujeres reales, serias y profesionales. Disfrutá experiencias únicas, con fotos verificadas y sin engaños. Solo para mayores de 18 años.
+		</p>
 	</header>
 	<div class="landing_box_button" >
 		<ButtonHeart/>
 	</div>
-	<!-- <article>
-		<p>Encuentra damas de compañia en Capital Federal.  Visita el departamento privado de la trabajadora sexual o coordina encuentros a domicilio u hoteles. Para contactar con las escorts llamalas por telefono o por WhatsApp tocando en el boton de llamado. Todas las fotos son reales y pertenecen a las escorts de los avisos, fotos reales y sin engaños.. Sitios de Escorts en Argentina: bairesgirls, soloindependientes, selfiegirls, sexysabor, gemidos, argentinaxp, dulcesdiosas, argentinasensual, skokka, argentinasx, tacosaltos, sensualbaires, platynum, mimosasvip, escortsenbuenosaires, escortsvip, mininasvip, locanto, argentinaxp, area-vip, selfiescorts, pkadoras</p>
-		<p>Encontra escorts que realicen Fetiches sexuales tales como, fetiche de pies, bsm, masoquismo, sadismo sexual, travestida, voyeurismo, parafilias, amanantar, escort nodriza, fetichismo de pies, nylon, pantyhose, medias, fetichismo de cuero, fantasias sexuales, asfixias, piercings, zapatos, tacones, lenceria, disfraces, salirofilia, burusera, olores, juegos sexuales, sexo oral, sexo anal, lluvia dorada, gaping, garganta profunda, bucal sin globito o bucal natural.  buenosairesescorts, chicas vip buenos aires, buenosairesescorts, chicas vip bs as. Avisos sexuales con fotos y videos.</p>
-	</article> -->
 	<span class="womans" />
 	<img class="black-circle" src="./blackcircle.svg" alt="Guia Escorts Asmodeo en Argentina">
 </section>
@@ -70,11 +71,34 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		z-index: 2;
 		display: grid;
 		place-items: center;
-		height: 100px;
+		height: 120px;
+	}
+	h1{
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		font-family: 'Brush-script',sans-serif;
+		font-size: 150px;
+		line-height: 1;
+		font-weight:lighter;
+		margin: 0;
+	}
+	header > h1 > span{
+		font-family: 'Poppins-ex-italic';
+		font-size: 25px;
+		line-height: 1;
+		font-weight: 400;
 	}
 	.landing_box_button{
 		position: relative;
 		z-index: 3;
+	}
+	p{
+		text-align: center;
+		width: 700px;
+		font-size: 10px;
+		font-weight: 100;
 	}
 	.black-circle{
 		z-index: 1;
@@ -97,12 +121,18 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 			.blurred-bg{
 				width: 340px;
 			}
+			header{
+				height: 50px;
+			}
 			h1{
 				font-size: 80px;
 			}
 			.womans{
 				height: 80px;
 				margin-bottom: -100px;
+			}
+			p{
+				width: 350px;
 			}
 		}
 </style>

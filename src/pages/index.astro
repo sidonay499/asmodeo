@@ -1,4 +1,5 @@
 ---
+import Info from '../components/Info.astro';
 import Landing from '../components/Landing.astro';
 import CardsPreview from '../components/react/cardsPreview/CardsPreview';
 import ProfileFilter from '../components/react/profileFilter/ProfileFilter';
@@ -9,4 +10,5 @@ import Layout from '../layouts/Layout.astro';
 	<Landing/>
 	<ProfileFilter client:only="react" />
 	<CardsPreview client:only="react" />
+	<Info/>
 </Layout>
