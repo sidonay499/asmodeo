@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import '../index.css'
 
 const AgeFilter = ()=>{
-    const { getEscorts,setCurrentPage,filterActive,setFilterActive } = useStore()
+    const { getEscorts,setCurrentPage,filterActive,setFilterActive, setFilter } = useStore()
     const [ages,setAges] = useState([])
     const minAge = 18
     const maxAge = 100
@@ -22,7 +22,8 @@ const AgeFilter = ()=>{
             name="age"
             onChange={(event)=>{
                 setCurrentPage(1)
-                getEscorts('age',Number(event.target.value))
+                setFilter('age',event.target.value)
+                getEscorts()
                 setFilterActive(true)
             }}
         >

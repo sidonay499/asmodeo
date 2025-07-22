@@ -13,7 +13,7 @@ import ArrowLeft from '../icons/navigation/ArrowLeft'
 import './profileFilter.css'
 
 const ProfileFilter = ()=>{
-    const { getEscorts, setCurrentPage, filterActive, setFilterActive } = useStore()
+    const { getEscorts, setCurrentPage, setFilterActive, setFilter, filterActive } = useStore()
     const [visible,setVisible] = useState(true)
     const [position,setPosition] = useState('left')
 
@@ -24,20 +24,27 @@ const ProfileFilter = ()=>{
     return(
         <aside className='aside_filter' >
             <div className={`box_filter visible_${visible}`} >
+                <h2 className='title_filter' >BUSCÁ POR ZONAS Y MÁS</h2>
                 <div className='boxes_fil' >
-                    <div onClick={()=>{
-                        getEscorts()
-                        setFilterActive(false)
-                    }} className='box_all' >
+                    <div 
+                        onClick={()=>{
+                            setFilter(null,null)
+                            setFilterActive(false)
+                            setCurrentPage(1)
+                            getEscorts(true)
+                        }} 
+                        className={filterActive ? 'box_all' : 'box_all filter-active-true'} >
                         <span>ALL</span>
                     </div>
                     <div className='box_gender' >
                         <span className={`item item_${position}`} />
                         <div
                             onClick={()=>{
+                                    setFilterActive(true)
+                                    setFilter('gender','MALE')
                                     setPosition('rigth')
                                     setCurrentPage(1)
-                                    getEscorts('gender','MALE')
+                                    getEscorts()
                                 }}
                             className='item_filter' 
                         >                        
@@ -45,9 +52,11 @@ const ProfileFilter = ()=>{
                         </div>
                         <div 
                             onClick={()=>{
+                                setFilterActive(true)
                                 setPosition('left')
                                 setCurrentPage(1)
-                                getEscorts('gender','FEMALE')
+                                setFilter('gender','FEMALE')
+                                getEscorts()
                             }} 
                             className='item_filter' 
                         >                        

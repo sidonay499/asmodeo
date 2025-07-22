@@ -39,6 +39,7 @@ const {
 <Layout 
     title=`Mirá el Perfil de ${name} en Asmodeo Escorts Vip en ${location}`
     description=`Perfil de ${name} en asmodeo.net - ${location}. Descubre más sobre ${name} y conéctate con una Escort Vip de ${location}. Únete a la comunidad de asmodeo.net.`
+    canonical={`${name}/${id}`}
 >
     <article class='container_detail' >
             <div class='box_detail' >
@@ -53,6 +54,7 @@ const {
                         </div>
                         <h5>{location?.toUpperCase()}</h5>
                         <h5>{state?.toUpperCase()}</h5>
+                        <h5>{country?.toUpperCase()}</h5>
                         <div class='box_description' >
                             <p>{description}</p>
                         </div>
@@ -177,11 +179,11 @@ const {
     }
     .aside_detail{
         display: grid;
-        height: 220px;
+        align-items: flex-start;
+        height: 450px;
         width: 190px;
         overflow: auto;
         padding: 5px;
-        gap: 10px;
         h5{
             margin-bottom: 2px;
         }
@@ -211,7 +213,7 @@ const {
         display: grid;
         place-items: center;
         padding-left: 5px;
-        height: 220px;
+        height: 450px;
         width: 425px;
         overflow: auto;
     }

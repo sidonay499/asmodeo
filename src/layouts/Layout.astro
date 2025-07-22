@@ -3,7 +3,7 @@ import { ClientRouter } from "astro:transitions"
 import Navbar from "../components/react/navbar/Navbar"
 import Footer from "../components/Footer.astro"
 
-const { title, description} = Astro.props
+const { title, description, canonical} = Astro.props
 const path = Astro.url.pathname
 ---
 
@@ -13,7 +13,7 @@ const path = Astro.url.pathname
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-		<link rel="canonical" href="https://asmodeo.net">
+		<link rel="canonical" href={canonical ? `https://asmodeo.net/${canonical}` : "https://asmodeo.net"}>
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={!description ? "Descubrí las mejores escorts VIP independientes en Buenos Aires. Acompañantes de alto nivel te esperan en Asmodeo Escorts para una experiencia exclusiva y discreta." : description}>
 		<title>{title ? title : 'ESCORTS VIP en Buenos Aires | Las Mejores Escorts Mujeres y Hombres en Argentina'}</title>
@@ -74,6 +74,7 @@ const path = Astro.url.pathname
 		min-height: 100dvh;
 		color: var(--primary);
 		background: linear-gradient(var(--secundary),var(--third));
+		scroll-behavior: smooth;
 	}
 	:root::-webkit-scrollbar{
 		width: 4px;

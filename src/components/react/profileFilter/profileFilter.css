@@ -1,6 +1,6 @@
 .aside_filter{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     width: 100%;
     margin-bottom: 20px;
@@ -11,8 +11,17 @@
 .box_filter{
     display: grid;
     place-items: center;
+    border-radius: 25px;
+    padding: 30px 5px 5px 5px;
     overflow: hidden;
     transition: all ease-in-out 300ms;
+    background-color: var(--action);
+}
+.title_filter{
+    font-size: 15px;
+    color: var(--primary);
+    margin-top: -25px;
+    text-align: center;
 }
 .boxes_fil{
     display: flex;
@@ -29,7 +38,7 @@
     border: solid 1px var(--action);
     font-size: 10px;
     color: var(--primary);
-    background-color: var(--action);
+    background-color: var(--third);
     margin-right: 5px;
     transition: all ease-in-out 300ms;
     cursor: pointer;
@@ -39,6 +48,7 @@
     background-color: var(--third);
 }
 .box_gender{
+    z-index: 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -48,6 +58,9 @@
     border-radius: 15px;
     border: solid 1px var(--primary);
 }
+.box_gender > div >p{
+    z-index: 2;
+}
 .item_filter{
     display: grid;
     place-items: center;
@@ -56,12 +69,12 @@
     height: 40px;
 }
 .item{
-    z-index: -1;
+    z-index: 1;
     position: absolute;
     width: 90px;
     height: 21px;
     border-radius: 15px;
-    background-color: var(--action);
+    background-color: var(--third);
     transition: all ease-in-out 300ms;
 }
 .item_rigth{
@@ -109,6 +122,11 @@
 }
 .visible_false{
     height: 0px;
+}
+.filter-active-true {
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
 }
 
 @media

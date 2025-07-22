@@ -12,24 +12,29 @@ const CardsPreview = ()=>{
         loading,
         errors,
         getEscorts,
+        setFilterActive,
         cleanErrors,
+        setFilter
     } = useStore()
 
-    const handleAlert = ()=>{
+    const handleAlert = async ()=>{
+        setFilter(null,null)
+        setFilterActive(false)
+        getEscorts()
         cleanErrors()
     }
-
+    
     useEffect(()=>{
         getEscorts()
-    },[errors])
+    },[])
 
     return(
-        <section className='box_section_preview' >
+        <section className='box_section_preview' id="cards-preview" >
             {loading && <Loader size={80} />}
             {errors && <Alert handleAlert={handleAlert} >{errors}</Alert>}
             <div className='container_cardsPreview' >
                 {
-                    !errors && escorts.map((item)=>(
+                    !errors && escorts?.map((item)=>(
                         <Card item={item} key={item.id} />
                     ))
                 }
