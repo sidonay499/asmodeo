@@ -1,20 +1,20 @@
 import { useState } from 'react'
 import useStore from '../../zustand/store'
 import LocationFilter from '../filters/locationFilter/LocationFilter'
-import AgeFilter from '../filters/ageFilter/AgeFilter'
+// import AgeFilter from '../filters/ageFilter/AgeFilter'
 import StateFilter from '../filters/stateFilter/StateFilter'
 import CountryFilter from '../filters/countryFilter/CountryFilter'
-import HairFilter from '../filters/hairFilter/HairFilter'
-import EyesColor from '../filters/eyesColor/EyesColor'
-import ShavedFilter from '../filters/shavedFilter/ShavedFilter'
+// import HairFilter from '../filters/hairFilter/HairFilter'
+// import EyesColor from '../filters/eyesColor/EyesColor'
+// import ShavedFilter from '../filters/shavedFilter/ShavedFilter'
 import CategoryFilter from '../filters/categoryFilter/CaterogyFilter'
-import BiotypeFilter from '../filters/biotypeFilter/BiotypeFilter'
+// import BiotypeFilter from '../filters/biotypeFilter/BiotypeFilter'
 import ArrowLeft from '../icons/navigation/ArrowLeft'
 import './profileFilter.css'
 
 const ProfileFilter = ()=>{
     const { getEscorts, setCurrentPage, setFilterActive, setFilter, filterActive } = useStore()
-    const [visible,setVisible] = useState(true)
+    const [visible,setVisible] = useState(false)
     const [position,setPosition] = useState('left')
 
     const handleVisible = ()=>{
@@ -64,7 +64,7 @@ const ProfileFilter = ()=>{
                         </div>
                     </div>
                     <div className="options_filter" >
-                        <AgeFilter/>
+                        <CategoryFilter/>
                     </div>
                     <div className="options_filter" >
                         <LocationFilter/>
@@ -76,23 +76,8 @@ const ProfileFilter = ()=>{
                         <CountryFilter/>
                     </div>
                 </div>
-                <div className='boxes_fil' >
-                    <div className="options_filter" >
-                        <HairFilter/>
-                    </div>
-                    <div className="options_filter" >
-                        <EyesColor/>
-                    </div>
-                    <div className="options_filter" >
-                        <ShavedFilter/>
-                    </div>
-                    <div className="options_filter" >
-                        <CategoryFilter/>
-                    </div>
-                    <div className="options_filter" >
-                        <BiotypeFilter/>
-                    </div>
-                </div>
+                {/* <div className='boxes_fil' >
+                </div> */}
             </div>
             <div onClick={handleVisible} className={`visible_filter rotate_${visible}`}>
                 <ArrowLeft/>
