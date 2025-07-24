@@ -1,4 +1,5 @@
 .aside_navbar{
+    z-index: 10;
     position: absolute;
     display: grid;
     place-items: center;
@@ -18,8 +19,14 @@
 .box_navbar{
     display: flex;
     align-items: center;
-    
+    justify-content: space-between;
     gap: 40px;
+    width: 700px;
+}
+.box_navbar > div{
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 @media
@@ -27,10 +34,16 @@
         .aside_navbar{
             width: 700px;
         }
+        .box_navbar{
+            width: 500px;
+        }
     }
-@media
+    @media
     (width < 700px){
         .aside_navbar{
+            width: 300px;
+        }
+        .box_navbar{
             width: 300px;
         }
     }

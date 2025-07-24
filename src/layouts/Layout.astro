@@ -37,7 +37,7 @@ const path = Astro.url.pathname
 		<ClientRouter/>
 	</head>
 	<body>
-		<Navbar client:only="react" path={path} />
+		<Navbar client:only="react"/>
 		<slot />
 		<Footer/>
 	</body>
@@ -88,7 +88,7 @@ const path = Astro.url.pathname
 		display: grid;
 		place-items: center;
 		margin: 0;
-		font-family: 'Poppins-semi-bold',sans-serif;
+		font-family: 'Poppins-Light',sans-serif;
 	}
 	h1{
 		font-family: 'Brush-script',sans-serif;

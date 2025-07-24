@@ -1,13 +1,20 @@
 ---
+// import { getCollection, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+// const post = await getCollection("posts")
+
+// const { data } = post[0]
+// const { title, image } = data
+
+// const { Content } = await render(post[0])
 
 ---
 
-<Layout tittle="Próximamente en Asmodeo | Blog" >
+<Layout tittle="Blog para Escorts Vip o Clientes | Asmodeo Escorts Vip" >
     <section>
         <header>
-            <h1>Próximamente en Asmodeo</h1>
-            <h4>BLOG PARA ESCORTS</h4>
+            <h1>MANTENETE ACTUALIZADO DEL MUNDO ESCORT EN ASMODEO</h1>
+            <p>EN ASMODEO BLOG VAS A ENCONTRAR INFORMACIÓN Y CONSEJOS PARA SIEMPRE TENER UNA BUENA EXPERIENCIA EN EL AMBITO ESCORTS</p>
         </header>
     </section>
 </Layout>
@@ -15,15 +22,23 @@ import Layout from "../layouts/Layout.astro";
 <style>
     section{
         display: grid;
-        place-items: center;
+        align-items: flex-start;
+        min-height: 500px;
+        max-width: 700px;
+        text-align: center;
         padding-block: 100px;
     }
     header{
         display: grid;
         place-items: center;
     }
+    p{
+        font-size: 10px;
+        text-wrap: balance;
+    }
     h1{
-        font-size: 80px;
+        font-family: 'Poppins-ex-italic';
+        font-size: 22px;
     }
 
     @media

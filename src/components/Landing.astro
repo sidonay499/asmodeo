@@ -4,10 +4,6 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 ---
 
 <section>
-	<div class="wrapper">
-		<div class="blurred-bg"></div>
-		<picture></picture>
-	</div>  
 	<header>
 		<h1>
 			Asmodeo
@@ -21,57 +17,31 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		<ButtonHeart/>
 	</div>
 	<span class="womans" />
-	<img class="black-circle" src="./blackcircle.svg" alt="Guia Escorts Asmodeo en Argentina">
 </section>
 
 <style>
 	section{
 		display: grid;
 		place-items: center;
-		height: 700px;
+		height: 650px;
+		padding-block: 50px;
+		background: url('../../public/bgk.webp') no-repeat;
+		background-position: center;
+		background-size: contain;
 	}
 	.womans{
 		pointer-events: none;
-		z-index: 10;	
-		margin-top:-80px;
+		margin-top:-120px;
 		width: 90vw;
 		height: 200px;
 		background: url('./Asmodeo-Escorts-Vip.webp') center no-repeat;
 		background-size: contain;
 	}
-	.wrapper {
-		z-index: 0;
-		position: relative;
-	}
-	.blurred-bg {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 400px;
-		height: 500px;
-		transform: translate(-50%, -20%);
-		background: url('/woman.webp') center no-repeat;
-		background-size: contain;
-		filter: blur(25px);
-		z-index: 1;
-	}
-	picture {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 400px;
-		height: 500px;
-		transform: translate(-50%, -20%);
-		background: url('/woman.webp') center no-repeat;
-		background-size: contain;
-		z-index: 2;
-		mask-image: linear-gradient(var(--third)10%,#00000000);
-	}
 	header{
-		z-index: 2;
 		display: grid;
 		place-items: center;
-		height: 120px;
+		height: 50px;
+		padding-top: 50px;
 	}
 	h1{
 		display: grid;
@@ -91,8 +61,9 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		margin-top: -20px;
 	}
 	.landing_box_button{
-		position: relative;
-		z-index: 3;
+		display: grid;
+		place-items: center;
+		margin-top: 15px;
 	}
 	p{
 		text-align: center;
@@ -100,36 +71,25 @@ import ButtonHeart from "./buttons/ButtonHeart.astro";
 		font-size: 10px;
 		font-weight: 100;
 	}
-	.black-circle{
-		z-index: 1;
-		position: absolute;
-		left: 50%;
-		top: 60%;
-		transform: translateX(-50%);
-		width: 980px;
-		mask-image: linear-gradient(var(--third)55%,#00000000);
-	}
 
 	@media
 		(width < 700px){
-			.black-circle{
-				width: 360px;
+			section{
+				background: url('../../public/bgk-mobile.webp') no-repeat;
+				background-size: cover;
+				width: 100%;
 			}
-			picture{
-				width: 340px;
+			header > h1 >span{
+				margin-top: 5px;
 			}
-			.blurred-bg{
-				width: 340px;
-			}
-			header{
-				height: 50px;
+			.landing_box_button{
+				height: 30px;
 			}
 			h1{
 				font-size: 80px;
 			}
 			.womans{
-				height: 80px;
-				margin-bottom: -100px;
+				display: none;
 			}
 			p{
 				width: 350px;
