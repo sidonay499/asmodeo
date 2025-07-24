@@ -9,7 +9,7 @@ const breakpointColumnsObj = {
   700: 1
 }
 
-const MasonryGalery = ({images}) => {
+const MasonryGalery = ({images,name,location}) => {
   const [view,setView] = useState('')
 
   const closeView = ()=>{
@@ -28,7 +28,11 @@ const MasonryGalery = ({images}) => {
       >
         {images.map((item) => (
           <div key={[item]} className="masonry-item">
-              <img onClick={()=>setView(item)} src={item} alt="Imágen Escort Vip en Argentina, Servicos Escorts" />
+              <img 
+                onClick={()=>setView(item)} 
+                src={item} 
+                alt={`Imágen de ${name} Escort Vip en ${location}, Servicios Escorts`}
+              />
           </div>
         ))}
       </Masonry>

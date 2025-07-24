@@ -45,7 +45,7 @@ const {
             <div class='box_detail' >
                 <header class='header_detail' >
                     <picture>
-                        <img class='image_profile_detail'  src={imageProfile} alt="Escort Vip en Argentina, Asmodeo Guia Escort Vip" />
+                        <img class='image_profile_detail'  src={imageProfile} alt={`Imágen de ${name} Escort Vip en ${location}, Servicios Escorts`} />
                     </picture>
                     <div class='container_header' >
                         <div class='box_header' >
@@ -89,7 +89,7 @@ const {
                         </div>
                     </aside>
                     <div class='container_masonry' >
-                        {images ? <MasonryGalery client:only="react" images={images} /> : null}
+                        {images ? <MasonryGalery client:only="react" images={images} name={name} location={location} /> : null}
                     </div>
                 </div >
                 {Inboxes ? (<div class='box_experience' >
