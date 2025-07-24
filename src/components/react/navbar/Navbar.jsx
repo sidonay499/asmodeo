@@ -6,7 +6,7 @@ const Navbar = ({path})=>{
             {path != '/' && 
             <div className='box_navbar' >
                 <a href="/blog" aria-label='Blog Asmodeo, Escorts Vip en Argentina' >BLOG</a>
-                <a href="/home" aria-label='Landing Asmodeo, Escorts Vip en Argentina' >
+                <a href="/" aria-label='Landing Asmodeo, Escorts Vip en Argentina' >
                     <img
                         className='image_navbar'
                         style={{viewTransitionName:'asmodeo'}}
