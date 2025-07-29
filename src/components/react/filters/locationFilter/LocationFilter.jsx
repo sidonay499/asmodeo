@@ -4,23 +4,21 @@ import getAttributes from "../../../../adapters/escorts/getAttributes"
 
 const LocationFilter = ()=>{
     const [ locations,setLocations ] = useState([])
-    const { escorts,getEscorts,errors,setCurrentPage,setFilterActive,filterActive,setFilter } = useStore()
+    const { getEscorts,setCurrentPage,setFilterActive,filterActive,setFilter } = useStore()
 
-    useEffect(()=>{
-        if(!errors && escorts.length){
-            async function fechData() {
-                const escorts = await getAttributes('location')
-                const locationArray = escorts?.map((item)=>{
-                    return item.location.trim()
-                })
-                
-                const locationNotDuplicates = locationArray.filter((item, index) => locationArray.indexOf(item) === index);
-                const locationsSorted = locationNotDuplicates.sort((a,b)=>a.localeCompare(b))
+    useEffect(()=>{     
+        async function fechData() {
+            const escorts = await getAttributes('location')
+            const locationArray = escorts?.map((item)=>{
+                return item.location.trim()
+            })
+            
+            const locationNotDuplicates = locationArray.filter((item, index) => locationArray.indexOf(item) === index);
+            const locationsSorted = locationNotDuplicates.sort((a,b)=>a.localeCompare(b))
 
-                setLocations(locationsSorted)
-            }
-            fechData()
+            setLocations(locationsSorted)
         }
+        fechData()
     },[])
 
     return(

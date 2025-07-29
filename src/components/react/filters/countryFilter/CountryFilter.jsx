@@ -4,23 +4,21 @@ import getAttributes from "../../../../adapters/escorts/getAttributes"
 
 const CountryFilter = ()=>{
     const [ countries,setCountries ] = useState([])
-    const { escorts,getEscorts,errors,setCurrentPage,setFilterActive,filterActive,setFilter } = useStore()
+    const { getEscorts,setCurrentPage,setFilterActive,filterActive,setFilter } = useStore()
 
     useEffect(()=>{
-        if(!errors && escorts.length){
-            async function fechData() {
-                const escorts = await getAttributes('country')
-                const countryArray = escorts?.map((item)=>{
-                    return item.country.trim()
-                })
-                
-                const countryNotDuplicates = countryArray.filter((item, index) => countryArray.indexOf(item) === index);
-                const countriesSorted = countryNotDuplicates.sort((a,b)=>a.localeCompare(b))
+        async function fechData() {
+            const escorts = await getAttributes('country')
+            const countryArray = escorts?.map((item)=>{
+                return item.country.trim()
+            })
+            
+            const countryNotDuplicates = countryArray.filter((item, index) => countryArray.indexOf(item) === index);
+            const countriesSorted = countryNotDuplicates.sort((a,b)=>a.localeCompare(b))
 
-                setCountries(countriesSorted)
-            }
-            fechData()
+            setCountries(countriesSorted)
         }
+        fechData()
     },[])
 
     return(
