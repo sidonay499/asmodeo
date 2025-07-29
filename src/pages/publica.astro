@@ -15,7 +15,16 @@ import Layout from "../layouts/Layout.astro";
             </p>
             <p>
                 Publicar tu perfil es muy sencillo: solo necesitás enviarnos la información y material fotográfico a 
-                <strong>ventas@asmodeo.net</strong> y nuestro equipo se encargará del resto.
+                <a 
+                    rel="noreferrer"
+                    target="_blank"
+                    aria-label="Hablanos para publicar en asmodeo" 
+                    href="https://wa.me/+5491176387479"
+                >
+                    <strong>
+                        📱 11 7638-7479
+                    </strong>
+                </a> y nuestro equipo se encargará del resto.
             </p>
             <p>
                 En Asmodeo, priorizamos la presentación clara y atractiva de cada perfil, permitiéndote destacar tus servicios como 
@@ -45,6 +54,16 @@ import Layout from "../layouts/Layout.astro";
     img{
         height: 500px;
         mask-image: linear-gradient(var(--third)10%,#00000000);
+    }
+    a{
+        border: solid 1px var(--primary);
+        padding: 5px 10px;
+        border-radius: 25px;
+        margin-right: 5px;
+    }
+    a:hover{
+        background-color: var(--third);
+        color: var(--action);
     }
 
     @media
