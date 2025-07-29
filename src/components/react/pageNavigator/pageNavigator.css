@@ -13,16 +13,15 @@
     padding: 7px 10px;
     border: none;
     border-radius: 30px;
-    border: solid 1px var(--action);
-    background-color: var(--action);
+    border: solid 1px var(--primary);
+    background-color: var(--third);
     color: var(--primary);
     font-weight: 600;
     font-size: 18px;
     cursor: pointer;
 }
 .box_navigator_handler button:hover{
-    background-color: var(--thid);
-    border: solid 1px var(--primary);
+    background-color: var(--action);
 }
 .current_page{
     display: flex;

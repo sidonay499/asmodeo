@@ -1,8 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+// import { render } from "astro:content";
+
+const { blog } = Astro.params
+
+const allPosts = await getCollection("posts")
+const post = allPosts.filter((p)=>{
+    return p
+})
+console.log(post)
+
 ---
 
-<Layout title="" >
+<Layout 
+    title=""
+>
     <main aria-label="Post del Blog Asmodeo.net" >
         <section>
             <header>

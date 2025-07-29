@@ -15,7 +15,8 @@
     padding: 30px 10px 10px 10px;
     overflow: hidden;
     transition: all ease-in-out 300ms;
-    background-color: var(--action);
+    background-color: var(--third);
+    border: solid 1px var(--primary);
 }
 .title_filter{
     font-size: 18px;
@@ -119,6 +120,7 @@
 }
 .visible_true{
     height: 75px;
+    background-color: var(--action);
 }
 .visible_false{
     height: 0px;
