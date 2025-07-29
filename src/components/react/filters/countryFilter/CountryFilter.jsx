@@ -21,7 +21,7 @@ const CountryFilter = ()=>{
             }
             fechData()
         }
-    },[escorts])
+    },[])
 
     return(
         <select 

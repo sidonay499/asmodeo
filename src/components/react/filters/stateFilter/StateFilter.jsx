@@ -21,7 +21,7 @@ const StateFilter = ()=>{
             }
             fechData()
         }
-    },[escorts])
+    },[])
 
     return(
         <select 

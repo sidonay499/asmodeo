@@ -21,7 +21,7 @@ const LocationFilter = ()=>{
             }
             fechData()
         }
-    },[escorts])
+    },[])
 
     return(
         <select 
