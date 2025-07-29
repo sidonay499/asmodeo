@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import useStore from "../../../zustand/store"
+import getAttributes from "../../../../adapters/escorts/getAttributes"
 
 const CountryFilter = ()=>{
     const [ countries,setCountries ] = useState([])
@@ -7,12 +8,18 @@ const CountryFilter = ()=>{
 
     useEffect(()=>{
         if(!errors && escorts.length){
-            const countriesArray = escorts.map((item)=>{
-                return item.country.trim()
-            })
-    
-            const countriesNotDuplicates =  countriesArray.filter((item, index) => countriesArray.indexOf(item) === index);
-            setCountries(countriesNotDuplicates)
+            async function fechData() {
+                const escorts = await getAttributes('country')
+                const countryArray = escorts?.map((item)=>{
+                    return item.country.trim()
+                })
+                
+                const countryNotDuplicates = countryArray.filter((item, index) => countryArray.indexOf(item) === index);
+                const countriesSorted = countryNotDuplicates.sort((a,b)=>a.localeCompare(b))
+
+                setCountries(countriesSorted)
+            }
+            fechData()
         }
     },[escorts])
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import useStore from "../../../zustand/store"
+import getAttributes from "../../../../adapters/escorts/getAttributes"
 
 const LocationFilter = ()=>{
     const [ locations,setLocations ] = useState([])
@@ -7,12 +8,18 @@ const LocationFilter = ()=>{
 
     useEffect(()=>{
         if(!errors && escorts.length){
-            const locationArray = escorts.map((item)=>{
-                return item.location.trim()
-            })
+            async function fechData() {
+                const escorts = await getAttributes('location')
+                const locationArray = escorts?.map((item)=>{
+                    return item.location.trim()
+                })
+                
+                const locationNotDuplicates = locationArray.filter((item, index) => locationArray.indexOf(item) === index);
+                const locationsSorted = locationNotDuplicates.sort((a,b)=>a.localeCompare(b))
 
-            const locationNotDuplicates = locationArray.filter((item, index) => locationArray.indexOf(item) === index);
-            setLocations(locationNotDuplicates)
+                setLocations(locationsSorted)
+            }
+            fechData()
         }
     },[escorts])
 

@@ -1,2 +1,2 @@
 
-GET https://asmodeo-back.onrender.com/escort
+GET https://asmodeo-back.onrender.com/escort/atributes/location

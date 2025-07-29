@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import useStore from "../../../zustand/store"
+import getAttributes from "../../../../adapters/escorts/getAttributes"
 
 const StateFilter = ()=>{
     const [ states,setStates ] = useState([])
@@ -7,16 +8,18 @@ const StateFilter = ()=>{
 
     useEffect(()=>{
         if(!errors && escorts.length){
-            const statesArray = escorts.map((item)=>{
-                const tieneEspacios = /^\s|\s$/.test(item.state);
-                if(tieneEspacios){
+            async function fechData() {
+                const escorts = await getAttributes('state')
+                const stateArray = escorts?.map((item)=>{
                     return item.state.trim()
-                }
-                return item.state
-            })
+                })
+                
+                const stateNotDuplicates = stateArray.filter((item, index) => stateArray.indexOf(item) === index);
+                const statesSorted = stateNotDuplicates.sort((a,b)=>a.localeCompare(b))
 
-            const statesNotDuplicates = statesArray.filter((item, index) => statesArray.indexOf(item) === index)
-            setStates(statesNotDuplicates)
+                setStates(statesSorted)
+            }
+            fechData()
         }
     },[escorts])
 
