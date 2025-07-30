@@ -9,7 +9,10 @@ import Layout from "../../layouts/Layout.astro"
 const { name,id } = Astro.params
 
 const p = await getAllEscorts("1","id",id)
+if(typeof p === "string") return Astro.redirect('/404')
+
 const profile = p && p.escorts && p.escorts[0]
+
 const {
     Inboxes,
     imageProfile,
@@ -50,7 +53,7 @@ const {
                     <div class='container_header' >
                         <div class='box_header' >
                             <h2>{name?.toUpperCase()}</h2>
-                            <ButtonAction phone={phone} />
+                            <ButtonAction phone={phone} name={name} />
                         </div>
                         <h5>{location?.toUpperCase()}</h5>
                         <h5>{state?.toUpperCase()}</h5>

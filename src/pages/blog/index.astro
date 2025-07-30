@@ -1,0 +1,103 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await getCollection("posts")
+---
+
+<Layout 
+    tittle="Blog para Escorts Vip o Clientes | Asmodeo Escorts Vip" 
+    description="En este Blog vas a encontrar Información Relevante para mantenerte Informado del Mundo Escort, Toda la Info con respecto a las Escorts Profesionales de Argentina y más."
+    canonical="blog"
+>
+    <section aria-label="Blog de Asmodeo Escorts" >
+        <div>
+            <header aria-label="Encabezado de blog Asmodeo" >
+                <h1>MANTENETE ACTUALIZADO DEL MUNDO ESCORT EN ASMODEO</h1>
+                <p>EN ASMODEO BLOG VAS A ENCONTRAR INFORMACIÓN Y CONSEJOS PARA SIEMPRE TENER UNA BUENA EXPERIENCIA EN EL AMBITO ESCORTS</p>
+            </header>
+            {
+                posts?.map(p => (
+                    <a href={`/blog/${p.id}`}>
+                        <article aria-label="Enlace a articulo del blog" class="container_post"  >
+                            <div>
+                                <h3 aria-label="Título de enlace" >{p.data.title}</h3>
+                                <p aria-label="Descripción de enlace" >{p.data.description}</p>
+                            </div>
+                            <img 
+                                src={p.data.image} 
+                                transition:name="blog_cover" 
+                                alt="image de enlace a artículo del blog, muestra una modelo"
+                                aria-label="Imágen de enlace"
+                            >
+                        </article>
+                    </a>
+                ))
+            }
+        </div>
+    </section>
+</Layout>
+
+<style>
+    section{
+        display: grid;
+        align-items: flex-start;
+        justify-content: center;
+        min-height: 400px;
+        max-width: 900px;
+        padding: 5px;
+        text-align: center;
+        padding-block: 100px;
+    }
+    section > div{
+        display: grid;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    header{
+        display: grid;
+        place-items: center;
+    }
+    p{
+        font-size: 12px;
+        text-wrap: balance;
+    }
+    h1{
+        font-family: 'Poppins-ex-italic';
+        font-size: 30px;
+        text-wrap: balance;
+    }
+    h3{
+        font-size: 18px;
+        margin: 0px;
+    }
+    .container_post{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin-block: 10px;
+        background-color: var(--third);
+        border-radius: 15px;
+        text-align: left;
+        padding: 10px;
+        gap: 5px;
+    }
+    .container_post > img{
+        aspect-ratio: 2/1;
+        height: 100px;
+        width: 150px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    @media
+        (width < 700px){
+            h1{
+                font-size: 30px;
+            }
+            .container_post > img{
+                height: 250px;
+                width: 150px;
+            }
+        }
+</style>
