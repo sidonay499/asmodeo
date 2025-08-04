@@ -13,6 +13,7 @@ const ButtonAction = ({phone,name})=>{
             target="_blank"
             aria-label="Hablar al whatsapp"
         >
+            <img src="/hearts.svg" alt="Corazone en Asmodeo Escort" />
             HABLAR AL WHATSAPP <Whatsapp/>
         </a>
     )

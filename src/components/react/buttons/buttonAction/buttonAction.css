@@ -1,10 +1,22 @@
 .button_action_box{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     border: solid 1px var(--action);
+    background-color: var(--third);
     padding: 8px;
     border-radius: 12px;
     gap: 5px;
     font-size: 13px;
+}
+.button_action_box > img{
+    position: absolute;
+    height: 30px;
+    opacity: 0;
+    transition: all ease-in-out 400ms;
+}
+.button_action_box:hover > img{
+    opacity: 1;
+    height: 90px;
 }

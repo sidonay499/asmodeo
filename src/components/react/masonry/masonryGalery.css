@@ -14,7 +14,11 @@
     display: block;
     object-fit: cover;
     border-radius: 5px;
+    transition: all ease-in-out 300ms;
   }
+}
+.masonry-item:hover > img{
+  filter: grayscale(10);
 }
 .container_view{
   z-index: 10;
