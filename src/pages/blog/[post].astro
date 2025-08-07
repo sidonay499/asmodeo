@@ -15,7 +15,7 @@ const { Content } = blog && await render(blog)
 
 const allTitles = allPosts.map((p)=>{
     if(title !== p.data.title){
-        return p.data.title
+        return p
     }
 })
 ---
@@ -40,9 +40,9 @@ const allTitles = allPosts.map((p)=>{
                 <h4 aria-label="Título de links a otros post de Asmodeo.net" >OTRAS ENTRADAS</h4>
                 <div class="box_related">
                     {
-                        allTitles?.map(t =>(
-                            <a aria-label={`Link a post ${t}`} href={blog?.id}>
-                                {t}
+                        allTitles?.map(p =>(
+                            <a aria-label={`Link a post ${p?.data.title}`} href={p?.id} >
+                                {p?.data.title}
                             </a>
                         ))
                     }
