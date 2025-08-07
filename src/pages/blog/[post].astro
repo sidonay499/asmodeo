@@ -9,12 +9,12 @@ const blog = allPosts.find((p)=>{
     return p.id === post
 })
 const { data } = blog ? blog : {}
-const { title,description } = data
+const { title,description,date } = data
 
 const { Content } = blog && await render(blog)
 
 const allTitles = allPosts.map((p)=>{
-    if(title === p.data.title){
+    if(title !== p.data.title){
         return p.data.title
     }
 })
@@ -28,19 +28,20 @@ const allTitles = allPosts.map((p)=>{
     <main aria-label="Post del Blog Asmodeo.net" >
         <section>
             <img src={data ? data.image : ''} alt="" transition:name="blog_cover">
-            <header>
-                <h1>{data ? data.title : null}</h1>
-                <p>{data ? data.description : null}</p>
+            <header aria-label="Cabecera de post" >
+                <h1 aria-label="Título del post" >{data ? data.title : null}</h1>
+                <p aria-label="Descripción del post" >{data ? data.description : null}</p>
             </header>
-            <article>
+            <article aria-label="Artículo del post" >
                 <Content/>
+                <p aria-label="Fecha del post" class="date_post" >{date}</p>
             </article>
-            <div class="container_related" >
-                <h4>OTRAS ENTRADAS</h4>
+            <div class="container_related" aria-label="Links a otros post de Asmodeo.net" >
+                <h4 aria-label="Título de links a otros post de Asmodeo.net" >OTRAS ENTRADAS</h4>
                 <div class="box_related">
                     {
                         allTitles?.map(t =>(
-                            <a href={blog?.id}>
+                            <a aria-label={`Link a post ${t}`} href={blog?.id}>
                                 {t}
                             </a>
                         ))
@@ -59,6 +60,9 @@ const allTitles = allPosts.map((p)=>{
     }
     header{
         padding-inline: 8px;
+    }
+    .date_post{
+        font-size: 10px;
     }
     section{
         display: grid;
