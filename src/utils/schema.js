@@ -28,7 +28,7 @@ export const validateInbox = Yup.object().shape({
         .matches(/^[a-zA-Z ]+$/,'Formato inválido')
         .required('El nombre es requerido'),
     message:Yup.string()
-        .min(10,'Muy corto')
+        .min(20,'Muy corto')
         .max(600,'Muy largo')
         .matches(/^[a-zA-Z0-9\s.,:¡!¿?áéíóúüÁÉÍÓÚÜñÑ\-]+$/, 'Formato inválido')
         .required('El mensaje es requerido'),
