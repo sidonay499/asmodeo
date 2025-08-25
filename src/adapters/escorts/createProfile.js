@@ -28,9 +28,9 @@ export default async function createProfile(values,gender){
             description:values.description,
             price:values.price,
             phone:values.phone,
-            location:values.location.toUpperCase(),
-            state:values.state.toUpperCase(),
-            country:values.country.toUpperCase(),
+            location:values.location.toUpperCase().trim(),
+            state:values.state.toUpperCase().trim(),
+            country:values.country.toUpperCase().trim(),
             category:values.category
         }
     
