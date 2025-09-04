@@ -35,7 +35,8 @@ const {
     hairColor,
     price,
     penis,
-    country
+    country,
+    category
 } = profile ? profile : {}
 ---
 
@@ -67,6 +68,7 @@ const {
                     <aside class='aside_detail' >
                         <div>
                             <h5>{`TARIFA: ${price}  USD`}</h5>
+                            <h6>{`CATEGORÍA: ${category}`}</h6>
                         </div>
                         <div>
                             <h5>DETALLES PERSONALES</h5>
