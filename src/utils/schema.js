@@ -70,7 +70,7 @@ export const validateEscortFemale = Yup.object().shape({
         .min(100,'Debe ser mayor a 100cm')
         .max(280,'Debe der menor a 280cm')
         .positive('Debe ser un número positivo')
-        .integer('El peso debe ser un número entero')
+        .integer('El altura debe ser un número entero')
         .required('La altura es obligatoria y en centímetros'),
     weigth:Yup.number()
         .min(30,'Debe ser mayor a 30')
@@ -213,7 +213,7 @@ export const validateEscortMale = Yup.object().shape({
         .min(100,'Debe ser mayor a 100cm')
         .max(280,'Debe der menor a 280cm')
         .positive('Debe ser un número positivo')
-        .integer('El peso debe ser un número entero')
+        .integer('El altura debe ser un número entero')
         .required('La altura es obligatoria y en centímetros'),
     weigth:Yup.number()
         .min(30,'Debe ser mayor a 30')
@@ -290,7 +290,7 @@ export const validateEscortMale = Yup.object().shape({
     phone:Yup.string()
         .min(8,"Teléfono muy corto")
         .max(22,"Teléfono muy largo")
-        .matches(/^\+?[0-9]+$/, "Solo se permiten números sin espacio ni guiones y agregar '+' al principio")
+        .matches(/^\+[0-9]+$/, "Solo se permiten números sin espacio ni guiones y agregar '+' al principio")
         .required('El teléfono es obligatorio'),
     location:Yup.string()
         .min(4, 'Localidad muy corta')

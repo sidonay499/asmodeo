@@ -19,7 +19,6 @@ export default async function createProfile(values,gender){
             hairColor:values.hairColor,
             eyesColor:values.eyesColor,
             shaved:values.shaved,
-            measures:`${values.breast}-${values.waist}-${values.hip}`,
             bodyType:values.bodyType,
             breasts:values.breasts,
             ass:values.ass,
@@ -32,6 +31,10 @@ export default async function createProfile(values,gender){
             state:values.state.toUpperCase().trim(),
             country:values.country.toUpperCase().trim(),
             category:values.category
+        }
+
+        if(values.breast && values.waist && values.hip){
+            profile.measures = `${values.breast}-${values.waist}-${values.hip}`
         }
     
         const res = await axios.post(URL,profile,{
