@@ -6,11 +6,18 @@ const PageNavigator = ()=>{
         currentPage, 
         getEscorts,
         pages, 
-        setCurrentPage, 
+        setCurrentPage,
+        filter,
+        getParameters
     } = useStore()
 
     const fowardPage = ()=>{
         if(currentPage < pages){
+            if(filter.type){
+                setCurrentPage(currentPage + 1)
+                getParameters()
+                return
+            }
             setCurrentPage(currentPage + 1)
             getEscorts()
         }

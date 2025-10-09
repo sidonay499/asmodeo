@@ -1,7 +1,7 @@
 import useStore from "../../../zustand/store"
 
 const ShavedFilter = ()=>{
-    const { getEscorts,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
+    const { getParameters,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
 
     return(
         <select 
@@ -11,7 +11,7 @@ const ShavedFilter = ()=>{
                 setCurrentPage(1)
                 setFilterActive(true)
                 setFilter('shaved',event.target.value)
-                getEscorts()
+                getParameters()
             }}
         >
             <option value="">DEPILACIÓN</option>

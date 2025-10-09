@@ -1,5 +1,6 @@
 import { create } from "zustand"
 import getAllEscorts from "../../adapters/escorts/getAllEscorts"
+import getParams from "../../adapters/escorts/getParams"
 
 const useStore = create((set,get)=>({
     escorts:[],
@@ -15,41 +16,27 @@ const useStore = create((set,get)=>({
 
     getEscorts: async (all)=>{
         try {
-            const { currentPage,escorts,filterActive,filter }= get()
+            const { currentPage,escorts }= get()
+
             set({
                 loading:true
             })
-            const data = await getAllEscorts(currentPage,filter.type,filter.value)
-            if(!data.escorts){
-                set({
-                    loading:false,
-                    errors:'NO SE ENCONTRARON PERFILES',
-                    escorts:[]
-                })
-                return
-            }
+
+            const data = await getAllEscorts(currentPage)
+
             if(all){
                 set({
                     loading:false,
                     escorts:data.escorts,
-                    pages:data.pages,
-                    currentPage:1
+                    pages:data.pages
                 })
                 return
             }
-   
-            if(filterActive && filter.type !== null){
-                set({
-                    loading:false,
-                    escorts:currentPage === 1 ? data.escorts : [...escorts,...data.escorts],
-                    pages:data.pages,
-                })
-                return
-            }
+
             set({
                 loading:false,
-                escorts:escorts.length === 0 ? data.escorts : [...escorts,...data.escorts],
-                pages:data.pages,
+                escorts:escorts ? [...escorts,...data.escorts] : data.escorts,
+                pages:data.pages
             })
 
         } catch (error) {
@@ -59,6 +46,28 @@ const useStore = create((set,get)=>({
                 loading:false
             })
         }
+    },
+    getParameters:async ()=>{
+        const { currentPage,filter,escorts } = get()
+
+        set({
+            loading:true
+        })
+
+        try {
+            const profiles = await getParams(currentPage,filter.type,filter.value)
+            console.log(profiles)
+            set({
+                loading:false,
+                escorts:filter.type && currentPage > 1 ? [...escorts,...profiles.escorts] : profiles.escorts,
+            })
+        } catch (error) {
+            set({
+                loading:false,
+                error:error.message
+            })
+        }
+
     },
     setFilter: (type,value)=>{
         set({

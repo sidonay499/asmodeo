@@ -1,5 +1,5 @@
 ---
-import getAllEscorts from "../../adapters/escorts/getAllEscorts"
+import getParams from "../../adapters/escorts/getParams"
 import ButtonAction from "../../components/react/buttons/buttonAction/ButtonAction"
 import CreateInbox from "../../components/react/forms/inbox/CreateInbox"
 import MasonryGalery from "../../components/react/masonry/MasonryGalery"
@@ -8,7 +8,7 @@ import Layout from "../../layouts/Layout.astro"
 
 const { name,id } = Astro.params
 
-const p = await getAllEscorts("1","id",id)
+const p = await getParams("1","id",id)
 if(typeof p === "string") return Astro.redirect('/404')
 
 const profile = p && p.escorts && p.escorts[0]

@@ -4,7 +4,7 @@ import getAttributes from "../../../../adapters/escorts/getAttributes"
 
 const LocationFilter = ()=>{
     const [ locations,setLocations ] = useState([])
-    const { getEscorts,setCurrentPage,setFilterActive,filterActive,setFilter } = useStore()
+    const { getParameters,setCurrentPage,setFilterActive,filterActive,setFilter } = useStore()
 
     useEffect(()=>{     
         async function fechData() {
@@ -29,7 +29,7 @@ const LocationFilter = ()=>{
                 setCurrentPage(1)
                 setFilterActive(true)
                 setFilter('location', event.target.value)
-                getEscorts()
+                getParameters()
             }}
         >
             <option value="">LOCALIDAD</option>

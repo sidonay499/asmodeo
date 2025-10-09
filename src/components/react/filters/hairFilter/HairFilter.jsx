@@ -1,7 +1,7 @@
 import useStore from "../../../zustand/store"
 
 const HairFilter = ()=>{
-    const { getEscorts,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
+    const { getParameters,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
 
     return(
         <select 
@@ -11,7 +11,7 @@ const HairFilter = ()=>{
                 setCurrentPage(1)
                 setFilterActive(true)
                 setFilter('hairColor', event.target.value)
-                getEscorts()
+                getParameters()
             }}
         >
             <option value="">COLOR DE PELO</option>

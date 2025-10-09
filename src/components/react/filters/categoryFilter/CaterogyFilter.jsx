@@ -1,7 +1,7 @@
 import useStore from "../../../zustand/store"
 
 const CategoryFilter = ()=>{
-    const { getEscorts,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
+    const { getParameters,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
 
     return(
         <select 
@@ -11,7 +11,7 @@ const CategoryFilter = ()=>{
                 setCurrentPage(1)
                 setFilterActive(true)
                 setFilter('category',event.target.value)
-                getEscorts()
+                getParameters()
             }}
         >
             <option value="">CATEGORIAS</option>

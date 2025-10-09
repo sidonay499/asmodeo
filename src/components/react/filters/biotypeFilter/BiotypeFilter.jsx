@@ -1,7 +1,7 @@
 import useStore from "../../../zustand/store"
 
 const BiotypeFilter = ()=>{
-    const { getEscorts,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
+    const { getParameters,setCurrentPage,filterActive,setFilterActive,setFilter } = useStore()
 
     return(
         <select 
@@ -11,7 +11,7 @@ const BiotypeFilter = ()=>{
                 setCurrentPage(1)
                 setFilterActive(true)
                 setFilter('biotype',event.target.value)
-                getEscorts()
+                getParameters()
             }}
         >
             <option value="">BIOTIPO</option>

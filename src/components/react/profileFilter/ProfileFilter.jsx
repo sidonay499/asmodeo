@@ -31,7 +31,7 @@ const ProfileFilter = ()=>{
                             setFilter(null,null)
                             setFilterActive(false)
                             setCurrentPage(1)
-                            getEscorts(true)
+                            getEscorts("all")
                         }} 
                         className={filterActive ? 'box_all' : 'box_all filter-active-true'} >
                         <span>ALL</span>
