@@ -1,2 +1,6 @@
 
-GET https://asmodeo-back.onrender.com/escort/1
+GET https://asmodeo-back.onrender.com/escort
+
+###
+
+GET https://asmodeo-back.onrender.com/escort/parameter/1/id/36f05acf-3cde-47fc-ad2c-30ced106f377

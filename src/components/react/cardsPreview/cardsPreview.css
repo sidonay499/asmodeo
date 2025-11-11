@@ -1,6 +1,15 @@
 .box_section_preview{
     position: relative;
 }
+.box_cards{
+    display: grid;
+    place-items: center;
+}
+.title_category{
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: solid white 1px;
+}
 .container_cardsPreview{
     display: grid;
     grid-template-columns: repeat(5,auto);
@@ -8,7 +17,7 @@
     align-items: center;
     justify-content: center;
     padding-block: 20px;
-    min-height: 400px;
+    min-height: 300px;
     gap: 5px;
     animation: fadeInUp 0.5s ease-out forwards;
 }

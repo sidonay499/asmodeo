@@ -1,6 +1,7 @@
 import { create } from "zustand"
 import getAllEscorts from "../../adapters/escorts/getAllEscorts"
 import getParams from "../../adapters/escorts/getParams"
+import mookup from "../../utils/mookup.json"
 
 const useStore = create((set,get)=>({
     escorts:[],
@@ -14,7 +15,7 @@ const useStore = create((set,get)=>({
     loading:false,
     errors:null,
 
-    getEscorts: async (all)=>{
+    getEscorts: (all)=>{
         try {
             const { currentPage,escorts }= get()
 
@@ -22,7 +23,7 @@ const useStore = create((set,get)=>({
                 loading:true
             })
 
-            const data = await getAllEscorts(currentPage)
+            const data = mookup
 
             if(all){
                 set({
@@ -56,7 +57,6 @@ const useStore = create((set,get)=>({
 
         try {
             const profiles = await getParams(currentPage,filter.type,filter.value)
-            console.log(profiles)
             set({
                 loading:false,
                 escorts:filter.type && currentPage > 1 ? [...escorts,...profiles.escorts] : profiles.escorts,

@@ -7,7 +7,6 @@ const PageNavigator = ()=>{
         getEscorts,
         pages, 
         setCurrentPage,
-        filter,
         getParameters
     } = useStore()
 
