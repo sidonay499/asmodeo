@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions"
 import Navbar from "../components/react/navbar/Navbar"
 import Footer from "../components/Footer.astro"
+import GoogleAnalytics from "../components/google/GoogleAnalytics.astro"
 
 const { title, description, canonical} = Astro.props
 ---
@@ -9,13 +10,16 @@ const { title, description, canonical} = Astro.props
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<GoogleAnalytics/>
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/icon.webp"/>
 		<link rel="canonical" href={canonical ? `https://asmodeo.net/${canonical}` : "https://asmodeo.net/"}>
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={!description ? "Descubrí las Mejores Escorts VIP Independientes en Buenos Aires. Acompañantes de alto nivel te esperan en Asmodeo Escorts para una Experiencia Exclusiva y Discreta." : description}>
-		<title>{title ? title : 'ESCORTS VIP en Buenos Aires | Las Mejores Escorts Mujeres y Hombres en Argentina'}</title>
+		<meta name="description" content={!description ? "VIP Escorts en Buenos Aires para encuentros exclusivos. Opciones masculinas y femeninas en Argentina con total privacidad y estilo." : description}>
+		<title>{title ? title : 'VIP Escorts en Buenos Aires | Mejores Escorts Masculinos y Femeninos en Argentina'}</title>
 
 		<meta property="og:locale" content="es_ES">
 		<meta property="og:type" content="website">
@@ -31,7 +35,6 @@ const { title, description, canonical} = Astro.props
 		<meta name="twitter:description" content="Guía elegante y exclusiva de escorts VIP en Buenos Aires y toda Argentina. Conecta por WhatsApp con profesionales de primer nivel." />
 		<meta name="twitter:image" content="https://www.asmodeo.net/woman-asmodeo-escorts.webp" />
 		<meta name="twitter:site" content="@asmodeo" />
-
 		<ClientRouter/>
 	</head>
 	<body>
