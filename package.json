@@ -9,21 +9,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.3",
-    "@astrojs/sitemap": "^3.4.0",
-    "@astrojs/vercel": "^8.0.4",
-    "@types/react": "^19.1.0",
-    "astro": "^5.5.2",
-    "axios": "^1.11.0",
-    "formik": "^2.4.6",
-    "ldrs": "^1.1.7",
-    "path-to-regexp": "^6.2.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/vercel": "^9.0.2",
+    "@types/react": "^19.2.7",
+    "astro": "^5.16.4",
+    "axios": "^1.13.2",
+    "formik": "^2.4.9",
+    "ldrs": "^1.1.9",
+    "path-to-regexp": "^8.3.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-masonry-css": "^1.0.16",
-    "react-router-dom": "^7.7.0",
-    "rollup": "^4.45.1",
-    "yup": "^1.6.1",
-    "zustand": "^5.0.6"
+    "react-router-dom": "^7.10.0",
+    "rollup": "^4.53.3",
+    "yup": "^1.7.1",
+    "zustand": "^5.0.9"
   }
 }

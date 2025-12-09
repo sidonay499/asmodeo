@@ -1,7 +1,5 @@
 import { create } from "zustand"
 import getAllEscorts from "../../adapters/escorts/getAllEscorts"
-import getParams from "../../adapters/escorts/getParams"
-import mookup from "../../utils/mookup.json"
 
 const useStore = create((set,get)=>({
     escorts:[],
@@ -15,29 +13,17 @@ const useStore = create((set,get)=>({
     loading:false,
     errors:null,
 
-    getEscorts: (all)=>{
+    getEscorts: async ()=>{
         try {
-            const { currentPage,escorts }= get()
-
             set({
                 loading:true
             })
 
-            const data = mookup
-
-            if(all){
-                set({
-                    loading:false,
-                    escorts:data.escorts,
-                    pages:data.pages
-                })
-                return
-            }
+            const data = await getAllEscorts()
 
             set({
                 loading:false,
-                escorts:escorts ? [...escorts,...data.escorts] : data.escorts,
-                pages:data.pages
+                escorts:data,
             })
 
         } catch (error) {
@@ -48,27 +34,27 @@ const useStore = create((set,get)=>({
             })
         }
     },
-    getParameters:async ()=>{
-        const { currentPage,filter,escorts } = get()
+    // getParameters:async ()=>{
+    //     const { currentPage,filter,escorts } = get()
 
-        set({
-            loading:true
-        })
+    //     set({
+    //         loading:true
+    //     })
 
-        try {
-            const profiles = await getParams(currentPage,filter.type,filter.value)
-            set({
-                loading:false,
-                escorts:filter.type && currentPage > 1 ? [...escorts,...profiles.escorts] : profiles.escorts,
-            })
-        } catch (error) {
-            set({
-                loading:false,
-                error:error.message
-            })
-        }
+    //     try {
+    //         const profiles = await getParams(currentPage,filter.type,filter.value)
+    //         set({
+    //             loading:false,
+    //             escorts:filter.type && currentPage > 1 ? [...escorts,...profiles.escorts] : profiles.escorts,
+    //         })
+    //     } catch (error) {
+    //         set({
+    //             loading:false,
+    //             error:error.message
+    //         })
+    //     }
 
-    },
+    // },
     setFilter: (type,value)=>{
         set({
             filter:{

@@ -6,14 +6,14 @@ const {
     PUBLIC_GET_ALL_ESCORTS_DEV
 } = import.meta.env
 
-export default async function getAllEscorts(){
+export default async function getAllEscortsByAdmin(currentPage){
     
     const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_GET_ALL_ESCORTS_PROD : PUBLIC_GET_ALL_ESCORTS_DEV
 
     try {
-        console.log('ejecuto')
-        const res = await axios.get(URL)
-        console.log('publicdata',res.data)
+        const res = await axios.get(`${URL}/${currentPage}`,{
+            withCredentials:true
+        })
         return res.data
     } catch (error) {
         return error.response.data.error
