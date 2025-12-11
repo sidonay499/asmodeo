@@ -1,5 +1,6 @@
 import { create } from "zustand"
 import getAllEscorts from "../../adapters/escorts/getAllEscorts"
+import getAllEscortsByAdmin from "../../adapters/escorts/getAllEscortsByAdmin"
 
 const useStore = create((set,get)=>({
     escorts:[],
@@ -31,6 +32,35 @@ const useStore = create((set,get)=>({
             set({
                 errors:error,
                 loading:false
+            })
+        }
+    },
+    getEscortByAdmin: async ()=>{
+        try {
+            const { escorts, currentPage } = get()
+            set({
+                loading:true
+            })
+
+            const res = await getAllEscortsByAdmin(currentPage)
+
+            if(!res.escorts){
+                set({
+                    loadin:false,
+                    errors:res
+                })
+                return
+            };
+            
+            set({
+                loading:false,
+                escorts: escorts ? [...escorts, ...res.escorts] : res.escorts,
+                pages:res.pages
+            })
+        } catch (error) {
+            set({
+                loading:false,
+                error:error
             })
         }
     },
@@ -71,7 +101,8 @@ const useStore = create((set,get)=>({
     cleanErrors:()=>{
         set({
             errors:null,
-            escorts:[]
+            escorts:[],
+            loading:false
         })
     
     },

@@ -1,21 +1,23 @@
 import { useEffect, useState } from 'react'
 import useIsLogin from '../../hooks/useIsLogin'
 import CreateEscortFemale from '../../forms/createEscort/female/CreateEscortFemale'
-import './dashboard.css'
 import CreateEscortMale from '../../forms/createEscort/male/CreateEscortMale'
-import useStore from '../../../zustand/store'
 import CardAdmin from '../../cards/cardAdmin/CardAdmin'
 import PageNavigator from '../../pageNavigator/PageNavigator'
+import useStore from '../../../zustand/store'
+import './dashboard.css'
+import Loader from '../../icons/loader/Loader'
+import Alert from '../../modals/alerts/Alert'
 
 const Dashboard = ()=>{
-    const { escorts,getEscorts } = useStore()
+    const { escorts, getEscortByAdmin, loading, errors, cleanErrors } = useStore()
     const [item,setItem] = useState(true)
     const [gender,setGender] = useState(true)
     const login = useIsLogin()
     
     useEffect(()=>{
         login()
-        getEscorts()
+        getEscortByAdmin()
     },[])
 
     const handlerItem = ()=>{
@@ -24,9 +26,14 @@ const Dashboard = ()=>{
     const handlerGender = ()=>{
         setGender(!gender)
     }
+    const handleAlert = ()=>{
+        cleanErrors()
+    }
 
     return(
         <section className='section_dashboard' >
+            {loading ? <Loader/> : null}
+            {errors ? <Alert handleAlert={handleAlert} >{errors}</Alert> : null}
             <header className='header_dashboard' >
                 <h2>DASHBOARD ADMINISTRADOR</h2>
                 <div className='box_dashboard' >

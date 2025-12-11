@@ -4,21 +4,15 @@ import'./pageNavigator.css'
 const PageNavigator = ()=>{
     const { 
         currentPage, 
-        getEscorts,
+        getEscortByAdmin,
         pages, 
-        setCurrentPage,
-        getParameters
+        setCurrentPage
     } = useStore()
 
     const fowardPage = ()=>{
         if(currentPage < pages){
-            if(filter.type){
-                setCurrentPage(currentPage + 1)
-                getParameters()
-                return
-            }
             setCurrentPage(currentPage + 1)
-            getEscorts()
+            getEscortByAdmin()
         }
     }  
 
