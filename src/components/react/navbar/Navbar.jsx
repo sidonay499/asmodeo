@@ -13,7 +13,7 @@ const Navbar = ()=>{
                     />
                 </a>
                 <div>
-                    <a aria-label='Publica en Asmodeo, Escorts Vip en Argentina' href="/publica">PUBLICAR</a>
+                    <a aria-label='Publica en Asmodeo, Escorts Vip en Argentina' href="/publicar-perfil-escort-argentina">PUBLICAR</a>
                     <a href="/blog" aria-label='Blog Asmodeo, Escorts Vip en Argentina' >BLOG</a>
                 </div>
             </div>

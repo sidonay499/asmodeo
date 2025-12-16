@@ -3,24 +3,33 @@ const year = new Date().getFullYear()
 ---
 
 <footer>
-    <div>
+    <div class="links">
+        <div>
+            <h3>LINKS</h3>
+            <a href="/estadisticas-escorts-argentina">Informe 2025: estadísticas del mercado de acompañantes en Argentina</a>
+        </div>
+        <div>
+            <h3>BLOG</h3>
+            <a href="/mitos-y-verdades-sobre-las-escorts-vip-en-argentina">Mitos y verdades sobre las Escorts VIP en Argentina</a>
+            <a href="/escorts-vip">¿Cómo llevar un buen trato con una Escort VIP?</a>
+        </div>
+    </div>
+    <div class="rigths">
         {`TODOS LOS DERECHOS RESERVADO ©ASMODEO ${year} -`}<a href="/legal">TERMINOS Y CONDICIONES</a>
     </div>
 </footer>
 
 <style>
     footer{
-        z-index: 10;
-        position: fixed;
-        bottom: 0;
         display: grid;
         place-items: center;
         font-size: 8px;
         padding-block: 5px;
         width: 100%;
-        background-color: var(--total-black);
+        border-top: solid 1px var(--primary);
+        gap: 50px;
     }
-    div{
+    .rigths{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -29,14 +38,29 @@ const year = new Date().getFullYear()
             font-size: 8px;
         }
     }
-    div > a:hover{
+    a:hover{
         color: var(--action);
+    }
+    .links{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        padding-top: 5px;
+        gap: 40px;
+    }
+    .links > div{
+        display: grid;
+
     }
 
     @media
         (width < 700px){
             footer{
                 padding-block: 10px;
+            }
+            .links{
+                display: grid;
             }
         }
 </style>

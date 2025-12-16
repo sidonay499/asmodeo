@@ -6,10 +6,6 @@ const useStore = create((set,get)=>({
     escorts:[],
     pages:1,
     filterActive:false,
-    filter:{
-        type:null,
-        value:null
-    },
     currentPage:1,
     loading:false,
     errors:null,
