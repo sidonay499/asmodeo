@@ -26,6 +26,7 @@ export default defineConfig({
     }),
   ],
   redirects:{
-    '/publica': '/publicar-perfil-escort-argentina'
+    '/publica': '/publicar-perfil-escort-argentina',
+    '/blog/escorts-vip.md': '/blog/Cómo-llevar-un-buen-trato-con-una-Escort-VIP.md'
   }
 });
