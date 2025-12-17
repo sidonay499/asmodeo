@@ -25,4 +25,7 @@ export default defineConfig({
       priority: 0.9,
     }),
   ],
+  redirects:{
+    '/publica': '/publicar-perfil-escort-argentina'
+  }
 });
