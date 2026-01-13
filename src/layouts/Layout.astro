@@ -5,11 +5,30 @@ import Footer from "../components/Footer.astro"
 import GoogleAnalytics from "../components/google/GoogleAnalytics.astro"
 
 const { title, description, canonical} = Astro.props
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "VIP Escorts en Buenos Aires - Escorts Femeninas y Masculinos en Argentina",
+  "description": "Guía completa sobre VIP Escorts en Buenos Aires, Escorts femeninas en Argentina y Escorts masculinos en Argentina con perfiles reales, consejos y tendencias.",
+  "author": {
+    "@type": "Organization",
+    "name": "Asmodeo Escorts VIP"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Asmodeo.net"
+  },
+  "mainEntityOfPage": "https://asmodeo.net/"
+}
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Schema org -->
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+
 		<!-- Google tag (gtag.js) -->
 		<GoogleAnalytics forward={['dataLayer.push']}/>
 
