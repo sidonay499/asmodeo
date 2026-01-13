@@ -24,6 +24,11 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.9,
     }),
+    partytown({
+      config:{
+        forward:["dataLayer.push", "gtag"]
+      }
+    })
   ],
   redirects:{
     '/publica': '/publicar-perfil-escort-argentina',
