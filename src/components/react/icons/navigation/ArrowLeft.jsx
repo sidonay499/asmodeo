@@ -3,15 +3,21 @@ import './styleNavigation.css'
 const ArrowLeft = ({backPage})=>{
     return(
         <span onClick={backPage} className='button_navigation' >
-            <svg
-                className="navigation_icons"
-                width="24"  
-                height="24"  
-                viewBox="0 0 24 24"  
-                fill="none"   
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
             >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M13 20l-3 -8l3 -8" />
+                <path d="M5 12l14 0" />
+                <path d="M5 12l4 4" />
+                <path d="M5 12l4 -4" />
             </svg>
         </span>
     )

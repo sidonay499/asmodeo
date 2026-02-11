@@ -2,6 +2,7 @@
     display: grid;
     place-items: center;
     gap: 20px;
+    padding-block: 100px;
 }
 .box_redirect{
     display: grid;

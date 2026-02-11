@@ -1,6 +1,6 @@
 import { Field, Formik, Form, ErrorMessage } from 'formik'
 import { useState } from 'react'
-import { validateEscortFemale } from '../../../../../utils/schema'
+import { validateEscort } from '../../../../../utils/schema'
 import ButtonReact from '../../../buttons/buttonsReact/ButtonReact'
 import uploadImageProfile from '../../../../../adapters/escorts/uploadImageProfile'
 import uploadImageGalery from '../../../../../adapters/escorts/uploadImageGalery'
@@ -52,7 +52,7 @@ const CreateEscortFemale = ()=>{
                     country:'',
                     category:false
                 }}
-                validationSchema={validateEscortFemale}
+                validationSchema={validateEscort}
                 onSubmit={ async (values,actions)=>{
                     try {
                         setLoader(!loader)

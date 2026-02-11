@@ -1,4 +1,5 @@
 ---
+import getAllEscorts from "../../adapters/escorts/getAllEscorts"
 import getParams from "../../adapters/escorts/getParams"
 import ButtonAction from "../../components/react/buttons/buttonAction/ButtonAction"
 import CreateInbox from "../../components/react/forms/inbox/CreateInbox"
@@ -9,6 +10,9 @@ import Layout from "../../layouts/Layout.astro"
 const { name,id } = Astro.params
 
 const p = await getParams("1","id",id)
+const profilesSuggested = await getAllEscorts()
+console.log(profilesSuggested)
+
 if(typeof p === "string") return Astro.redirect('/404')
 
 const profile = p && p.escorts && p.escorts[0]
@@ -110,6 +114,28 @@ const {
                 <div class='box_inbox' >
                     <h5>{`DEJA TU COMENTARIO A CERCA DE ${name?.toUpperCase()}`}</h5>
                     <CreateInbox client:only="react" id={id}/>
+                </div>
+                <div class="sugges_title">
+                    <h2>PERFÍLES RELACIONADOS</h2>
+                </div>
+                <div class="container_suggest_card">
+                    <div class="box_suggest_card">
+                    {
+                        profilesSuggested?.map((p:any)=>(
+                            <a 
+                                class="suggest_card" 
+                                rel="noreferrer"
+                                target="_blank"
+                                aria-label={`modelo ${p.name} en la localidad de ${p.location}`}
+                                href={`/${p.name}/${p.id}`}
+                            >
+                                <img src={p.imageProfile} alt="">
+                                <h2>{`${p.name} (${p.age})`}</h2>
+                                <p>{p.location}</p>
+                            </a>
+                        ))
+                    }
+                    </div>
                 </div>
             </div>
         </article>
@@ -243,6 +269,63 @@ const {
         border-top: solid 1px var(--primary);
         margin-top: 35px;
         gap: 25px;
+    }
+    .sugges_title{
+        display: grid;
+        place-items: center;
+        margin-top: 50px;
+    }
+    .container_suggest_card{
+        display: grid;
+        position: relative;
+        margin-block: 25px;
+    }
+    .container_suggest_card::after{
+        position: absolute;
+        content: "";
+        width: 180px;
+        height: calc(100% - 15px);
+        right: 0px;
+        background: linear-gradient(to left, var(--third),transparent);
+    }
+    .box_suggest_card{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        overflow: auto;
+    }
+    .box_suggest_card::-webkit-scrollbar{
+		width: 4px;
+	}
+	.box_suggest_card::-webkit-scrollbar-thumb{
+		background-color: var(--pink);
+        padding: 2px;
+        border-radius: 15px;
+	}
+    .suggest_card{
+        display: grid;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        background: var(--third);
+        padding: 10px;
+        height: 200px;
+    }
+    .suggest_card > img{
+        width: 100px;
+        height: 130px;
+        object-fit: cover;
+    }
+    .suggest_card > h2{
+        font-size: 13px;
+        margin-bottom: -5px;
+        line-height: 1;
+    }
+    .suggest_card > p{
+        font-size: 8px;
+        margin: 0px;
     }
 
     @media

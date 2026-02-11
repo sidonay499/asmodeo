@@ -21,7 +21,7 @@ export default async function updateProfile(id,prop,valueProp){
             }
         )
         console.log('response',res)
-        return true
+        return res.data
     } catch (error) {
         console.log('error',error)
         return error

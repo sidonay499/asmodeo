@@ -27,8 +27,8 @@ const LoginForm = ()=>{
             setLoader(true)
             const res = await adminLogin(values)
             setLoader(false)
-
-            if(res.name){
+            
+            if(res !== 'validate user' || res.name){
                 setStorage(res,'admin')
                 navigate('/admin')
                 return

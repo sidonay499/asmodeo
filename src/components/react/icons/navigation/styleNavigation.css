@@ -6,7 +6,6 @@
     height: 35px;
     border: none;
     border-radius: 50%;
-    background-color: var(--third);
     border: solid 1px var(--primary);
     cursor: pointer;
     transition: all ease-in-out 300ms;

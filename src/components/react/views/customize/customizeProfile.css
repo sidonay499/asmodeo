@@ -1,0 +1,40 @@
+.form_customize{
+    display: grid;
+    align-items: center;
+    gap: 15px;
+}
+.box_navigation_customize{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.box_input_customize{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+.input_customize{
+    display:grid;
+    align-items: center;
+}
+.customize_img_profile{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+    border: solid 2px var(--primary);
+}
+.container_images_custom{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+}
+.customize_images{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}

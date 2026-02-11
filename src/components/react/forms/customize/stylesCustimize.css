@@ -1,0 +1,8 @@
+.form_imageProfile{
+    display: grid;
+    align-items: center;
+}
+.error_message_customize{
+    height: 18px;
+    font-size: 10px;
+}

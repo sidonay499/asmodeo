@@ -50,7 +50,7 @@ const useStore = create((set,get)=>({
             
             set({
                 loading:false,
-                escorts: escorts ? [...escorts, ...res.escorts] : res.escorts,
+                escorts:res.escorts,
                 pages:res.pages
             })
         } catch (error) {

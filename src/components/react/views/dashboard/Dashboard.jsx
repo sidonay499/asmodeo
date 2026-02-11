@@ -75,7 +75,7 @@ const Dashboard = ()=>{
                         {
                             escorts.map(p => (
                                 <div key={p.id}>
-                                    <CardAdmin item={p} />
+                                    <CardAdmin item={p}/>
                                 </div>
                             ))
                         }

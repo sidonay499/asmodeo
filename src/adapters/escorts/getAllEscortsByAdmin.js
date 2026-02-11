@@ -1,4 +1,5 @@
 import axios from "axios"
+import setStorage from "../../utils/setStorage"
 
 export default async function getAllEscortsByAdmin(currentPage){
     try {
@@ -7,7 +8,9 @@ export default async function getAllEscortsByAdmin(currentPage){
         })
         return res.data
     } catch (error) {
-        console.log('err',error)
-        return error.message
+        if(error.response.data.error === "Faltan credenciales"){
+            setStorage('clear')
+        }
+        return error.response.data.error
     }
 }
