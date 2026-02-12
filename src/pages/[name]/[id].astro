@@ -287,6 +287,12 @@ const {
         height: calc(100% - 15px);
         right: 0px;
         background: linear-gradient(to left, var(--third),transparent);
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none;     /* IE 10+ */
+        user-select: none;         /* Estándar moderno */
+        
+        /* Evita interacciones de clic (opcional, pero recomendado) */
+        pointer-events: none;
     }
     .box_suggest_card{
         display: flex;
