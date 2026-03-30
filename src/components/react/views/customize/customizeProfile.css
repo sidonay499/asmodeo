@@ -2,6 +2,7 @@
     display: grid;
     align-items: center;
     gap: 15px;
+    margin-block: 100px;
 }
 .box_navigation_customize{
     display: flex;

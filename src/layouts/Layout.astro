@@ -4,7 +4,7 @@ import Navbar from "../components/react/navbar/Navbar"
 import Footer from "../components/Footer.astro"
 import GoogleAnalytics from "../components/google/GoogleAnalytics.astro"
 
-const { title, description, canonical} = Astro.props
+const { title, description, canonical, schemaProfile} = Astro.props
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,7 +27,7 @@ const schema = {
 <html lang="en">
 	<head>
 		<!-- Schema org -->
-		<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(schemaProfile ? schemaProfile : schema)} />
 
 		<!-- Google tag (gtag.js) -->
 		<GoogleAnalytics forward={['dataLayer.push']}/>

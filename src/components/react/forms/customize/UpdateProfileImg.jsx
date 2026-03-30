@@ -1,11 +1,11 @@
-import { ErrorMessage, Field, Form, Formik } from "formik"
+import { ErrorMessage, Form, Formik } from "formik"
 import { validateEscort } from "../../../../utils/schema"
 import "./stylesCustimize.css"
 import updateProfile from "../../../../adapters/escorts/updateProfile"
 import uploadImageProfile from "../../../../adapters/escorts/uploadImageProfile"
-import setStorage from "../../../../utils/setStorage"
+import deleteImage from "../../../../adapters/escorts/deleteImage"
 
-const UpdateProfileImg = ({id,handleLoader,handleAlert})=>(
+const UpdateProfileImg = ({id,image,handleLoader,handleAlert})=>(
     <Formik
         initialValues={{
             imageProfile:null
@@ -15,10 +15,17 @@ const UpdateProfileImg = ({id,handleLoader,handleAlert})=>(
             try {
                 handleLoader(true)
                 const formData = new FormData()
+                const deleteImg = deleteImage(image)
+                console.log("delete",deleteImg)
+                setTimeout(()=>{
+                    handleAlert("Se eliminó correctamente la imágen")
+                },200)
     
                 const profileImg = values.imageProfile
                 const urlProfile = await uploadImageProfile(formData, profileImg)
-                handleAlert("Se guardo correctamente la imagen en la nube")
+                setTimeout(()=>{
+                    handleAlert("Se guardo correctamente la imagen en la nube")
+                },200)
                 
                 const updateDB = await updateProfile(id,'imageProfile',urlProfile)
                 handleAlert(updateDB)

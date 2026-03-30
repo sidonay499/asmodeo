@@ -15,7 +15,8 @@ const CustomizeProfile = ()=>{
     const profile = escorts.find(p => {
         if(p.id === id) return p
     })
-
+    const image = profile.imageProfile.split("/").pop().replace(".webp","")
+    
     const handleAlert = ()=>{
         setAlert("")
     }
@@ -36,7 +37,7 @@ const CustomizeProfile = ()=>{
             <div className="box_input_customize">
                 <img className="customize_img_profile" src={profile.imageProfile} alt={profile.name} />
                 <div className="input_customize" >
-                    <UpdateProfileImg id={profile.id} handleLoader={handleLoader} handleAlert={setAlert}/>
+                    <UpdateProfileImg id={profile.id} image={image} handleLoader={handleLoader} handleAlert={setAlert}/>
                 </div>
             </div>
             <div className="box_input_customize">
