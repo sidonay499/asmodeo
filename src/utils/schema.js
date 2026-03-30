@@ -52,6 +52,13 @@ export const validateCode = Yup.object().shape({
         .required('Ingrese el código')
 })
 
+export const validateName = Yup.object().shape({
+  name: Yup.string()
+    .min(3,'Nombre demasiado corto')
+    .max(100,'Nombre demasiado largo')
+    .required('El nombre es obligatorio'),
+})
+
 export const validateEscort = Yup.object().shape({
   imageProfile: Yup.mixed()
     .required('La imagen de perfil es obligatoria')

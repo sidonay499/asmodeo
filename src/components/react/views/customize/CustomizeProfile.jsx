@@ -1,11 +1,12 @@
 import { Link, useParams } from "react-router-dom"
 import useStore from "../../../zustand/store"
 import "./customizeProfile.css"
-import UpdateProfileImg from "../../forms/customize/UpdateProfileImg"
 import ArrowLeft from "../../icons/navigation/ArrowLeft"
 import { useState } from "react"
 import Loader from "../../icons/loader/Loader"
 import Alert from "../../modals/alerts/Alert"
+import ChangeName from "../../forms/customize/name/ChangeName"
+import UpdateProfileImg from "../../forms/customize/imageProfile/UpdateProfileImg"
 
 const CustomizeProfile = ()=>{
     const [loader,setLoader] = useState(false)
@@ -55,10 +56,9 @@ const CustomizeProfile = ()=>{
                 </div>
             </div>
             <div className="box_input_customize">
-                <p>{profile.name}</p>
+                <h2>{profile.name}</h2>
                 <div className="input_customize" >
-                    <label htmlFor="imageProfile">CAMBIAR NOMBRE</label>
-    
+                    <ChangeName/>
                 </div>
             </div>
         </section>

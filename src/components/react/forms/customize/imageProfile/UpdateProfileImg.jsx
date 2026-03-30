@@ -1,9 +1,9 @@
 import { ErrorMessage, Form, Formik } from "formik"
-import { validateEscort } from "../../../../utils/schema"
 import "./stylesCustimize.css"
-import updateProfile from "../../../../adapters/escorts/updateProfile"
-import uploadImageProfile from "../../../../adapters/escorts/uploadImageProfile"
-import deleteImage from "../../../../adapters/escorts/deleteImage"
+import { validateEscort } from "../../../../../utils/schema"
+import deleteImage from "../../../../../adapters/escorts/deleteImage"
+import uploadImageProfile from "../../../../../adapters/escorts/uploadImageProfile"
+import updateProfile from "../../../../../adapters/escorts/updateProfile"
 
 const UpdateProfileImg = ({id,image,handleLoader,handleAlert})=>(
     <Formik
