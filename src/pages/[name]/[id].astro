@@ -50,7 +50,7 @@ const schemaProfile = {
    "@type":"ProfilePage",
    "@id":`https://asmodeo.net/${name}/${id}`,
    "url":`https://asmodeo.net/${name}/${id}`,
-   "name":{name},
+   "name":name,
    "primaryImageOfPage":{
      "@id":`https://asmodeo.net/${name}/${id}`
    },
@@ -61,7 +61,7 @@ const schemaProfile = {
   {
    "@type":"ImageObject",
    "@id":`https://asmodeo.net/${name}/${id}`,
-   "contentUrl":{imageProfile},
+   "contentUrl":imageProfile,
    "caption":`${name} profile photo`
   },
   {
@@ -76,7 +76,7 @@ const schemaProfile = {
     {
      "@type":"ListItem",
      "position":2,
-     "name":{name}
+     "name":name
     }
    ]
   }
