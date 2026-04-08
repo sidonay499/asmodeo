@@ -7,11 +7,18 @@ import axios from 'axios';
 import partytown from '@astrojs/partytown';
 
 const pages = async () => {
-  const res = await axios.get('https://asmodeo-back.onrender.com/escort')
-  const customPages = res.data.map((escort) => {
-    return `https://asmodeo.net/${escort.name}/${escort.id}`
-  });
-  return customPages;
+  try {
+    const res = await axios.get('https://asmodeo-back.onrender.com/escort')
+
+    if (!Array.isArray(res.data)) return []
+
+    return res.data.map((escort) => 
+      `https://asmodeo.net/${escort.name}/${escort.id}`
+    )
+  } catch (error) {
+    console.error("Error fetching sitemap pages:", error)
+    return []
+  }
 }
 
 export default defineConfig({
