@@ -1,0 +1,18 @@
+.form_change_values{
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+.box_label_change_values{
+    display: grid;
+}
+.box_error_change_values{
+    display: flex;
+    height: 13px;
+}
+.error_change_values{
+    font-size: 10px;
+}
+.button_change_values{
+    margin-bottom: 11px;
+}

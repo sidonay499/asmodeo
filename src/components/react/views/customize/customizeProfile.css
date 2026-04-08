@@ -13,18 +13,19 @@
 }
 .box_input_customize{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 15px;
 }
 .input_customize{
     display:grid;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 20px;
 }
 .customize_img_profile{
     width: 100px;
-    height: 100px;
-    border-radius: 50px;
+    height: 130px;
+    border-radius: 10px;
     object-fit: cover;
     border: solid 2px var(--primary);
 }

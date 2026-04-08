@@ -58,6 +58,58 @@ export const validateName = Yup.object().shape({
     .max(100,'Nombre demasiado largo')
     .required('El nombre es obligatorio'),
 })
+export const validateAge = Yup.object().shape({
+  age: Yup.number()
+    .max(100)
+    .positive('Debe ser un número positivo')
+    .integer('La edad debe ser un número entero')
+    .required('La edad es obligatoria'),
+})
+export const validateHeigth = Yup.object().shape({
+  heigth: Yup.number()
+    .min(100,'Debe ser mayor a 100cm')
+    .max(280,'Debe ser menor a 280cm')
+    .positive('Debe ser un número positivo')
+    .integer('La altura debe ser un número entero')
+    .required('La altura es obligatoria'),
+})
+export const validateWeigth = Yup.object().shape({
+  weigth: Yup.number()
+    .min(30)
+    .max(200)
+    .positive('Debe ser un número positivo')
+    .integer('El peso debe ser un número entero')
+    .required('El peso es obligatorio'),
+})
+export const validateHairColor = Yup.object().shape({
+  hairColor: Yup.mixed()
+    .oneOf([
+      'NEGRO','RUBIO','CASTAÑO','CASTAÑO OSCURO','RUBIO OSCURO','COLORADO'
+    ])
+    .required('El color de pelo es obligatorio'),
+})
+export const validateEyesColor = Yup.object().shape({
+  eyesColor: Yup.mixed()
+    .oneOf([
+      'NEGROS','AZULES','CELESTES','VERDES','MARRONES','CAFÉ','MARRON CLARO','MIEL'
+    ])
+    .required('El color de ojos es obligatorio'),
+})
+export const validateShaved = Yup.object().shape({
+  shaved: Yup.mixed()
+    .oneOf(['FULL','PARCIAL','NATURAL'])
+    .required('La depilación es obligatoria'),
+})
+export const validateCategory = Yup.object().shape({
+  category: Yup.mixed()
+    .oneOf([
+      'UNIVERSE','GALAXY','STAR','ECLIPSE','EQUINOX','MOON','MASSAGE','VIRTUAL'
+    ])
+    .required('La categoría es obligatoria'),
+})
+export const validateTattoos = Yup.object().shape({
+  tattoos: Yup.boolean(),
+})
 
 export const validateEscort = Yup.object().shape({
   imageProfile: Yup.mixed()

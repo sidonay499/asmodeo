@@ -20,7 +20,7 @@ export default async function updateProfile(id,prop,valueProp){
                 withCredentials:true    
             }
         )
-        console.log('response',res)
+        console.log('response',res.data)
         return res.data
     } catch (error) {
         console.log('error',error)
