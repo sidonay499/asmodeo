@@ -1,8 +1,8 @@
 ---
-title: 'Argentina escort stats: mercado, tendencias, demografía y demanda en 2024–2025'
-date: '2025/12/30'
-description: 'Datos reales sobre el mercado de escorts en Argentina. Tendencias 2024–2025, perfiles de usuarios, demanda en Buenos Aires y ciudades clave.'
-image: '/blogImages/escort-vip-blog-asmodeo-escorts.webp'
+title: 'Argentina escort stats: mercado, tendencias, demografía y demanda en 2025–2026'
+date: '2026/1/1'
+description: 'Datos reales sobre el mercado de escorts en Argentina. Tendencias 2025–2026, perfiles de usuarios, demanda en Buenos Aires y ciudades clave.'
+image: '/blogImages/escorts-asmodeo.webp'
 toc: true
 ---
 
