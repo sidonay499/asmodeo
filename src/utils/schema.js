@@ -118,6 +118,32 @@ export const validateBodyType = Yup.object().shape({
     ])
     .required('El tipo de cuerpo es obligatorio'),
 })
+export const validatePrice = Yup.object().shape({
+  price: Yup.number()
+    .min(2)
+    .max(20000)
+    .integer('El precio debe ser un número entero')
+    .required('El precio es obligatorio'),
+})
+export const validatePhone = Yup.object().shape({
+  phone: Yup.string()
+    .min(8)
+    .max(22)
+    .matches(/^\+?[0-9]+$/, "Solo números, sin espacios ni guiones")
+    .required('El teléfono es obligatorio'),
+})
+export const validateLocation = Yup.object().shape({
+  location: Yup.string()
+    .min(4)
+    .max(100)
+    .required('La localidad es obligatoria'),
+})
+export const validateDescription = Yup.object().shape({
+  description: Yup.string()
+    .min(10,'Muy corta')
+    .max(1000,'Muy larga')
+    .required('La descripción es obligatoria'),
+})
 
 export const validateEscort = Yup.object().shape({
   imageProfile: Yup.mixed()

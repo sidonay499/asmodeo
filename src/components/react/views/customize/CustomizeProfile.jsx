@@ -16,6 +16,10 @@ import ChangeShaved from "../../forms/customize/changeValues/ChangeShaved"
 import ChangeCategory from "../../forms/customize/changeValues/ChangeCategory"
 import ChangeTattoos from "../../forms/customize/changeValues/ChangeTattoos"
 import ChangeBodyType from "../../forms/customize/changeValues/ChangeBodyType"
+import ChangePrice from "../../forms/customize/changeValues/ChangePrice"
+import ChangePhone from "../../forms/customize/changeValues/ChangePhone"
+import ChangeLocation from "../../forms/customize/changeValues/ChangeLocation"
+import ChangeDescription from "../../forms/customize/changeValues/ChangeDescription"
 
 const CustomizeProfile = ()=>{
     const [loader,setLoader] = useState(false)
@@ -25,7 +29,7 @@ const CustomizeProfile = ()=>{
     const profile = escorts.find(p => {
         if(p.id === id) return p
     })
-    console.log()
+
     const image = profile.imageProfile.split("/").pop().replace(".webp","")
     
     const handleAlert = ()=>{
@@ -146,6 +150,38 @@ const CustomizeProfile = ()=>{
                     handleAlert={setAlert} 
                     bodyType={profile.bodyType} 
                     gender={profile.gender}
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangePrice 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    price={profile.price} 
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangePhone 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    phone={profile.phone} 
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangeLocation 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    location={profile.location} 
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangeDescription 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    description={profile.description} 
                 />
             </div>
         </section>

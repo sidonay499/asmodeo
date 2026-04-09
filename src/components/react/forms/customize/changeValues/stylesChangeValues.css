@@ -16,3 +16,12 @@
 .button_change_values{
     margin-bottom: 11px;
 }
+.label_description{
+    width: 250px;
+}
+
+@media (width < 700px){
+    .form_change_values{
+        display: grid;
+    }
+}

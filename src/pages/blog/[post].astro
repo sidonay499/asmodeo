@@ -10,7 +10,8 @@ const blog = allPosts.find((p)=>{
 })
 const { data } = blog ? blog : {}
 
-const { Content } = blog && await render(blog)
+const rendered = blog ? await render(blog) : null
+const Content = rendered?.Content
 
 const allTitles = allPosts.map((p)=>{
     if(data?.title !== p.data.title){
