@@ -17,22 +17,25 @@ const posts = await getCollection("posts")
                 <p>EN ASMODEO BLOG VAS A ENCONTRAR INFORMACIÓN Y CONSEJOS PARA SIEMPRE TENER UNA BUENA EXPERIENCIA EN EL AMBITO ESCORTS</p>
             </header>
             {
-                posts?.map(p => (
-                    <a href={`/blog/${p.id}`}>
-                        <article aria-label="Enlace a articulo del blog" class="container_post"  >
-                            <div>
-                                <h3 aria-label="Título de enlace" >{p.data.title}</h3>
-                                <p aria-label="Descripción de enlace" >{p.data.description}</p>
-                            </div>
-                            <img 
-                                src={p.data.image} 
-                                transition:name="blog_cover" 
-                                alt="image de enlace a artículo del blog, muestra una modelo"
-                                aria-label="Imágen de enlace"
-                            >
-                        </article>
-                    </a>
-                ))
+                posts?.map(p => {
+                    const idParse = p.id.replace(/\.md$/,"")
+                    return(
+                        <a href={`/blog/${idParse}`}>
+                            <article aria-label="Enlace a articulo del blog" class="container_post"  >
+                                <div>
+                                    <h3 aria-label="Título de enlace" >{p.data.title}</h3>
+                                    <p aria-label="Descripción de enlace" >{p.data.description}</p>
+                                </div>
+                                <img 
+                                    src={p.data.image} 
+                                    transition:name="blog_cover" 
+                                    alt="image de enlace a artículo del blog, muestra una modelo"
+                                    aria-label="Imágen de enlace"
+                                >
+                            </article>
+                        </a>
+                    )
+                })
             }
         </div>
     </section>

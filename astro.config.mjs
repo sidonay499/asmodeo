@@ -33,6 +33,9 @@ export default defineConfig({
   ],
     redirects:{
       '/publica': '/publicar-perfil-escort-argentina',
-      '/blog/escorts-vip.md': '/blog/Cómo-llevar-un-buen-trato-con-una-Escort-VIP.md'
+      '/blog/escorts-vip.md': '/blog/Cómo-llevar-un-buen-trato-con-una-Escort-VIP.md',
+      'argentina-escort-stats-2025-mercado-demanda-y-perfil-del-cliente.md': 'argentina-escort-stats-2025-mercado-demanda-y-perfil-del-cliente',
+      'cómo-llevar-un-buen-trato-con-una-escort-vip.md': 'cómo-llevar-un-buen-trato-con-una-escort-vip',
+      'mitos-y-verdades-sobre-las-escorts-vip-en-argentina.md': 'mitos-y-verdades-sobre-las-escorts-vip-en-argentina'
     }
 });

@@ -110,6 +110,14 @@ export const validateCategory = Yup.object().shape({
 export const validateTattoos = Yup.object().shape({
   tattoos: Yup.boolean(),
 })
+export const validateBodyType = Yup.object().shape({
+  bodyType: Yup.mixed()
+    .oneOf([
+      'DELGADA','MUY DELGADA','VOLUPTUOSA','RELLENA',
+      'DELGADO','MUY DELGADO','NORMAL'
+    ])
+    .required('El tipo de cuerpo es obligatorio'),
+})
 
 export const validateEscort = Yup.object().shape({
   imageProfile: Yup.mixed()

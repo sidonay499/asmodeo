@@ -15,6 +15,7 @@ import ChangeEyesColor from "../../forms/customize/changeValues/ChangeAyesColor"
 import ChangeShaved from "../../forms/customize/changeValues/ChangeShaved"
 import ChangeCategory from "../../forms/customize/changeValues/ChangeCategory"
 import ChangeTattoos from "../../forms/customize/changeValues/ChangeTattoos"
+import ChangeBodyType from "../../forms/customize/changeValues/ChangeBodyType"
 
 const CustomizeProfile = ()=>{
     const [loader,setLoader] = useState(false)
@@ -67,31 +68,85 @@ const CustomizeProfile = ()=>{
                 </div>
             </div>
             <div className="input_customize" >
-                <ChangeName id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} name={profile.name}/>
+                <ChangeName 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    name={profile.name}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeAges id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} age={profile.age}/>
+                <ChangeAges 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    age={profile.age}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeHeigth id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} heigth={profile.heigth}/>
+                <ChangeHeigth 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    heigth={profile.heigth}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeWeigth id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} weigth={profile.weigth}/>
+                <ChangeWeigth 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    weigth={profile.weigth}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeHairColor id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} hairColor={profile.hairColor}/>
+                <ChangeHairColor 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    hairColor={profile.hairColor}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeEyesColor id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} eyesColor={profile.eyesColor}/>
+                <ChangeEyesColor 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    eyesColor={profile.eyesColor}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeShaved id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} shaved={profile.shaved}/>
+                <ChangeShaved 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    shaved={profile.shaved}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeCategory id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} category={profile.category}/>
+                <ChangeCategory 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    category={profile.category}
+                />
             </div>
             <div className="input_customize" >
-                <ChangeTattoos id={profile.id} handleLoader={handleLoader} handleAlert={setAlert} tattoos={profile.tattoos}/>
+                <ChangeTattoos 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    tattoos={profile.tattoos}
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangeBodyType 
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    bodyType={profile.bodyType} 
+                    gender={profile.gender}
+                />
             </div>
         </section>
     )

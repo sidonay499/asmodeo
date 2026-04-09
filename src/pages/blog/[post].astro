@@ -9,20 +9,19 @@ const blog = allPosts.find((p)=>{
     return p.id === post
 })
 const { data } = blog ? blog : {}
-const { title,description,date } = data
 
 const { Content } = blog && await render(blog)
 
 const allTitles = allPosts.map((p)=>{
-    if(title !== p.data.title){
+    if(data?.title !== p.data.title){
         return p
     }
 })
 ---
 
 <Layout
-    title={`${title} | Blog en Asmodeo Escort Vips`}
-    description={description}
+    title={`${data?.title} | Blog en Asmodeo Escort Vips`}
+    description={data?.description}
     canonical={`blog/${post}`}
 >
     <main aria-label="Post del Blog Asmodeo.net" >
@@ -34,7 +33,6 @@ const allTitles = allPosts.map((p)=>{
             </header>
             <article aria-label="Artículo del post" >
                 <Content/>
-                <p aria-label="Fecha del post" class="date_post" >{date}</p>
             </article>
             <div class="container_related" aria-label="Links a otros post de Asmodeo.net" >
                 <h4 aria-label="Título de links a otros post de Asmodeo.net" >OTRAS ENTRADAS</h4>
