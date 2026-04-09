@@ -42,7 +42,7 @@ const UpdateProfileImg = ({id,image,handleLoader,handleAlert})=>(
         {
             ({setFieldValue})=>(
                 <Form className="form_imageProfile">
-                    <label htmlFor="imageProfile">CAMBIAR FOTOS GALERÍA</label>
+                    <label htmlFor="imageProfile">CAMBIAR IMÁGEN DE PERFIL</label>
                     <input 
                         type="file"
                         name="imageProfile"

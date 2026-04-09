@@ -20,6 +20,12 @@ import ChangePrice from "../../forms/customize/changeValues/ChangePrice"
 import ChangePhone from "../../forms/customize/changeValues/ChangePhone"
 import ChangeLocation from "../../forms/customize/changeValues/ChangeLocation"
 import ChangeDescription from "../../forms/customize/changeValues/ChangeDescription"
+import ChangeState from "../../forms/customize/changeValues/ChangeState"
+import ChangeCountry from "../../forms/customize/changeValues/ChangeCountry"
+import ChangeBreasts from "../../forms/customize/changeValues/ChangeBreasts"
+import ChangeAss from "../../forms/customize/changeValues/ChangeAss"
+import ChangePenis from "../../forms/customize/changeValues/ChangePenis"
+import ChangeMeasures from "../../forms/customize/changeValues/ChangeMeasures"
 
 const CustomizeProfile = ()=>{
     const [loader,setLoader] = useState(false)
@@ -29,7 +35,7 @@ const CustomizeProfile = ()=>{
     const profile = escorts.find(p => {
         if(p.id === id) return p
     })
-
+    console.log(profile)
     const image = profile.imageProfile.split("/").pop().replace(".webp","")
     
     const handleAlert = ()=>{
@@ -184,6 +190,60 @@ const CustomizeProfile = ()=>{
                     description={profile.description} 
                 />
             </div>
+            <div className="input_customize" >
+                <ChangeState
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    state={profile.state} 
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangeCountry
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    country={profile.country} 
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangeBreasts
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    breasts={profile.breasts} 
+                />
+            </div>
+            <div className="input_customize" >
+                <ChangeAss
+                    id={profile.id} 
+                    handleLoader={handleLoader} 
+                    handleAlert={setAlert} 
+                    ass={profile.ass} 
+                />
+            </div>
+            {
+                profile.gender === "FEMALE" && profile.measures ? 
+                <div className="input_customize" >
+                    <ChangeMeasures
+                        id={profile.id} 
+                        handleLoader={handleLoader} 
+                        handleAlert={setAlert} 
+                        measures={profile.measures} 
+                    />
+                </div> : null
+            }
+            {
+                profile.gender === "MALE" && profile.penis ? 
+                <div className="input_customize" >
+                    <ChangePenis
+                        id={profile.id} 
+                        handleLoader={handleLoader} 
+                        handleAlert={setAlert} 
+                        penis={profile.penis} 
+                    />
+                </div> : null
+            }
         </section>
     )
 }

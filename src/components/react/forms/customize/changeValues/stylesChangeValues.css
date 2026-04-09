@@ -17,7 +17,18 @@
     margin-bottom: 11px;
 }
 .label_description{
-    width: 250px;
+    width: 270px;
+}
+.container_change_measures{
+    display: flex;
+    gap: 22px;
+}
+.box_input_change_measures{
+    display: grid;
+    gap: 5px;
+}
+.box_input_change_measures > input{
+    width: 55px;
 }
 
 @media (width < 700px){

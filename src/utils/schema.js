@@ -46,10 +46,10 @@ export const validateLogin = Yup.object().shape({
 })
 
 export const validateCode = Yup.object().shape({
-    code:Yup.string()
-        .min(6,'Código inválido')
-        .max(6,'Código inválido')
-        .required('Ingrese el código')
+  code:Yup.string()
+      .min(6,'Código inválido')
+      .max(6,'Código inválido')
+      .required('Ingrese el código')
 })
 
 export const validateName = Yup.object().shape({
@@ -134,6 +134,7 @@ export const validatePhone = Yup.object().shape({
 })
 export const validateLocation = Yup.object().shape({
   location: Yup.string()
+    .matches(/^[A-ZÁÉÍÓÚÑ\s]+$/, 'Solo mayúsculas sin números')
     .min(4)
     .max(100)
     .required('La localidad es obligatoria'),
@@ -143,6 +144,50 @@ export const validateDescription = Yup.object().shape({
     .min(10,'Muy corta')
     .max(1000,'Muy larga')
     .required('La descripción es obligatoria'),
+})
+export const validateState = Yup.object().shape({
+  state: Yup.string()
+    .matches(/^[A-ZÁÉÍÓÚÑ\s]+$/, 'Solo mayúsculas sin números')
+    .min(5)
+    .max(300)
+    .required('La provincia es obligatoria'),
+})
+export const validateCountry = Yup.object().shape({
+  country: Yup.string()
+    .matches(/^[A-ZÁÉÍÓÚÑ\s]+$/, 'Solo mayúsculas sin números')
+    .min(3)
+    .max(50)
+    .required('El país es obligatorio'),
+})
+export const validateBreasts = Yup.object().shape({
+  breasts: Yup.mixed()
+    .oneOf(['PEQUEÑOS','PERFECTOS','GRANDES','EXTRA GRANDES']),
+})
+export const validateAss = Yup.object().shape({
+  ass: Yup.mixed()
+    .oneOf(['CHICA','PERFECTA','GRANDE']),
+})
+export const validatePenis = Yup.object().shape({
+  penis: Yup.number()
+    .min(1)
+    .max(50)
+    .positive(),
+})
+export const validateMeasures = Yup.object().shape({
+  breast: Yup.number()
+    .min(30)
+    .max(400)
+    .positive("solo positivo"),
+
+  waist: Yup.number()
+    .min(30)
+    .max(400)
+    .positive("solo positivo"),
+
+  hip: Yup.number()
+    .min(30)
+    .max(400)
+    .positive("solo positivo"),
 })
 
 export const validateEscort = Yup.object().shape({

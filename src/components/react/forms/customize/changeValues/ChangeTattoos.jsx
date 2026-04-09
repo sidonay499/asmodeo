@@ -20,7 +20,7 @@ const ChangeTattoos = ({id,handleLoader,handleAlert,tattoos})=>(
     >
         <Form className="form_change_values">
             <div className="box_label_change_values">
-                <label htmlFor="tattoos">TATTOOS: {tattoos === true ? "si" : "no"}</label>
+                <label htmlFor="tattoos">TATTOOS: {tattoos === true ? "SI" : "NO"}</label>
                 <Field as="select" name="tattoos">
                     <option value="">CAMBIAR SI TIENE TATUAJE</option>
                     {tattoos === true ? 
