@@ -21,7 +21,7 @@ const ChangePhone = ({id,handleLoader,handleAlert,phone})=>(
         <Form className="form_change_values">
             <div className="box_label_change_values">
                 <label htmlFor="phone">TELÉFONO: {phone}</label>
-                <Field type="number" name="phone"/>
+                <Field type="text" name="phone"/>
                 <div className="box_error_change_values">
                     <ErrorMessage name="phone" component="div" className="error_change_values"/>
                 </div>

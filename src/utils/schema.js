@@ -110,6 +110,9 @@ export const validateCategory = Yup.object().shape({
 export const validateTattoos = Yup.object().shape({
   tattoos: Yup.boolean(),
 })
+export const validateActive = Yup.object().shape({
+  tattoos: Yup.boolean(),
+})
 export const validateBodyType = Yup.object().shape({
   bodyType: Yup.mixed()
     .oneOf([

@@ -19,7 +19,7 @@ const uploadImageProfile = async (formData,profileImg)=>{
     })
 
     const originalUrl = res.data.url.replace(/^http:\/\//i, "https://")
-    const resizeUrl = originalUrl.replace('/upload/', '/upload/w_400,h_500,c_fill/')
+    const resizeUrl = originalUrl.replace('/upload/', '/upload/w_300,h_300,c_fill/')
 
     return resizeUrl
 }
