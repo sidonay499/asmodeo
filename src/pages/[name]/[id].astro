@@ -6,6 +6,8 @@ import CreateInbox from "../../components/react/forms/inbox/CreateInbox"
 import MasonryGalery from "../../components/react/masonry/MasonryGalery"
 import Experience from "../../components/react/modals/experience/Experience"
 import Layout from "../../layouts/Layout.astro"
+import createSchemaProfile from "../../utils/createSchemaProfile"
+import generateDescription from "../../utils/generateDescriptionProfile"
 
 const { name,id } = Astro.params
 
@@ -43,51 +45,14 @@ const {
     category
 } = profile ? profile : {}
 
-const schemaProfile = {
- "@context":"https://schema.org",
- "@graph":[
-  {
-   "@type":"ProfilePage",
-   "@id":`https://asmodeo.net/${name}/${id}`,
-   "url":`https://asmodeo.net/${name}/${id}`,
-   "name":name,
-   "primaryImageOfPage":{
-     "@id":`https://asmodeo.net/${name}/${id}`
-   },
-   "isPartOf":{
-     "@id":"https://asmodeo.net/#website"
-   }
-  },
-  {
-   "@type":"ImageObject",
-   "@id":`https://asmodeo.net/${name}/${id}`,
-   "contentUrl":imageProfile,
-   "caption":`${name} profile photo`
-  },
-  {
-   "@type":"BreadcrumbList",
-   "itemListElement":[
-    {
-     "@type":"ListItem",
-     "position":1,
-     "name":"Home",
-     "item":"https://asmodeo.net/"
-    },
-    {
-     "@type":"ListItem",
-     "position":2,
-     "name":name
-    }
-   ]
-  }
- ]
-}
+const schemaProfile = createSchemaProfile(name,id,imageProfile,description)
+const descriptionProfile = generateDescription(name)
 
 ---
 
 <Layout 
-    title=`Mirá el Perfil de ${name} en Asmodeo Escorts Vip en ${location}`
-    description=`Perfil de ${name} en asmodeo.net - ${location}. Descubre más sobre ${name} y conéctate con una Escort Vip de ${location}. Únete a la comunidad de asmodeo.net.`
+    title=`${name} | Asmodeo`
+    description={descriptionProfile}
     canonical={`${name}/${id}`}
     schemaProfile={schemaProfile}
 >
